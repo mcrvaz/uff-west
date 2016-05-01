@@ -1,21 +1,29 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Timer : MonoBehaviour {
+public class Timer {
 
-    public float timeToLive = 5;
-    float currentTimeToLive = 0;
+    public float timeLimit { get; set; }
+    float currentTime = 0;
     bool paused;
+
+    public Timer() {
+
+    }
+
+    public Timer(float timeLimit) {
+        this.timeLimit = timeLimit;
+    }
     
     public float Run(bool loop = true) {
         if (!paused) {
-            if (currentTimeToLive > 0) {
-                currentTimeToLive -= Time.deltaTime;
+            if (currentTime > 0) {
+                currentTime -= Time.deltaTime;
             } else if (loop) {
                 ResetTimer();
             }
         }
-        return currentTimeToLive;
+        return currentTime;
     }
 
     public void PauseTimer(bool paused){
@@ -23,6 +31,6 @@ public class Timer : MonoBehaviour {
     }
 
     public void ResetTimer() {
-        currentTimeToLive = timeToLive;
+        currentTime = timeLimit;
     }
 }

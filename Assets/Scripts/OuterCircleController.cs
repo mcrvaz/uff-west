@@ -3,9 +3,11 @@ using System.Collections;
 
 public class OuterCircleController : MonoBehaviour {
 
-    private float timeToLive = 5f;
-    
+    private float timeToLive;
+    private Vector2 originalScale;
+
     void Awake() {
+        originalScale = new Vector2(1f, 1f);
         timeToLive = GetComponentInParent<TargetController>().timeToLive;
     }
 
@@ -16,11 +18,10 @@ public class OuterCircleController : MonoBehaviour {
     IEnumerator LerpOuterCircle() {
         Vector2 scale = transform.localScale;
         float t = 0f;
+
         while (t < timeToLive) {
-            scale = Vector2.Lerp(scale, new Vector2(1,1), t / timeToLive);
-            transform.localScale = scale;
-            print(scale);
             t += Time.deltaTime;
+            transform.localScale = Vector2.Lerp(scale, originalScale, t / timeToLive);
             yield return null;
         }
     }

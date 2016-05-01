@@ -9,6 +9,9 @@ public class TimedTargetDestructor : MonoBehaviour {
 
     private void Awake() {
         m_TimeOut = GetComponentInParent<TargetController>().timeToLive;
+    }
+
+    private void Start() {
         Invoke("DestroyNow", m_TimeOut);
     }
 

@@ -3,9 +3,16 @@ using System.Collections;
 
 public class TargetController : MonoBehaviour {
 
-    public float timeToLive = 5f;
+    [Tooltip("Minimum time in seconds before destroying this object.")]
+    public float minTimeToLive;
+    [Tooltip("Minimum time in seconds before destroying this object.")]
+    public float maxTimeToLive;
 
-    void Start() {
+    [HideInInspector]
+    public float timeToLive;
+
+    void Awake() {
+        timeToLive = Random.Range(minTimeToLive, maxTimeToLive);
     }
     
 }
