@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using System.Collections;
+using System.Collections.Generic;
 
 public class ObjectSpawner : MonoBehaviour {
     [Tooltip("Object to be instantiated.")]

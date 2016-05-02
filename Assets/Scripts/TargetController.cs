@@ -14,5 +14,5 @@ public class TargetController : MonoBehaviour {
     void Awake() {
         timeToLive = Random.Range(minTimeToLive, maxTimeToLive);
     }
-    
+
 }

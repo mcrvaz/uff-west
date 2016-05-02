@@ -7,7 +7,7 @@ public class OuterCircleController : MonoBehaviour {
     private Vector2 originalScale;
 
     void Awake() {
-        originalScale = new Vector2(1f, 1f);
+        originalScale = Vector2.one;
         timeToLive = GetComponentInParent<TargetController>().timeToLive;
     }
 

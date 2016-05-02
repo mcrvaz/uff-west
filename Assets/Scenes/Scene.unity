@@ -115,7 +115,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 10, y: 10}
 --- !u!114 &659748729
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -128,9 +128,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 136574, guid: 901c68c94a66c7e459a83be14cd4e825, type: 2}
-  spawnArea: {fileID: 0}
-  minTime: 1
-  maxTime: 5
+  minTime: 0.2
+  maxTime: 0.5
 --- !u!4 &659748730
 Transform:
   m_ObjectHideFlags: 0
@@ -139,7 +138,7 @@ Transform:
   m_GameObject: {fileID: 659748727}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 20, y: 10, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -203,7 +202,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
