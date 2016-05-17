@@ -6,4 +6,16 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Scene.unity
+    path: Assets/Scenes/Menu/MainMenu.unity
+  - enabled: 1
+    path: Assets/Scenes/Duel/Duel.unity
+  - enabled: 1
+    path: Assets/Scenes/Duel/Contract.unity
+  - enabled: 1
+    path: Assets/Scenes/Duel/DuelStatistics.unity
+  - enabled: 1
+    path: Assets/Scenes/Menu/Achievements.unity
+  - enabled: 1
+    path: Assets/Scenes/Menu/Instructions.unity
+  - enabled: 1
+    path: Assets/Scenes/Menu/Statistics.unity
