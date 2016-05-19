@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 
 public class ObjectSpawner : MonoBehaviour {
-    [Tooltip("Object to be instantiated.")]
-    public GameObject prefab;
+    [Tooltip("Objects to be instantiated.")]
+    public List<GameObject> prefabs;
     [Tooltip("Minimum time in seconds before instantiating.")]
     public float minTime;
     [Tooltip("Maximum time in seconds before instantiating.")]
@@ -14,7 +14,6 @@ public class ObjectSpawner : MonoBehaviour {
     private float currentTime, nextTime;
 
     void Awake() {
-        prefabRenderer = prefab.GetComponentInChildren<Renderer>();
         spawnArea = GetComponent<Collider2D>();
     }
 
@@ -39,7 +38,10 @@ public class ObjectSpawner : MonoBehaviour {
     }
 
     private GameObject InstantiatePrefab() {
-        return (GameObject) Instantiate(prefab, GetRandomPosition(), Quaternion.identity);
+        var selectedPrefab = prefabs[Random.Range(0, prefabs.Count)];
+        //if it's too slow, we can store the renderers in another list on Awake
+        prefabRenderer = selectedPrefab.GetComponentInChildren<Renderer>();
+        return (GameObject)Instantiate(selectedPrefab, GetRandomPosition(), Quaternion.identity);
     }
 
     private void InstantiateRepeating() {
