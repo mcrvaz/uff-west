@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 
 public class ObjectSpawner : MonoBehaviour {
+    [Tooltip("Object in the scene that the instantiated objects will be parented to.")]
+    public GameObject container;
     [Tooltip("Objects to be instantiated.")]
     public List<GameObject> prefabs;
     [Tooltip("Minimum time in seconds before instantiating.")]
@@ -39,9 +41,12 @@ public class ObjectSpawner : MonoBehaviour {
 
     private GameObject InstantiatePrefab() {
         var selectedPrefab = prefabs[Random.Range(0, prefabs.Count)];
+        GameObject go;
         //if it's too slow, we can store the renderers in another list on Awake
         prefabRenderer = selectedPrefab.GetComponentInChildren<Renderer>();
-        return (GameObject)Instantiate(selectedPrefab, GetRandomPosition(), Quaternion.identity);
+        go = (GameObject)Instantiate(selectedPrefab, GetRandomPosition(), Quaternion.identity);
+        go.transform.SetParent(container.transform);
+        return go;
     }
 
     private void InstantiateRepeating() {

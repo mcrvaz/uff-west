@@ -74,6 +74,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 224: {fileID: 22435654}
+  - 114: {fileID: 11466022}
   m_Layer: 5
   m_Name: Modal
   m_TagString: Untagged
@@ -555,7 +556,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11467656}
+      - m_Target: {fileID: 11466022}
         m_MethodName: Quit
         m_Mode: 1
         m_Arguments:
@@ -614,7 +615,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: cbbabe9e292f5604897926494bb38fef, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 12ef7cbdfe0e143fa858a324456c8979, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -959,7 +960,18 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Modal text
+  m_Text: Are you sure you want to quit?
+--- !u!114 &11466022
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 115936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5abca2934f1ebda4b85206ee00f8cb5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11466664
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1004,7 +1016,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7de98841cbbe84b46a29c6f0b74443fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  modal: {fileID: 115936}
 --- !u!114 &11473320
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1044,7 +1055,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11467656}
+      - m_Target: {fileID: 11466022}
         m_MethodName: CancelQuit
         m_Mode: 1
         m_Arguments:
@@ -1361,7 +1372,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11467656}
+      - m_Target: {fileID: 11466022}
         m_MethodName: ConfirmQuit
         m_Mode: 1
         m_Arguments:

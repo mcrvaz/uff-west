@@ -1,21 +1,19 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public class Timer {
 
     public float timeLimit { get; set; }
-    float currentTime = 0;
-    bool paused;
+    public float currentTime { get; set; }
+    public bool paused { get; set; }
+    public bool loop { get; set; }
 
-    public Timer() {
-
-    }
-
-    public Timer(float timeLimit) {
+    public Timer(float timeLimit, bool loop) {
         this.timeLimit = timeLimit;
+        this.currentTime = this.timeLimit;
+        this.loop = loop;
     }
-    
-    public float Run(bool loop = true) {
+
+    public float Run() {
         if (!paused) {
             if (currentTime > 0) {
                 currentTime -= Time.deltaTime;
@@ -26,7 +24,7 @@ public class Timer {
         return currentTime;
     }
 
-    public void PauseTimer(bool paused){
+    public void PauseTimer(bool paused) {
         this.paused = paused;
     }
 
