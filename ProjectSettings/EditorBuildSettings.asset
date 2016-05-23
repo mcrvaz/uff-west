@@ -19,3 +19,5 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu/Instructions.unity
   - enabled: 1
     path: Assets/Scenes/Menu/Statistics.unity
+  - enabled: 1
+    path: Assets/Scenes/Menu/GameMode.unity

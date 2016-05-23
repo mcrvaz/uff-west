@@ -1,9 +1,13 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class DuelTimeController : MonoBehaviour {
 
+    public UnityEvent finish;
+
     private float timeLimit;
+    private float currentTime;
     private Timer timer;
     private Text visualTimer;
 
@@ -14,6 +18,14 @@ public class DuelTimeController : MonoBehaviour {
     }
 
     void Update() {
+        UpdateScreenText();
+
+        if (timer.Finished()) {
+            finish.Invoke();
+        }
+    }
+
+    void UpdateScreenText() {
         visualTimer.text = ((int)timer.Run()).ToString();
     }
 

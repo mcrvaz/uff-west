@@ -27,6 +27,10 @@ public class MenuSceneController : MonoBehaviour {
         SceneManager.LoadScene(SceneNames.CONTRACT);
     }
 
+    public void GameMode() {
+        SceneManager.LoadScene(SceneNames.GAME_MODES);
+    }
+
     public void Duel() {
         SceneManager.LoadScene(SceneNames.DUEL);
     }

@@ -24,6 +24,10 @@ public class Timer {
         return currentTime;
     }
 
+    public bool Finished() {
+        return currentTime <= 0;
+    }
+
     public void PauseTimer(bool paused) {
         this.paused = paused;
     }
