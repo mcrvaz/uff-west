@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 447390}
   - 212: {fileID: 21254864}
   - 114: {fileID: 11445636}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: OuterCircle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,9 +27,9 @@ GameObject:
   - 4: {fileID: 488630}
   - 114: {fileID: 11482578}
   - 58: {fileID: 5814738}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: HitTarget
-  m_TagString: Untagged
+  m_TagString: Target
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -43,7 +43,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 432286}
   - 212: {fileID: 21255408}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TargetSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}

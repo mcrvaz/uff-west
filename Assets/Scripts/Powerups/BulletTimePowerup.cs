@@ -29,7 +29,15 @@ public class BulletTimePowerup : TargetController {
     }
 
     void OnMouseDown() {
+        //TO DO
         StartCoroutine("BulletTimeAction");
+        duelController.RegisterPlayerBulletTime();
+    }
+
+    public new void OnEnemyMouseDown() {
+        //TO DO
+        duelController.RegisterEnemyBulletTime();
+        DestroySelf();
     }
 
 }

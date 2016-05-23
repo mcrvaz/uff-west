@@ -18,14 +18,14 @@ public class DuelTimeController : MonoBehaviour {
     }
 
     void Update() {
-        UpdateScreenText();
+        UpdateUIText();
 
         if (timer.Finished()) {
             finish.Invoke();
         }
     }
 
-    void UpdateScreenText() {
+    void UpdateUIText() {
         visualTimer.text = ((int)timer.Run()).ToString();
     }
 

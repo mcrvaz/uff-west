@@ -10,9 +10,9 @@ GameObject:
   - 4: {fileID: 466208}
   - 114: {fileID: 11438320}
   - 58: {fileID: 5838110}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PowerupBulletTime
-  m_TagString: Untagged
+  m_TagString: Target
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26,7 +26,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 493282}
   - 212: {fileID: 21253914}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PowerupSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,7 +43,7 @@ GameObject:
   - 4: {fileID: 479396}
   - 212: {fileID: 21261888}
   - 114: {fileID: 11498752}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: OuterCircle
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -16,7 +16,7 @@ public class ObjectSpawner : MonoBehaviour {
     private float currentTime, nextTime;
 
     void Awake() {
-        spawnArea = GetComponent<Collider2D>();
+        spawnArea = container.GetComponent<Collider2D>();
     }
 
     void Start() {
@@ -28,15 +28,15 @@ public class ObjectSpawner : MonoBehaviour {
     }
 
     private Vector2 GetRandomPosition() {
-        float randomX = Random.Range(
+        float x = Random.Range(
             -spawnArea.bounds.size.x + prefabRenderer.bounds.size.x,
             spawnArea.bounds.size.x - prefabRenderer.bounds.size.x
         );
-        float randomY = Random.Range(
+        float y = Random.Range(
             -spawnArea.bounds.size.y + prefabRenderer.bounds.size.y,
             spawnArea.bounds.size.y - prefabRenderer.bounds.size.y
         );
-        return new Vector2(randomX, randomY);
+        return new Vector2(x, y);
     }
 
     private GameObject InstantiatePrefab() {

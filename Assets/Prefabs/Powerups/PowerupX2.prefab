@@ -9,7 +9,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 447362}
   - 212: {fileID: 21216828}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PowerupSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26,9 +26,9 @@ GameObject:
   - 4: {fileID: 485160}
   - 114: {fileID: 11401014}
   - 58: {fileID: 5801356}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PowerupX2
-  m_TagString: Untagged
+  m_TagString: Target
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -43,7 +43,7 @@ GameObject:
   - 4: {fileID: 498032}
   - 212: {fileID: 21272082}
   - 114: {fileID: 11421860}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: OuterCircle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -116,6 +116,7 @@ MonoBehaviour:
   minTimeToLive: 0.5
   maxTimeToLive: 0.8
   timeToLive: 0
+  numberOfShots: 0
 --- !u!114 &11421860
 MonoBehaviour:
   m_ObjectHideFlags: 1
