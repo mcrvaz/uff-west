@@ -32,9 +32,7 @@ public class EnemyCharacterController : DuelCharacterController {
     private void Click() {
         if (selectedTarget != null) {
             selectedTarget.OnEnemyMouseDown();
-            print("CLICKED! " + selectedTarget);
         }
-        print("MISSED!");
     }
 
     private float GetTimeToClick() {

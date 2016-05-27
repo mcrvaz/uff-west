@@ -1,13 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class BulletTimePowerup : TargetController {
-    [Tooltip("New time scale value. For instance, 0.5 slows time by half.")]
+public class BulletTimePowerup : PowerupController {
+    [Tooltip("New time scale value for when the player hits this powerup. For instance, 0.5 slows time by half.")]
     public float slowFactor;
+    [Tooltip("New time scale value for when the enemy hits this powerup. For instance, 0.5 slows time by half.")]
+    public float enemySlowFactor;
     [Tooltip("Duration in seconds before ending the powerup effect.")]
     public float duration;
 
     void Start() {
+        base.ShowSelf();
         base.TimedHide(base.timeToLive);
     }
 
@@ -24,6 +27,7 @@ public class BulletTimePowerup : TargetController {
         SetTimeScale();
         base.HideSelf();
         yield return new WaitForSeconds(duration * slowFactor);
+        print("wut");
         ResetTimeScale();
         Destroy(gameObject);
     }

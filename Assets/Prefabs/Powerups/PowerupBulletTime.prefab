@@ -116,7 +116,8 @@ MonoBehaviour:
   minTimeToLive: 2
   maxTimeToLive: 2
   timeToLive: 0
-  slowFactor: 0.2
+  slowFactor: 0.5
+  enemySlowFactor: 0
   duration: 2
 --- !u!114 &11498752
 MonoBehaviour:
@@ -195,7 +196,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: slowFactor
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 131430}

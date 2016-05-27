@@ -27,6 +27,11 @@ public class ObjectSpawner : MonoBehaviour {
         return Random.Range(minTime, maxTime);
     }
 
+    private GameObject GetRandomPrefab() {
+        var r = Random.Range(0, prefabs.Count);
+        return prefabs[r];
+    }
+
     private Vector2 GetRandomPosition() {
         float x = Random.Range(
             -spawnArea.bounds.size.x + prefabRenderer.bounds.size.x,
@@ -40,8 +45,8 @@ public class ObjectSpawner : MonoBehaviour {
     }
 
     private GameObject InstantiatePrefab() {
-        var selectedPrefab = prefabs[Random.Range(0, prefabs.Count)];
         GameObject go;
+        var selectedPrefab = GetRandomPrefab();
         //if it's too slow, we can store the renderers in another list on Awake
         prefabRenderer = selectedPrefab.GetComponentInChildren<Renderer>();
         go = (GameObject)Instantiate(selectedPrefab, GetRandomPosition(), Quaternion.identity);
