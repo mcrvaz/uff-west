@@ -4,7 +4,7 @@ using System.Collections;
 public class EnemyCharacterController : DuelCharacterController {
 
     public float minTimeToClick, maxTimeToClick;
-    private TargetController selectedTarget;
+    public TargetController selectedTarget;
 
     void Start() {
         SelectTarget();
@@ -21,14 +21,6 @@ public class EnemyCharacterController : DuelCharacterController {
         return GameObject.FindObjectsOfType<TargetController>();
     }
 
-    private TargetController SelectTarget() {
-        var targets = GetTargets();
-        if (targets.Length > 0) {
-            selectedTarget = targets[Random.Range(0, targets.Length)];
-        }
-        return selectedTarget;
-    }
-
     private void Click() {
         if (selectedTarget != null) {
             selectedTarget.OnEnemyMouseDown();
@@ -39,4 +31,11 @@ public class EnemyCharacterController : DuelCharacterController {
         return Random.Range(minTimeToClick, maxTimeToClick);
     }
 
+    public TargetController SelectTarget() {
+        var targets = GetTargets();
+        if (targets.Length > 0) {
+            selectedTarget = targets[Random.Range(0, targets.Length)];
+        }
+        return selectedTarget;
+    }
 }

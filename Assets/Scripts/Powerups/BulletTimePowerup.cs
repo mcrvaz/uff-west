@@ -27,7 +27,6 @@ public class BulletTimePowerup : PowerupController {
         SetTimeScale();
         base.HideSelf();
         yield return new WaitForSeconds(duration * slowFactor);
-        print("wut");
         ResetTimeScale();
         Destroy(gameObject);
     }

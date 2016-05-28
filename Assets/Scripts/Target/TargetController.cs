@@ -13,6 +13,7 @@ public class TargetController : MonoBehaviour {
 
     protected DuelController duelController;
 
+    private bool hit;
     private Collider2D container;
     private CircleCollider2D targetCollider;
     private SpriteRenderer[] sprites;
@@ -71,13 +72,22 @@ public class TargetController : MonoBehaviour {
     }
 
     void OnMouseDown() {
+        hit = true;
         duelController.RegisterPlayerShot();
         DestroySelf();
     }
 
     public void OnEnemyMouseDown() {
+        hit = true;
         duelController.RegisterEnemyShot();
         DestroySelf();
+    }
+
+    void OnDestroy() {
+        if (!hit) {
+            //tells the controller that it expired
+            duelController.TargetExpired(this);
+        }
     }
 
 }

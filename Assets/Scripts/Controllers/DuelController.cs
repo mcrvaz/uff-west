@@ -20,6 +20,14 @@ public class DuelController : MonoBehaviour {
         }
     }
 
+    public void TargetExpired(TargetController target) {
+        //if the target that the enemy was aiming expired
+        //he should pick a new one
+        if(target == enemy.selectedTarget) {
+            enemy.SelectTarget();
+        }
+    }
+
     public void EndDuel() {
         SceneManager.LoadScene(SceneNames.DUEL_STATISTICS);
     }
