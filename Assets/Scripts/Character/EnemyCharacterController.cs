@@ -4,6 +4,7 @@ using System.Collections;
 public class EnemyCharacterController : DuelCharacterController {
 
     public float minTimeToClick, maxTimeToClick;
+    [HideInInspector]
     public TargetController selectedTarget;
 
     void Start() {

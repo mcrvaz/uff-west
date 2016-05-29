@@ -6,11 +6,15 @@ public class DuelCharacterController : MonoBehaviour {
 
     public float health;
     public float damage;
-
     public Text healthText;
+    public RevolverCylinderController revolver;
 
     void Awake() {
         UpdateUIHealth();
+    }
+
+    private void UpdateUIHealth() {
+        healthText.text = health.ToString();
     }
 
     public float TakeDamage(float damage) {
@@ -23,10 +27,6 @@ public class DuelCharacterController : MonoBehaviour {
         this.health += health;
         UpdateUIHealth();
         return this.health;
-    }
-
-    public void UpdateUIHealth() {
-        healthText.text = health.ToString();
     }
 
 }

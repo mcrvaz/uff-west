@@ -32,16 +32,21 @@ public class DuelController : MonoBehaviour {
         SceneManager.LoadScene(SceneNames.DUEL_STATISTICS);
     }
 
-    public void RegisterEnemyShot() {
-        if (player.TakeDamage(enemy.damage) <= 0) {
+    private void RegisterShot(DuelCharacterController source, DuelCharacterController destiny) {
+        if(destiny.TakeDamage(source.damage) <= 0) {
             EndDuel();
         }
     }
 
+    public void RegisterEnemyShot() {
+        RegisterShot(source: enemy, destiny: player);
+    }
+
     public void RegisterPlayerShot() {
-        if (enemy.TakeDamage(player.damage) <= 0) {
-            EndDuel();
+        if (!player.revolver.isReloading) {
+            player.revolver.Fire();
         }
+        RegisterShot(source: player, destiny: enemy);
     }
 
     public void RegisterEnemyDoubleDamage() {
