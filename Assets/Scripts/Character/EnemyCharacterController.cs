@@ -5,7 +5,7 @@ public class EnemyCharacterController : DuelCharacterController {
 
     public float minTimeToClick, maxTimeToClick;
     [HideInInspector]
-    public TargetController selectedTarget;
+    public TargetController selectedTarget { get; set; }
 
     void Start() {
         SelectTarget();

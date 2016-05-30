@@ -5,7 +5,7 @@ public class DoubleDamagePowerup : TargetController {
     public int numberOfShots;
     [Tooltip("Damage multiplier.")]
     public int setDamageFactor;
-    public static int damageFactor;
+    public static int damageFactor; //switch to enum?
 
     protected override void Awake() {
         base.Awake();

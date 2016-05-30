@@ -5,9 +5,9 @@ using UnityEngine.Events;
 public class DuelTimeController : MonoBehaviour {
 
     public UnityEvent finish;
-
+    [HideInInspector]
+    public float currentTime { get; set; }
     private float timeLimit;
-    private float currentTime;
     private Timer timer;
     private Text visualTimer;
 
@@ -26,7 +26,8 @@ public class DuelTimeController : MonoBehaviour {
     }
 
     void UpdateUIText() {
-        visualTimer.text = ((int)timer.Run()).ToString();
+        currentTime = timer.Run();
+        visualTimer.text = ((int)currentTime).ToString();
     }
 
 }

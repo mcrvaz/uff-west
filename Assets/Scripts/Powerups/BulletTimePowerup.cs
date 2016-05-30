@@ -3,12 +3,13 @@ using System.Collections;
 
 public class BulletTimePowerup : PowerupController {
     [Tooltip("New time scale value for when the player hits this powerup. For instance, 0.5 slows time by half.")]
-    public float playerSlowFactor;
+    public float playerSlowFactor; //switch to enum?
     [Tooltip("New time scale value for when the enemy hits this powerup. For instance, 0.5 slows time by half.")]
-    public float enemySlowFactor;
-    private float currentSlowFactor;
+    public float enemySlowFactor; //switch to enum?
     [Tooltip("Duration in seconds before ending the powerup effect.")]
     public float duration;
+
+    private float currentSlowFactor;
 
     protected override void Awake() {
         base.Awake();
@@ -27,7 +28,7 @@ public class BulletTimePowerup : PowerupController {
         Time.timeScale = 1;
     }
 
-    //should rename
+    //should rename?
     private IEnumerator BulletTimeAction() {
         SetTimeScale();
         base.HideSelf();
