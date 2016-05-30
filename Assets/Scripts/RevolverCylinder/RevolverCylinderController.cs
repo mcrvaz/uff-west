@@ -14,6 +14,13 @@ public class RevolverCylinderController : MonoBehaviour {
 
     void OnMouseDown() {
         print(index);
+        //GAMBIARRA
+        if (index == bullets.Length) {
+            index--;
+            isReloading = true;
+        }
+        //GAMBIARRA
+
         if (isReloading) {
             Reload();
         }
@@ -39,4 +46,5 @@ public class RevolverCylinderController : MonoBehaviour {
             isReloading = false;
         }
     }
+
 }
