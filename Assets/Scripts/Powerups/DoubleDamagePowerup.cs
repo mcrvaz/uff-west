@@ -1,18 +1,25 @@
 ﻿using UnityEngine;
 
 public class DoubleDamagePowerup : TargetController {
-
+    [Tooltip("Number of shots before this powerup expires.")]
     public int numberOfShots;
+    [Tooltip("Damage multiplier.")]
+    public int setDamageFactor;
+    public static int damageFactor;
 
-    void OnMouseDown() {
-        //TO DO
-        duelController.RegisterPlayerDoubleDamage();
-        DestroySelf();
+    protected override void Awake() {
+        base.Awake();
+        damageFactor = setDamageFactor;
     }
 
-    public new void OnEnemyMouseDown() {
-        //TO DO
-        duelController.RegisterEnemyDoubleDamage();
+    void OnMouseDown() {
+        if (duelController.RegisterPlayerDoubleDamage(this)) {
+            DestroySelf();
+        }
+    }
+
+    public override void OnEnemyMouseDown() {
+        duelController.RegisterEnemyDoubleDamage(this);
         DestroySelf();
     }
 

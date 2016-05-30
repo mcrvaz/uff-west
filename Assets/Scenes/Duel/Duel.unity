@@ -164,6 +164,10 @@ Prefab:
       propertyPath: m_LocalScale.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11475322, guid: fa990166e3611ac4086a43376668621a, type: 2}
+      propertyPath: revolver
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fa990166e3611ac4086a43376668621a, type: 2}
   m_IsPrefabParent: 0
@@ -205,6 +209,30 @@ Prefab:
     - target: {fileID: 480070, guid: e331d8ac52cd2cf4c8100143c59c0c60, type: 2}
       propertyPath: m_RootOrder
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 190686, guid: e331d8ac52cd2cf4c8100143c59c0c60, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 184066, guid: e331d8ac52cd2cf4c8100143c59c0c60, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 171570, guid: e331d8ac52cd2cf4c8100143c59c0c60, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 159632, guid: e331d8ac52cd2cf4c8100143c59c0c60, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 122064, guid: e331d8ac52cd2cf4c8100143c59c0c60, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 104162, guid: e331d8ac52cd2cf4c8100143c59c0c60, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e331d8ac52cd2cf4c8100143c59c0c60, type: 2}
@@ -304,12 +332,16 @@ Prefab:
       objectReference: {fileID: 816338806}
     - target: {fileID: 11491058, guid: 8501b8a7c7514a246ad5d7a4882e64c6, type: 2}
       propertyPath: minTime
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11491058, guid: 8501b8a7c7514a246ad5d7a4882e64c6, type: 2}
       propertyPath: maxTime
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 11491058, guid: 8501b8a7c7514a246ad5d7a4882e64c6, type: 2}
+      propertyPath: prefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 160198, guid: 42a886c474359bb4c82adf03ed4f65d5, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8501b8a7c7514a246ad5d7a4882e64c6, type: 2}
   m_IsPrefabParent: 0

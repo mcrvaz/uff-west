@@ -6,6 +6,7 @@ public class DuelCharacterController : MonoBehaviour {
 
     public float health;
     public float damage;
+    public int hasPowerup; //tells how many poweruped shots are left
     public Text healthText;
     public RevolverCylinderController revolver;
 

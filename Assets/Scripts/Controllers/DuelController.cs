@@ -15,7 +15,7 @@ public class DuelController : MonoBehaviour {
     }
 
     void ActivateTimer() {
-        if (timeLimit == 0) {
+        if (timeLimit <= 0) {
             FindObjectOfType<DuelTimeController>().gameObject.SetActive(false);
         }
     }
@@ -23,7 +23,7 @@ public class DuelController : MonoBehaviour {
     public void TargetExpired(TargetController target) {
         //if the target that the enemy was aiming expired
         //he should pick a new one
-        if(target == enemy.selectedTarget) {
+        if (target == enemy.selectedTarget) {
             enemy.SelectTarget();
         }
     }
@@ -33,35 +33,70 @@ public class DuelController : MonoBehaviour {
     }
 
     private void RegisterShot(DuelCharacterController source, DuelCharacterController destiny) {
-        if(destiny.TakeDamage(source.damage) <= 0) {
+        var damage = ApplyDoubleDamage(source);
+        if (destiny.TakeDamage(damage) <= 0) {
             EndDuel();
         }
+    }
+
+    private void ApplyBulletTime(float slowFactor) {
+
+    }
+
+    private float ApplyDoubleDamage(DuelCharacterController source) {
+        var damage = source.damage;
+
+        if (source.hasPowerup > 0) {
+            damage *= DoubleDamagePowerup.damageFactor;
+            source.hasPowerup--;
+        }
+
+        return damage;
+    }
+
+    private bool CanShoot() {
+        return !player.revolver.isReloading;
     }
 
     public void RegisterEnemyShot() {
         RegisterShot(source: enemy, destiny: player);
     }
 
-    public void RegisterPlayerShot() {
-        if (!player.revolver.isReloading) {
+    public bool RegisterPlayerShot() {
+        if (CanShoot()) {
             player.revolver.Fire();
+            RegisterShot(source: player, destiny: enemy);
+        } else {
+            //play empty sound
         }
-        RegisterShot(source: player, destiny: enemy);
+
+        return CanShoot();
     }
 
-    public void RegisterEnemyDoubleDamage() {
-        //TO DO
+    public void RegisterEnemyDoubleDamage(DoubleDamagePowerup dd) {
+        enemy.hasPowerup = dd.numberOfShots;
     }
 
-    public void RegisterPlayerDoubleDamage() {
-        //TO DO
+    public bool RegisterPlayerDoubleDamage(DoubleDamagePowerup dd) {
+        if (CanShoot()) {
+            player.revolver.Fire();
+            player.hasPowerup = dd.numberOfShots;
+        } else {
+            //play empty sound
+        }
+        return CanShoot();
     }
 
-    public void RegisterEnemyBulletTime() {
-        //TO DO
+    public void RegisterEnemyBulletTime(BulletTimePowerup bt) {
+        bt.Execute(bt.enemySlowFactor);
     }
 
-    public void RegisterPlayerBulletTime() {
+    public bool RegisterPlayerBulletTime(BulletTimePowerup bt) {
         //TO DO
+        if (CanShoot()) {
+            player.revolver.Fire();
+            bt.Execute(bt.playerSlowFactor);
+        }
+        return CanShoot();
     }
 }

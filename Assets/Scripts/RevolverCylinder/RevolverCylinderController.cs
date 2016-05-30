@@ -3,9 +3,10 @@ using System.Collections;
 
 public class RevolverCylinderController : MonoBehaviour {
 
-    public int index = 1; //index 0 should be the empty cylinder
+
     public bool isReloading;
 
+    private int index = 1; //index 0 should be the empty cylinder
     private SpriteRenderer[] bullets;
 
     void Awake() {
@@ -13,7 +14,6 @@ public class RevolverCylinderController : MonoBehaviour {
     }
 
     void OnMouseDown() {
-        print(index);
         //GAMBIARRA
         if (index == bullets.Length) {
             index--;

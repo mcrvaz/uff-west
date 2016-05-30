@@ -116,7 +116,8 @@ MonoBehaviour:
   minTimeToLive: 0.5
   maxTimeToLive: 0.8
   timeToLive: 0
-  numberOfShots: 0
+  numberOfShots: 2
+  setDamageFactor: 2
 --- !u!114 &11421860
 MonoBehaviour:
   m_ObjectHideFlags: 1

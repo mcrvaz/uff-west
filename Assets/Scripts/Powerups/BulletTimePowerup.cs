@@ -3,11 +3,16 @@ using System.Collections;
 
 public class BulletTimePowerup : PowerupController {
     [Tooltip("New time scale value for when the player hits this powerup. For instance, 0.5 slows time by half.")]
-    public float slowFactor;
+    public float playerSlowFactor;
     [Tooltip("New time scale value for when the enemy hits this powerup. For instance, 0.5 slows time by half.")]
     public float enemySlowFactor;
+    private float currentSlowFactor;
     [Tooltip("Duration in seconds before ending the powerup effect.")]
     public float duration;
+
+    protected override void Awake() {
+        base.Awake();
+    }
 
     void Start() {
         base.ShowSelf();
@@ -15,7 +20,7 @@ public class BulletTimePowerup : PowerupController {
     }
 
     void SetTimeScale() {
-        Time.timeScale = slowFactor;
+        Time.timeScale = currentSlowFactor;
     }
 
     void ResetTimeScale() {
@@ -23,24 +28,28 @@ public class BulletTimePowerup : PowerupController {
     }
 
     //should rename
-    IEnumerator BulletTimeAction() {
+    private IEnumerator BulletTimeAction() {
         SetTimeScale();
         base.HideSelf();
-        yield return new WaitForSeconds(duration * slowFactor);
+        yield return new WaitForSeconds(duration * currentSlowFactor);
         ResetTimeScale();
         Destroy(gameObject);
     }
 
-    void OnMouseDown() {
-        //TO DO
+    public void Execute(float slowFactor) {
+        currentSlowFactor = slowFactor;
         StartCoroutine("BulletTimeAction");
-        duelController.RegisterPlayerBulletTime();
     }
 
-    public new void OnEnemyMouseDown() {
-        //TO DO
-        duelController.RegisterEnemyBulletTime();
-        DestroySelf();
+    void OnMouseDown() {
+        if (duelController.RegisterPlayerBulletTime(this)) {
+            base.HideSelf();
+        }
+    }
+
+    public override void OnEnemyMouseDown() {
+        duelController.RegisterEnemyBulletTime(this);
+        base.HideSelf();
     }
 
 }

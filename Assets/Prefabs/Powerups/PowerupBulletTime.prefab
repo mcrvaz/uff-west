@@ -116,8 +116,8 @@ MonoBehaviour:
   minTimeToLive: 2
   maxTimeToLive: 2
   timeToLive: 0
-  slowFactor: 0.5
-  enemySlowFactor: 0
+  playerSlowFactor: 0.5
+  enemySlowFactor: 2
   duration: 2
 --- !u!114 &11498752
 MonoBehaviour:

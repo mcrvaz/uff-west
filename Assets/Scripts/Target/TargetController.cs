@@ -18,7 +18,7 @@ public class TargetController : MonoBehaviour {
     private CircleCollider2D targetCollider;
     private SpriteRenderer[] sprites;
 
-    void Awake() {
+    protected virtual void Awake() {
         targetCollider = GetComponent<CircleCollider2D>();
         sprites = GetComponentsInChildren<SpriteRenderer>();
         timeToLive = Random.Range(minTimeToLive, maxTimeToLive);
@@ -73,11 +73,12 @@ public class TargetController : MonoBehaviour {
 
     void OnMouseDown() {
         hit = true;
-        duelController.RegisterPlayerShot();
-        DestroySelf();
+        if (duelController.RegisterPlayerShot()) {
+            DestroySelf();
+        }
     }
 
-    public void OnEnemyMouseDown() {
+    public virtual void OnEnemyMouseDown() {
         hit = true;
         duelController.RegisterEnemyShot();
         DestroySelf();
