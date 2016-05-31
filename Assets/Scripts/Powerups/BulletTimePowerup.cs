@@ -1,11 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class BulletTimePowerup : PowerupController {
+public class BulletTimePowerup : TimedTargetController {
     [Tooltip("New time scale value for when the player hits this powerup. For instance, 0.5 slows time by half.")]
-    public float playerSlowFactor; //switch to enum?
+    public float playerSlowFactor;
     [Tooltip("New time scale value for when the enemy hits this powerup. For instance, 0.5 slows time by half.")]
-    public float enemySlowFactor; //switch to enum?
+    public float enemySlowFactor;
     [Tooltip("Duration in seconds before ending the powerup effect.")]
     public float duration;
 
@@ -13,11 +13,6 @@ public class BulletTimePowerup : PowerupController {
 
     protected override void Awake() {
         base.Awake();
-    }
-
-    void Start() {
-        base.ShowSelf();
-        base.TimedHide(base.timeToLive);
     }
 
     void SetTimeScale() {
@@ -28,8 +23,7 @@ public class BulletTimePowerup : PowerupController {
         Time.timeScale = 1;
     }
 
-    //should rename?
-    private IEnumerator _SetBulletTime() {
+    protected override IEnumerator TimedAction() {
         SetTimeScale();
         base.HideSelf();
         yield return new WaitForSeconds(duration * currentSlowFactor);
@@ -39,7 +33,7 @@ public class BulletTimePowerup : PowerupController {
 
     public void SetBulletTime(float slowFactor) {
         currentSlowFactor = slowFactor;
-        StartCoroutine("_SetBulletTime");
+        StartCoroutine("TimedAction");
     }
 
     void OnMouseDown() {

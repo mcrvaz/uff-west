@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class EvasionTargetController : TargetController {
+public class EvasionTargetController : TimedTargetController {
 
     [Tooltip("Time in seconds that the one who hits this target will be invulnerable.")]
     public float evasionTime;
@@ -12,12 +12,7 @@ public class EvasionTargetController : TargetController {
         base.Awake();
     }
 
-    void Start() {
-        base.ShowSelf();
-        base.TimedHide(base.timeToLive);
-    }
-
-    private IEnumerator _SetInvulnerable() {
+    protected override IEnumerator TimedAction() {
         print("before" + character);
         character.invulnerable = true;
         base.HideSelf();
@@ -29,7 +24,7 @@ public class EvasionTargetController : TargetController {
 
     public void SetInvulnerable(DuelCharacterController character) {
         this.character = character;
-        StartCoroutine("_SetInvulnerable");
+        StartCoroutine("TimedAction");
     }
 
     void OnMouseDown() {
