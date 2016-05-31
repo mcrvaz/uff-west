@@ -29,7 +29,7 @@ public class BulletTimePowerup : PowerupController {
     }
 
     //should rename?
-    private IEnumerator BulletTimeAction() {
+    private IEnumerator _SetBulletTime() {
         SetTimeScale();
         base.HideSelf();
         yield return new WaitForSeconds(duration * currentSlowFactor);
@@ -37,9 +37,9 @@ public class BulletTimePowerup : PowerupController {
         Destroy(gameObject);
     }
 
-    public void Execute(float slowFactor) {
+    public void SetBulletTime(float slowFactor) {
         currentSlowFactor = slowFactor;
-        StartCoroutine("BulletTimeAction");
+        StartCoroutine("_SetBulletTime");
     }
 
     void OnMouseDown() {

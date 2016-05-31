@@ -96,25 +96,25 @@ public class DuelController : MonoBehaviour {
 
     public void RegisterEnemyBulletTime(BulletTimePowerup bt) {
         stats.enemyBulletTimeHit++; //statistics
-        bt.Execute(bt.enemySlowFactor);
+        bt.SetBulletTime(bt.enemySlowFactor);
     }
 
     public bool RegisterPlayerBulletTime(BulletTimePowerup bt) {
         if (CanShoot()) {
             stats.playerBulletTimeHit++;
             player.revolver.Fire();
-            bt.Execute(bt.playerSlowFactor);
+            bt.SetBulletTime(bt.playerSlowFactor);
         }
         return CanShoot();
     }
 
     public void RegisterEnemyEvasion(EvasionTargetController ev) {
-        //TO DO 
+        ev.SetInvulnerable(enemy);
     }
 
     public bool RegisterPlayerEvasion(EvasionTargetController ev) {
-        //TO DO
-        return false;
+        ev.SetInvulnerable(player);
+        return true;
     }
 
 }

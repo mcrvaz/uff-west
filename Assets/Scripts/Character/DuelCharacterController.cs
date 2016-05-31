@@ -7,6 +7,7 @@ public class DuelCharacterController : MonoBehaviour {
     public float health;
     public float damage;
     public int hasPowerup; //tells how many poweruped shots are left
+    public bool invulnerable;
     public Text healthText;
     public RevolverCylinderController revolver;
 
@@ -19,6 +20,9 @@ public class DuelCharacterController : MonoBehaviour {
     }
 
     public float TakeDamage(float damage) {
+        if (invulnerable) {
+            return health;
+        }
         health -= damage;
         UpdateUIHealth();
         return health;

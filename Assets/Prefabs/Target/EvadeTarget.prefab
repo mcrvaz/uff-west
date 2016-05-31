@@ -24,7 +24,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 470988}
-  - 114: {fileID: 11462980}
+  - 114: {fileID: 11477450}
   - 58: {fileID: 5873268}
   m_Layer: 8
   m_Name: EvadeTarget
@@ -113,7 +113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b46a8f2fc86b2e4fb666787cc255a04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &11462980
+--- !u!114 &11477450
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -121,12 +121,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 166110}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a5fbe4b53cfd974081134ffcbc57c14, type: 3}
+  m_Script: {fileID: 11500000, guid: ce5ab9dbb92a7ef41a174be0a0f61a1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   minTimeToLive: 0.5
   maxTimeToLive: 2
-  timeToLive: 1
+  timeToLive: 0
+  evasionTime: 1
 --- !u!212 &21268508
 SpriteRenderer:
   m_ObjectHideFlags: 1
