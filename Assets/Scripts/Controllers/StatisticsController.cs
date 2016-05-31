@@ -62,15 +62,17 @@ public class StatisticsController : MonoBehaviour {
     public int targetsExpired { get; set; }
     public float timeElapsed { get; set; }
     public float timeRemaining { get; set; }
-    public float timeBetweenShots { get; set; } //not captured yet
+    public float playerTimeBetweenShots { get; private set; }
+    public float enemyTimeBetweenShots { get; private set; }
 
-    public float playerShotsPerSecond { get; private set; } //not captured yet
+    public float playerShotsPerSecond { get; private set; }
     private List<DateTime> playerShotTimes;
     public float enemyShotsPerSecond { get; private set; } //not captured yet
     private List<DateTime> enemyShotTimes;
     public int playerShots { get; private set; }
     public int enemyShots { get; private set; }
     private int playerShootingTime;
+    private int enemyShootingTime;
 
     void Awake() {
         playerShotTimes = new List<DateTime>();
@@ -95,8 +97,22 @@ public class StatisticsController : MonoBehaviour {
         return playerShootingTime;
     }
 
+    private int CalculateEnemyShootingTime() {
+        var endIndex = enemyShotTimes.Count - 1;
+        var initialDate = enemyShotTimes[0].Millisecond + enemyShotTimes[0].Second * 1000 + enemyShotTimes[0].Minute * 60000;
+        var lastDate = enemyShotTimes[endIndex].Millisecond + enemyShotTimes[endIndex].Second * 1000 + enemyShotTimes[endIndex].Minute * 60000;
+        enemyShootingTime = lastDate - initialDate;
+        return enemyShootingTime;
+    }
+
     private float CalculatePlayerTimeBetweenShots() {
-        return 1000 / playerShotsPerSecond;
+        playerTimeBetweenShots = 1000 / playerShotsPerSecond;
+        return playerTimeBetweenShots;
+    }
+
+    private float CalculateEnemyTimeBetweenShots() {
+        enemyTimeBetweenShots = 1000 / enemyShotsPerSecond;
+        return enemyTimeBetweenShots;
     }
 
     private float CalculatePlayerShotsPerSecond() {
@@ -105,8 +121,10 @@ public class StatisticsController : MonoBehaviour {
     }
 
     private float CalculateEnemyShotsPerSecond() {
-        return CalculateEnemyShots() / timeElapsed; //wrong
+        enemyShotsPerSecond = CalculateEnemyShots() / (CalculateEnemyShootingTime() / 1000f);
+        return enemyShotsPerSecond;
     }
+
 
     public void SaveToXML() {
         //TO DO

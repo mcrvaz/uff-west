@@ -108,4 +108,13 @@ public class DuelController : MonoBehaviour {
         return CanShoot();
     }
 
+    public void RegisterEnemyEvasion(EvasionTargetController ev) {
+        //TO DO 
+    }
+
+    public bool RegisterPlayerEvasion(EvasionTargetController ev) {
+        //TO DO
+        return false;
+    }
+
 }
