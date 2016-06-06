@@ -138,7 +138,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11475322, guid: fa990166e3611ac4086a43376668621a, type: 2}
       propertyPath: damage
-      value: 1
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 11475322, guid: fa990166e3611ac4086a43376668621a, type: 2}
       propertyPath: healthText

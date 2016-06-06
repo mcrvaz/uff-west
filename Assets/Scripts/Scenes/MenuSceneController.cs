@@ -39,5 +39,9 @@ public class MenuSceneController : MonoBehaviour {
         SceneManager.LoadScene(SceneNames.DUEL_STATISTICS);
     }
 
+    public void GameOver() {
+        SceneManager.LoadScene(SceneNames.GAME_OVER);
+    }
+
 
 }

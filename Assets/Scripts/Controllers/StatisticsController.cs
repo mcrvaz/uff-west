@@ -67,7 +67,7 @@ public class StatisticsController : MonoBehaviour {
 
     public float playerShotsPerSecond { get; private set; }
     private List<DateTime> playerShotTimes;
-    public float enemyShotsPerSecond { get; private set; } //not captured yet
+    public float enemyShotsPerSecond { get; private set; }
     private List<DateTime> enemyShotTimes;
     public int playerShots { get; private set; }
     public int enemyShots { get; private set; }
@@ -89,19 +89,20 @@ public class StatisticsController : MonoBehaviour {
         return enemyShots;
     }
 
+    private int CalculateShootingTime(List<DateTime> shotTimes) {
+        var endIndex = shotTimes.Count - 1;
+        var firstShot = shotTimes[0].Millisecond + shotTimes[0].Second * 1000 + shotTimes[0].Minute * 60000;
+        var lastShot = shotTimes[endIndex].Millisecond + shotTimes[endIndex].Second * 1000 + shotTimes[endIndex].Minute * 60000;
+        return lastShot - firstShot;
+    }
+
     private int CalculatePlayerShootingTime() {
-        var endIndex = playerShotTimes.Count - 1;
-        var initialDate = playerShotTimes[0].Millisecond + playerShotTimes[0].Second * 1000 + playerShotTimes[0].Minute * 60000;
-        var lastDate = playerShotTimes[endIndex].Millisecond + playerShotTimes[endIndex].Second * 1000 + playerShotTimes[endIndex].Minute * 60000;
-        playerShootingTime = lastDate - initialDate;
+        playerShootingTime = CalculateShootingTime(playerShotTimes);
         return playerShootingTime;
     }
 
     private int CalculateEnemyShootingTime() {
-        var endIndex = enemyShotTimes.Count - 1;
-        var initialDate = enemyShotTimes[0].Millisecond + enemyShotTimes[0].Second * 1000 + enemyShotTimes[0].Minute * 60000;
-        var lastDate = enemyShotTimes[endIndex].Millisecond + enemyShotTimes[endIndex].Second * 1000 + enemyShotTimes[endIndex].Minute * 60000;
-        enemyShootingTime = lastDate - initialDate;
+        enemyShootingTime = CalculateShootingTime(enemyShotTimes);
         return enemyShootingTime;
     }
 
@@ -125,8 +126,4 @@ public class StatisticsController : MonoBehaviour {
         return enemyShotsPerSecond;
     }
 
-
-    public void SaveToXML() {
-        //TO DO
-    }
 }

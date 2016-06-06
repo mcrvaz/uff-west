@@ -13,11 +13,8 @@ public class EvasionTargetController : TimedTargetController {
     }
 
     protected override IEnumerator TimedAction() {
-        print("before" + character);
-        character.invulnerable = true;
         base.HideSelf();
         yield return new WaitForSeconds(evasionTime);
-        print("after" + character);
         character.invulnerable = false;
         Destroy(gameObject);
     }

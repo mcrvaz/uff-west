@@ -11,5 +11,6 @@ public class SceneNames : MonoBehaviour {
     public const string GAME_MODES = "GameMode";
     public const string DUEL = "Duel";
     public const string DUEL_STATISTICS = "DuelStatistics";
+    public const string GAME_OVER = "GameOver";
 
 }
