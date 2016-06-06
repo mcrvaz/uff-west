@@ -27,6 +27,7 @@ public class GameController : Singleton<GameController> {
             }
         } else {
             print("Player won!");
+            isDeathDuel = false;
             SceneManager.LoadScene(SceneNames.DUEL_STATISTICS);
         }
     }

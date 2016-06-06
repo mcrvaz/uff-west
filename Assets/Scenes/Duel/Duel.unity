@@ -138,7 +138,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11475322, guid: fa990166e3611ac4086a43376668621a, type: 2}
       propertyPath: damage
-      value: 50
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11475322, guid: fa990166e3611ac4086a43376668621a, type: 2}
       propertyPath: healthText
@@ -799,7 +799,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11486978, guid: 736d1d33a34752342aeb4f02ab702ccb, type: 2}
       propertyPath: damage
-      value: 5
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 11486978, guid: 736d1d33a34752342aeb4f02ab702ccb, type: 2}
       propertyPath: healthText
