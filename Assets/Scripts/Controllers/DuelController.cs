@@ -8,6 +8,7 @@ public class DuelController : MonoBehaviour {
     private DuelCharacterController player;
     private EnemyCharacterController enemy;
     private DuelTimeController timer;
+    private ObjectSpawner[] spawners;
 
     void Awake() {
         EvaluateTimer();
@@ -15,12 +16,27 @@ public class DuelController : MonoBehaviour {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<DuelCharacterController>();
         enemy = GameObject.FindGameObjectWithTag("Enemy").GetComponent<EnemyCharacterController>();
         timer = GameObject.FindObjectOfType<DuelTimeController>();
+        spawners = GameObject.FindObjectsOfType<ObjectSpawner>();
     }
 
     void EvaluateTimer() {
         if (timeLimit <= 0) {
             //hide timer
             timer.gameObject.SetActive(false);
+        }
+    }
+
+    public void StartDuelPhase() {
+        timer.StartTimer();
+        foreach (var s in spawners) {
+            s.enabled = true;
+        }
+    }
+
+    public void EndDuelPhase() {
+        timer.StartTimer();
+        foreach (var s in spawners) {
+            s.enabled = false;
         }
     }
 

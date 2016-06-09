@@ -10,6 +10,7 @@ public class DuelTimeController : MonoBehaviour {
     private float timeLimit;
     private Timer timer;
     private Text visualTimer;
+    private bool isRunning;
 
     void Awake() {
         timeLimit = GameObject.FindObjectOfType<DuelController>().timeLimit;
@@ -18,11 +19,17 @@ public class DuelTimeController : MonoBehaviour {
     }
 
     void Update() {
-        UpdateUIText();
+        if (isRunning) {
+            UpdateUIText();
+        }
 
         if (timer.Finished()) {
             finish.Invoke();
         }
+    }
+
+    public void StartTimer() {
+        isRunning = true;
     }
 
     void UpdateUIText() {

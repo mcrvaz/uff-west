@@ -1,12 +1,14 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.Events;
 using System.Collections.Generic;
 
 public class DialogController : MonoBehaviour {
 
-    public List<SpeechText> dialogs;
+    public UnityEvent startGame;
+    public List<SpeechText> beginningDialogs;
+    public List<SpeechText> endingDialogs;
     [HideInInspector]
-    public bool isPhaseFinished;
+    public bool phaseFinished;
 
     private SpeechBubble playerSpeech;
     private SpeechBubble enemySpeech;
@@ -25,17 +27,17 @@ public class DialogController : MonoBehaviour {
     }
 
     void PopulateDialogs() {
-        this.dialogs = new List<SpeechText>();
-        this.dialogs.Add(new SpeechText("Hola!", SpeechText.Source.Player, SpeechText.Phase.Beginning));
-        this.dialogs.Add(new SpeechText("Hola cabrón!", SpeechText.Source.Enemy, SpeechText.Phase.Beginning));
-        enumerator = dialogs.GetEnumerator();
-        enumerator.MoveNext();
+        this.beginningDialogs = new List<SpeechText>();
+        this.endingDialogs = new List<SpeechText>();
+        this.beginningDialogs.Add(new SpeechText("Hola!", SpeechText.Source.Player, SpeechText.Phase.Beginning));
+        this.beginningDialogs.Add(new SpeechText("Hola cabrón!", SpeechText.Source.Enemy, SpeechText.Phase.Beginning));
+        this.endingDialogs.Add(new SpeechText("Y U MAD BRAH/?1!:?", SpeechText.Source.Player, SpeechText.Phase.Ending));
+        enumerator = beginningDialogs.GetEnumerator();
     }
 
     void Update() {
 #if UNITY_EDITOR
         if (Input.GetMouseButtonDown(0)) {
-            print("clicked!");
             NextDialog();
         }
 #endif
@@ -61,10 +63,18 @@ public class DialogController : MonoBehaviour {
         }
     }
 
+    private void EndDialogPhase() {
+        playerSpeech.HideSelf();
+        enemySpeech.HideSelf();
+        startGame.Invoke();
+    }
+
     private void NextDialog() {
+        var talking = enumerator.MoveNext();
         currentDialog = enumerator.Current;
-        isPhaseFinished = enumerator.MoveNext();
-        print(currentDialog.text);
         ShowDialog();
+        if (!talking) {
+            EndDialogPhase();
+        }
     }
 }

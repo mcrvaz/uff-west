@@ -3,7 +3,7 @@ using System.Collections;
 
 public class RevolverCylinderController : MonoBehaviour {
 
-
+    [HideInInspector]
     public bool isReloading;
 
     private int index = 1; //index 0 should be the empty cylinder
