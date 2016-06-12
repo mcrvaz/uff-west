@@ -128,7 +128,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 712849603}
-        m_MethodName: StartDuel
+        m_MethodName: StartDuelPhase
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

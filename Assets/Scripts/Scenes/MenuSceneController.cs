@@ -1,47 +1,66 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class MenuSceneController : MonoBehaviour {
 
+    private Animator animator;
+
+    void Awake() {
+        animator = GetComponent<Animator>();
+    }
+
+    private IEnumerator PlayTransition() {
+        animator.Play("SlideUp");
+        var animation = animator.GetCurrentAnimatorClipInfo(0)[0].clip;
+        yield return new WaitForSeconds(animation.length);
+    }
+
+    private IEnumerator ChangeScene(string sceneName) {
+        if (animator != null) {
+            yield return StartCoroutine(PlayTransition());
+        }
+        SceneManager.LoadScene(sceneName);
+    }
+
     public void StartGame() {
-        SceneManager.LoadScene(SceneNames.CONTRACT);
+        StartCoroutine(ChangeScene(SceneNames.CONTRACT));
     }
 
     public void Instructions() {
-        SceneManager.LoadScene(SceneNames.INSTRUCTIONS);
+        StartCoroutine(ChangeScene(SceneNames.INSTRUCTIONS));
     }
 
     public void Statistics() {
-        SceneManager.LoadScene(SceneNames.STATISTICS);
+        StartCoroutine(ChangeScene(SceneNames.STATISTICS));
     }
 
     public void Achievements() {
-        SceneManager.LoadScene(SceneNames.ACHIEVEMENTS);
+        StartCoroutine(ChangeScene(SceneNames.ACHIEVEMENTS));
     }
 
     public void Menu() {
-        SceneManager.LoadScene(SceneNames.MAIN_MENU);
+        StartCoroutine(ChangeScene(SceneNames.MAIN_MENU));
     }
 
     public void Contract() {
-        SceneManager.LoadScene(SceneNames.CONTRACT);
+        StartCoroutine(ChangeScene(SceneNames.CONTRACT));
     }
 
     public void GameMode() {
-        SceneManager.LoadScene(SceneNames.GAME_MODES);
+        StartCoroutine(ChangeScene(SceneNames.GAME_MODES));
     }
 
     public void Duel() {
-        SceneManager.LoadScene(SceneNames.DUEL);
+        StartCoroutine(ChangeScene(SceneNames.DUEL));
     }
 
     public void DuelStatistics() {
-        SceneManager.LoadScene(SceneNames.DUEL_STATISTICS);
+        StartCoroutine(ChangeScene(SceneNames.DUEL_STATISTICS));
     }
 
     public void GameOver() {
-        SceneManager.LoadScene(SceneNames.GAME_OVER);
+        StartCoroutine(ChangeScene(SceneNames.GAME_OVER));
     }
-
 
 }
