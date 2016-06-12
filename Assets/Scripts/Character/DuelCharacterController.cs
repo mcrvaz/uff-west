@@ -12,12 +12,22 @@ public class DuelCharacterController : MonoBehaviour {
     [HideInInspector]
     public int hasPowerup; //tells how many empowered shots are left
 
+    private Animator animator;
+
     void Awake() {
         UpdateUIHealth();
+        animator = GetComponentInChildren<Animator>();
     }
 
     private void UpdateUIHealth() {
         healthText.text = health.ToString();
+    }
+
+    public void Fire() {
+        if (revolver != null) {
+            revolver.Fire();
+        }
+        animator.SetTrigger("shooting");
     }
 
     public float TakeDamage(float damage) {

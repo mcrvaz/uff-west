@@ -13,41 +13,40 @@ public class DialogController : MonoBehaviour {
     private SpeechBubble playerSpeech;
     private SpeechBubble enemySpeech;
     private SpeechText currentDialog;
-    private SpeechText.Phase currentPhase;
+    private SpeechText.Phase currentPhase = SpeechText.Phase.Beginning;
     private IEnumerator<SpeechText> enumerator;
 
     void Awake() {
         playerSpeech = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<SpeechBubble>();
         enemySpeech = GameObject.FindGameObjectWithTag("Enemy").GetComponentInChildren<SpeechBubble>();
+        beginningDialogs = new List<SpeechText>();
+        endingDialogs = new List<SpeechText>();
     }
 
     void Start() {
         PopulateDialogs();
-        NextDialog();
+        StartDialogPhase(SpeechText.Phase.Beginning);
     }
 
     void PopulateDialogs() {
-        this.beginningDialogs = new List<SpeechText>();
-        this.endingDialogs = new List<SpeechText>();
-        this.beginningDialogs.Add(new SpeechText("Hola!", SpeechText.Source.Player, SpeechText.Phase.Beginning));
-        this.beginningDialogs.Add(new SpeechText("Hola cabrón!", SpeechText.Source.Enemy, SpeechText.Phase.Beginning));
-        this.endingDialogs.Add(new SpeechText("Y U MAD BRAH/?1!:?", SpeechText.Source.Player, SpeechText.Phase.Ending));
+        beginningDialogs.Add(new SpeechText("Hola!", SpeechText.Source.Player, SpeechText.Phase.Beginning));
+        beginningDialogs.Add(new SpeechText("Hola cabrón!", SpeechText.Source.Enemy, SpeechText.Phase.Beginning));
+
+        endingDialogs.Add(new SpeechText("Y U MAD BRAH/?1!:?", SpeechText.Source.Player, SpeechText.Phase.Ending));
+
         enumerator = beginningDialogs.GetEnumerator();
     }
 
     void Update() {
 #if UNITY_EDITOR
         if (Input.GetMouseButtonDown(0)) {
-            NextDialog();
+            NextDialog(currentPhase);
         }
 #endif
-#if UNITY_ANDROID
-        //if (Input.GetTouch(0).phase == TouchPhase.Ended) {
-        //    print("touched!");
-        //    if (!isFinished) {
-        //        NextDialog();
-        //    }
-        //}
+#if UNITY_ANDROID && !UNITY_EDITOR
+        if (Input.GetTouch(0).phase == TouchPhase.Ended) {
+            NextDialog();
+        }
 #endif
     }
 
@@ -69,7 +68,15 @@ public class DialogController : MonoBehaviour {
         startGame.Invoke();
     }
 
-    private void NextDialog() {
+    private void StartDialogPhase(SpeechText.Phase phase) {
+        NextDialog(phase);
+    }
+
+    private void ChangePhase(SpeechText.Phase newPhase) {
+        currentPhase = newPhase;
+    }
+
+    private void NextDialog(SpeechText.Phase phase) {
         var talking = enumerator.MoveNext();
         currentDialog = enumerator.Current;
         ShowDialog();

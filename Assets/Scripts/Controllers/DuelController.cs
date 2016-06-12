@@ -73,13 +73,12 @@ public class DuelController : MonoBehaviour {
     }
 
     private bool CanShoot() {
-        //can shoot while invulnerable?
-        //!player.invulnerable? 
         return !player.revolver.isReloading;
     }
 
     public void RegisterEnemyShot() {
         stats.enemyTargetsHit++; //statistics
+        enemy.Fire();
         RegisterShot(source: enemy, destiny: player);
     }
 
@@ -87,7 +86,7 @@ public class DuelController : MonoBehaviour {
         var canShoot = CanShoot();
         if (canShoot) {
             stats.playerTargetsHit++;
-            player.revolver.Fire();
+            player.Fire();
             RegisterShot(source: player, destiny: enemy);
         } else {
             //play empty sound
@@ -98,6 +97,7 @@ public class DuelController : MonoBehaviour {
 
     public void RegisterEnemyDoubleDamage(DoubleDamagePowerup dd) {
         stats.enemyDoubleDamageHit++; //statistics
+        enemy.Fire();
         enemy.hasPowerup = dd.numberOfShots;
     }
 
@@ -105,7 +105,7 @@ public class DuelController : MonoBehaviour {
         var canShoot = CanShoot();
         if (canShoot) {
             stats.playerDoubleDamageHit++; //statistics
-            player.revolver.Fire();
+            player.Fire();
             player.hasPowerup = dd.numberOfShots;
         } else {
             //play empty sound
@@ -115,6 +115,7 @@ public class DuelController : MonoBehaviour {
 
     public void RegisterEnemyBulletTime(BulletTimePowerup bt) {
         stats.enemyBulletTimeHit++; //statistics
+        enemy.Fire();
         bt.SetBulletTime(bt.enemySlowFactor);
     }
 
@@ -122,7 +123,7 @@ public class DuelController : MonoBehaviour {
         var canShoot = CanShoot();
         if (canShoot) {
             stats.playerBulletTimeHit++;
-            player.revolver.Fire();
+            player.Fire();
             bt.SetBulletTime(bt.playerSlowFactor);
         }
         return canShoot;
