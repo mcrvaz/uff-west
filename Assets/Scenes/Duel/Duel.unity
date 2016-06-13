@@ -145,7 +145,6 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
-  phaseFinished: 0
 --- !u!1001 &180911816
 Prefab:
   m_ObjectHideFlags: 0
@@ -407,7 +406,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0f29d92b8ae1b440aad085ef28cd0e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeLimit: 60
+  timeLimit: 5
 --- !u!4 &712849604
 Transform:
   m_ObjectHideFlags: 0
@@ -862,6 +861,10 @@ Prefab:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 2131042404}
+    - target: {fileID: 11475322, guid: fa990166e3611ac4086a43376668621a, type: 2}
+      propertyPath: damage
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fa990166e3611ac4086a43376668621a, type: 2}
   m_IsPrefabParent: 0

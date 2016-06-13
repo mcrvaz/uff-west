@@ -9,6 +9,7 @@ public class DialogController : MonoBehaviour {
     public List<SpeechText> beginningDialogs;
     public List<SpeechText> endingDialogs;
 
+    private bool hasNext;
     private SpeechBubble playerSpeech;
     private SpeechBubble enemySpeech;
     private SpeechText currentDialog;
@@ -41,10 +42,11 @@ public class DialogController : MonoBehaviour {
         if (Input.GetMouseButtonDown(0)) {
             NextDialog(currentPhase);
         }
+
 #endif
 #if UNITY_ANDROID && !UNITY_EDITOR
         if (Input.GetTouch(0).phase == TouchPhase.Ended) {
-            NextDialog();
+            NextDialog(currentPhase);
         }
 #endif
     }
@@ -64,20 +66,30 @@ public class DialogController : MonoBehaviour {
     private void EndDialogPhase() {
         playerSpeech.HideSelf();
         enemySpeech.HideSelf();
-        startGame.Invoke();
+
+        if (currentPhase == SpeechText.Phase.Beginning) {
+            startGame.Invoke();
+        } else {
+            endGame.Invoke();
+        }
     }
 
     private void StartDialogPhase(SpeechText.Phase phase) {
         var dialogList = (phase == SpeechText.Phase.Beginning) ? beginningDialogs : endingDialogs;
         enumerator = dialogList.GetEnumerator();
-        NextDialog(phase);
+
+        if (phase == SpeechText.Phase.Beginning) { //workaround
+            NextDialog(phase);
+        }
     }
 
     private void NextDialog(SpeechText.Phase phase) {
-        var talking = enumerator.MoveNext();
+        hasNext = enumerator.MoveNext();
         currentDialog = enumerator.Current;
+        print(currentDialog.text);
         ShowDialog();
-        if (!talking) {
+
+        if (!hasNext) {
             EndDialogPhase();
         }
     }

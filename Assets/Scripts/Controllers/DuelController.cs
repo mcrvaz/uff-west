@@ -36,9 +36,9 @@ public class DuelController : MonoBehaviour {
     }
 
     public void EndDuelPhase() {
-        timer.StartTimer();
+        timer.PauseTimer();
         foreach (var s in spawners) {
-            s.enabled = false;
+            Destroy(s);
         }
     }
 
@@ -52,10 +52,11 @@ public class DuelController : MonoBehaviour {
     }
 
     public void EndDuel() {
-        stats.timeElapsed = timer.currentTime; //statistics
-        stats.timeRemaining = timeLimit - timer.currentTime; //statistics
-        var winner = player.health > 0 ? player : enemy;
         dialog.NextPhase();
+        EndDuelPhase();
+        //stats.timeElapsed = timer.currentTime; //statistics
+        //stats.timeRemaining = timeLimit - timer.currentTime; //statistics
+        //var winner = player.health > enemy.health ? player : enemy;
         //GameController.Instance.EndDuel(winner);
     }
 

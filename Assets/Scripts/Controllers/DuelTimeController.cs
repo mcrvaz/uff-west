@@ -32,6 +32,10 @@ public class DuelTimeController : MonoBehaviour {
         isRunning = true;
     }
 
+    public void PauseTimer() {
+        isRunning = false;
+    }
+
     void UpdateUIText() {
         currentTime = timer.Run();
         visualTimer.text = ((int)currentTime).ToString();
