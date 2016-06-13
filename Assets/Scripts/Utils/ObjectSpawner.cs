@@ -13,7 +13,7 @@ public class ObjectSpawner : MonoBehaviour {
 
     private Collider2D spawnArea;
     private Renderer prefabRenderer;
-    private float currentTime, nextTime;
+    //private float currentTime, nextTime;
 
     void Awake() {
         spawnArea = container.GetComponent<Collider2D>();

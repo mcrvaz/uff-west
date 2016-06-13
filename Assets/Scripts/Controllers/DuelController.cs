@@ -8,6 +8,7 @@ public class DuelController : MonoBehaviour {
     private DuelCharacterController player;
     private EnemyCharacterController enemy;
     private DuelTimeController timer;
+    private DialogController dialog;
     private ObjectSpawner[] spawners;
 
     void Awake() {
@@ -16,6 +17,7 @@ public class DuelController : MonoBehaviour {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<DuelCharacterController>();
         enemy = GameObject.FindGameObjectWithTag("Enemy").GetComponent<EnemyCharacterController>();
         timer = GameObject.FindObjectOfType<DuelTimeController>();
+        dialog = GameObject.FindObjectOfType<DialogController>();
         spawners = GameObject.FindObjectsOfType<ObjectSpawner>();
     }
 
@@ -53,7 +55,8 @@ public class DuelController : MonoBehaviour {
         stats.timeElapsed = timer.currentTime; //statistics
         stats.timeRemaining = timeLimit - timer.currentTime; //statistics
         var winner = player.health > 0 ? player : enemy;
-        GameController.Instance.EndDuel(winner);
+        dialog.NextPhase();
+        //GameController.Instance.EndDuel(winner);
     }
 
     private void RegisterShot(DuelCharacterController source, DuelCharacterController destiny) {

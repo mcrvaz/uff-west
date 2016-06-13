@@ -4,11 +4,10 @@ using System.Collections.Generic;
 
 public class DialogController : MonoBehaviour {
 
-    public UnityEvent startGame;
+    public UnityEvent startGame; //what happens after first dialog phase ends
+    public UnityEvent endGame; //what happens after second dialog phase ends
     public List<SpeechText> beginningDialogs;
     public List<SpeechText> endingDialogs;
-    [HideInInspector]
-    public bool phaseFinished;
 
     private SpeechBubble playerSpeech;
     private SpeechBubble enemySpeech;
@@ -31,10 +30,10 @@ public class DialogController : MonoBehaviour {
     void PopulateDialogs() {
         beginningDialogs.Add(new SpeechText("Hola!", SpeechText.Source.Player, SpeechText.Phase.Beginning));
         beginningDialogs.Add(new SpeechText("Hola cabrón!", SpeechText.Source.Enemy, SpeechText.Phase.Beginning));
+        beginningDialogs.Add(new SpeechText("Czy mówisz po polsku?", SpeechText.Source.Enemy, SpeechText.Phase.Beginning));
+        beginningDialogs.Add(new SpeechText("What did u say bish?!?", SpeechText.Source.Player, SpeechText.Phase.Beginning));
 
-        endingDialogs.Add(new SpeechText("Y U MAD BRAH/?1!:?", SpeechText.Source.Player, SpeechText.Phase.Ending));
-
-        enumerator = beginningDialogs.GetEnumerator();
+        endingDialogs.Add(new SpeechText("u mad?", SpeechText.Source.Player, SpeechText.Phase.Ending));
     }
 
     void Update() {
@@ -69,11 +68,9 @@ public class DialogController : MonoBehaviour {
     }
 
     private void StartDialogPhase(SpeechText.Phase phase) {
+        var dialogList = (phase == SpeechText.Phase.Beginning) ? beginningDialogs : endingDialogs;
+        enumerator = dialogList.GetEnumerator();
         NextDialog(phase);
-    }
-
-    private void ChangePhase(SpeechText.Phase newPhase) {
-        currentPhase = newPhase;
     }
 
     private void NextDialog(SpeechText.Phase phase) {
@@ -83,5 +80,10 @@ public class DialogController : MonoBehaviour {
         if (!talking) {
             EndDialogPhase();
         }
+    }
+
+    public void NextPhase() {
+        currentPhase = SpeechText.Phase.Ending;
+        StartDialogPhase(currentPhase);
     }
 }
