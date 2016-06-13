@@ -7,17 +7,19 @@ public class DuelController : MonoBehaviour {
     private StatisticsController stats;
     private DuelCharacterController player;
     private EnemyCharacterController enemy;
+    private DuelCharacterController winner;
     private DuelTimeController timer;
-    private DialogController dialog;
+    private DialogController victoryDialog, defeatDialog; //no need for beginning dialog
     private ObjectSpawner[] spawners;
 
     void Awake() {
         EvaluateTimer();
-        stats = GameObject.FindObjectOfType<StatisticsController>();
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<DuelCharacterController>();
         enemy = GameObject.FindGameObjectWithTag("Enemy").GetComponent<EnemyCharacterController>();
+        victoryDialog = GameObject.FindGameObjectWithTag("VictoryDialog").GetComponent<DialogController>();
+        defeatDialog = GameObject.FindGameObjectWithTag("DefeatDialog").GetComponent<DialogController>();
+        stats = GameObject.FindObjectOfType<StatisticsController>();
         timer = GameObject.FindObjectOfType<DuelTimeController>();
-        dialog = GameObject.FindObjectOfType<DialogController>();
         spawners = GameObject.FindObjectsOfType<ObjectSpawner>();
     }
 
@@ -52,12 +54,21 @@ public class DuelController : MonoBehaviour {
     }
 
     public void EndDuel() {
-        dialog.NextPhase();
         EndDuelPhase();
-        //stats.timeElapsed = timer.currentTime; //statistics
-        //stats.timeRemaining = timeLimit - timer.currentTime; //statistics
-        //var winner = player.health > enemy.health ? player : enemy;
-        //GameController.Instance.EndDuel(winner);
+        stats.timeElapsed = timer.currentTime; //statistics
+        stats.timeRemaining = timeLimit - timer.currentTime; //statistics
+        winner = player.health > enemy.health ? player : enemy;
+
+        if (winner == player) {
+            victoryDialog.enabled = true;
+        } else {
+            defeatDialog.enabled = true;
+        }
+
+    }
+
+    public void EndDuelScene() {
+        GameController.Instance.EndDuel(winner);
     }
 
     private void RegisterShot(DuelCharacterController source, DuelCharacterController destiny) {

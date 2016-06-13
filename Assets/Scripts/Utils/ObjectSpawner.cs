@@ -59,4 +59,8 @@ public class ObjectSpawner : MonoBehaviour {
         Invoke("InstantiateRepeating", GetRandomTime());
     }
 
+    void OnDestroy() {
+        Destroy(container);
+    }
+
 }

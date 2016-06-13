@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Enemy
   - Target
+  - BeginningDialog
+  - VictoryDialog
+  - DefeatDialog
   layers:
   - Default
   - TransparentFX

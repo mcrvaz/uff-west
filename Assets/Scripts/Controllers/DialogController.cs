@@ -4,23 +4,20 @@ using System.Collections.Generic;
 
 public class DialogController : MonoBehaviour {
 
-    public UnityEvent startGame; //what happens after first dialog phase ends
-    public UnityEvent endGame; //what happens after second dialog phase ends
-    public List<SpeechText> beginningDialogs;
-    public List<SpeechText> endingDialogs;
+    public UnityEvent endDialogEvent; //what happens after dialog phase ends
+    public List<SpeechText> dialogs;
 
-    private bool hasNext;
+    public SpeechText.Phase phase;
+
     private SpeechBubble playerSpeech;
     private SpeechBubble enemySpeech;
     private SpeechText currentDialog;
-    private SpeechText.Phase currentPhase = SpeechText.Phase.Beginning;
     private IEnumerator<SpeechText> enumerator;
 
     void Awake() {
         playerSpeech = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<SpeechBubble>();
         enemySpeech = GameObject.FindGameObjectWithTag("Enemy").GetComponentInChildren<SpeechBubble>();
-        beginningDialogs = new List<SpeechText>();
-        endingDialogs = new List<SpeechText>();
+        dialogs = new List<SpeechText>();
     }
 
     void Start() {
@@ -29,24 +26,37 @@ public class DialogController : MonoBehaviour {
     }
 
     void PopulateDialogs() {
-        beginningDialogs.Add(new SpeechText("Hola!", SpeechText.Source.Player, SpeechText.Phase.Beginning));
-        beginningDialogs.Add(new SpeechText("Hola cabrón!", SpeechText.Source.Enemy, SpeechText.Phase.Beginning));
-        beginningDialogs.Add(new SpeechText("Czy mówisz po polsku?", SpeechText.Source.Enemy, SpeechText.Phase.Beginning));
-        beginningDialogs.Add(new SpeechText("What did u say bish?!?", SpeechText.Source.Player, SpeechText.Phase.Beginning));
+        var d = new List<SpeechText>();
+        //suppose this is the XML QUE O MOHAMMED AINDA NÃO FEZ
+        d.Add(new SpeechText("Hola!", SpeechText.Source.Player, SpeechText.Phase.Beginning));
+        d.Add(new SpeechText("Hola cabrón!", SpeechText.Source.Enemy, SpeechText.Phase.Beginning));
+        d.Add(new SpeechText("Czy mówisz po polsku?", SpeechText.Source.Enemy, SpeechText.Phase.Beginning));
+        d.Add(new SpeechText("What did u say bish?!?", SpeechText.Source.Player, SpeechText.Phase.Beginning));
 
-        endingDialogs.Add(new SpeechText("u mad?", SpeechText.Source.Player, SpeechText.Phase.Ending));
+        d.Add(new SpeechText("empty dialog", SpeechText.Source.Player, SpeechText.Phase.Victory)); //workaround
+        d.Add(new SpeechText("i won!", SpeechText.Source.Player, SpeechText.Phase.Victory));
+        d.Add(new SpeechText("rip", SpeechText.Source.Enemy, SpeechText.Phase.Victory));
+
+        d.Add(new SpeechText("you lost!", SpeechText.Source.Enemy, SpeechText.Phase.Defeat));
+        d.Add(new SpeechText("rip", SpeechText.Source.Player, SpeechText.Phase.Defeat));
+
+        foreach (var dialog in d) {
+            if (dialog.phase == this.phase) {
+                dialogs.Add(dialog);
+            }
+        }
     }
 
     void Update() {
 #if UNITY_EDITOR
         if (Input.GetMouseButtonDown(0)) {
-            NextDialog(currentPhase);
+            NextDialog();
         }
 
 #endif
 #if UNITY_ANDROID && !UNITY_EDITOR
         if (Input.GetTouch(0).phase == TouchPhase.Ended) {
-            NextDialog(currentPhase);
+            NextDialog();
         }
 #endif
     }
@@ -66,25 +76,17 @@ public class DialogController : MonoBehaviour {
     private void EndDialogPhase() {
         playerSpeech.HideSelf();
         enemySpeech.HideSelf();
-
-        if (currentPhase == SpeechText.Phase.Beginning) {
-            startGame.Invoke();
-        } else {
-            endGame.Invoke();
-        }
+        endDialogEvent.Invoke();
+        Destroy(gameObject);
     }
 
     private void StartDialogPhase(SpeechText.Phase phase) {
-        var dialogList = (phase == SpeechText.Phase.Beginning) ? beginningDialogs : endingDialogs;
-        enumerator = dialogList.GetEnumerator();
-
-        if (phase == SpeechText.Phase.Beginning) { //workaround
-            NextDialog(phase);
-        }
+        enumerator = dialogs.GetEnumerator();
+        NextDialog();
     }
 
-    private void NextDialog(SpeechText.Phase phase) {
-        hasNext = enumerator.MoveNext();
+    private void NextDialog() {
+        var hasNext = enumerator.MoveNext();
         currentDialog = enumerator.Current;
         print(currentDialog.text);
         ShowDialog();
@@ -94,8 +96,4 @@ public class DialogController : MonoBehaviour {
         }
     }
 
-    public void NextPhase() {
-        currentPhase = SpeechText.Phase.Ending;
-        StartDialogPhase(currentPhase);
-    }
 }

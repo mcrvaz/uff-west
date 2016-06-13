@@ -5,7 +5,7 @@
     }
 
     public enum Phase {
-        Beginning, Ending
+        Beginning, Victory, Defeat
     }
 
     public string text { get; private set; }
