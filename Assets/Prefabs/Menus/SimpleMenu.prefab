@@ -12,7 +12,7 @@ GameObject:
   - 114: {fileID: 11475880}
   - 114: {fileID: 11404578}
   m_Layer: 5
-  m_Name: Back Button
+  m_Name: BackButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -233,7 +233,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7de98841cbbe84b46a29c6f0b74443fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  modal: {fileID: 0}
 --- !u!222 &22214460
 CanvasRenderer:
   m_ObjectHideFlags: 1

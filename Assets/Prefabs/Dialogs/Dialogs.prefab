@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 403172}
   - 114: {fileID: 11472624}
   m_Layer: 0
-  m_Name: Victory Dialog Manager
+  m_Name: VictoryDialogManager
   m_TagString: VictoryDialog
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -41,7 +41,7 @@ GameObject:
   - 4: {fileID: 431334}
   - 114: {fileID: 11426022}
   m_Layer: 0
-  m_Name: Defeat Dialog Manager
+  m_Name: DefeatDialogManager
   m_TagString: DefeatDialog
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -57,7 +57,7 @@ GameObject:
   - 4: {fileID: 449762}
   - 114: {fileID: 11405308}
   m_Layer: 0
-  m_Name: Beginning Dialog Manager
+  m_Name: BeginningDialogManager
   m_TagString: BeginningDialog
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -7,13 +7,13 @@ public class GameController : Singleton<GameController> {
     // guarantee this will be always a singleton only - can't use the constructor!
     protected GameController() { }
 
-    public GameObject nextEnemy;
+    private GameObject nextEnemy;
     //everytime the player loses a regular duel, start a death duel
-    public GameObject deathEnemy;
+    private GameObject deathEnemy;
     //if the player wins death duel, restart previous duel, else, game over.
-    public float timeLimit, deathTimeLimit;
-    public float targetMaxTime, targetMinTime;
-    public bool isDeathDuel;
+    private float timeLimit, deathTimeLimit;
+    private float targetMaxTime, targetMinTime;
+    private bool isDeathDuel;
 
     public void EndDuel(DuelCharacterController winnerCharacter) {
         if (winnerCharacter is EnemyCharacterController) {

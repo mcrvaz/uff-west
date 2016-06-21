@@ -211,7 +211,7 @@ GameObject:
   - 4: {fileID: 322487903}
   - 114: {fileID: 322487904}
   m_Layer: 0
-  m_Name: Statistics Manager
+  m_Name: StatisticsManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -329,7 +329,7 @@ GameObject:
   - 4: {fileID: 712849604}
   - 114: {fileID: 712849603}
   m_Layer: 0
-  m_Name: Duel Manager
+  m_Name: DuelManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -805,6 +805,10 @@ Prefab:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 2131042404}
+    - target: {fileID: 152866, guid: 5e7e9367de55b424491ec91faf01685b, type: 2}
+      propertyPath: m_Name
+      value: BackgroundCanvas
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5e7e9367de55b424491ec91faf01685b, type: 2}
   m_IsPrefabParent: 0
@@ -905,10 +909,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 22313836, guid: 736d1d33a34752342aeb4f02ab702ccb, type: 2}
-      propertyPath: m_Camera
-      value: 
-      objectReference: {fileID: 2131042404}
     - target: {fileID: 11486978, guid: 736d1d33a34752342aeb4f02ab702ccb, type: 2}
       propertyPath: healthText
       value: 
@@ -917,10 +917,10 @@ Prefab:
       propertyPath: revolver
       value: 
       objectReference: {fileID: 1555687313}
-    - target: {fileID: 11486978, guid: 736d1d33a34752342aeb4f02ab702ccb, type: 2}
-      propertyPath: damage
-      value: 100
-      objectReference: {fileID: 0}
+    - target: {fileID: 22313836, guid: 736d1d33a34752342aeb4f02ab702ccb, type: 2}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 2131042404}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 736d1d33a34752342aeb4f02ab702ccb, type: 2}
   m_IsPrefabParent: 0

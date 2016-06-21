@@ -4,6 +4,7 @@ using System.Collections;
 
 public class DuelCharacterController : MonoBehaviour {
 
+    public string characterName;
     public float health;
     public float damage;
     public bool invulnerable;
