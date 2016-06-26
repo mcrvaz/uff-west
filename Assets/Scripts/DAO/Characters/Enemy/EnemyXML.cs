@@ -1,12 +1,8 @@
 ﻿using System.Xml;
 using System.Xml.Serialization;
 
-public class EnemyXML {
+public class EnemyXML:CharacterXML {
 
-    [XmlAttribute("characterName")]
-    public string characterName;
-    public float health;
-    public float damage;
     public float minTimeToClick, maxTimeToClick;
 
     public EnemyXML() { }

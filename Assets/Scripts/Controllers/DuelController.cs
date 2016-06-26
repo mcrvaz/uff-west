@@ -22,23 +22,27 @@ public class DuelController : MonoBehaviour {
         timer = GameObject.FindObjectOfType<DuelTimeController>();
         spawners = GameObject.FindObjectsOfType<ObjectSpawner>();
 
-
-        GetEnemies();
+        GetDuel();
+        GetEnemy();
+        GetPlayer();
     }
 
-
-    void GetEnemies() {
-        var xmlContainer = new EnemyXMLContainer();
-        var enemies = xmlContainer.Load().enemies;
-        var papaco = enemies[0];
-        papaco.characterName = "Papaco";
-        xmlContainer.Push(papaco);
-        xmlContainer.Save();
+    private void GetDuel() {
+        var duel = GameController.Instance.GetNextDuel();
+        print(duel.timeLimit);
     }
 
+    private void GetEnemy() {
+        var enemy = GameController.Instance.GetNextEnemy();
+        print(enemy.characterName);
+    }
 
+    private void GetPlayer() {
+        var player = GameController.Instance.GetNextPlayer();
+        print(player.characterName);
+    }
 
-    void EvaluateTimer() {
+    private void EvaluateTimer() {
         if (timeLimit <= 0) {
             //hide timer
             timer.gameObject.SetActive(false);

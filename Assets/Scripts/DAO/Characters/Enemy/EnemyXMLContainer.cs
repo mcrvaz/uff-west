@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Xml;
 using System.Xml.Serialization;
 using System.IO;
 using UnityEngine;
@@ -11,18 +10,21 @@ public class EnemyXMLContainer : XMLContainer<EnemyXMLContainer, EnemyXML> {
     [XmlArrayItem("Enemy")]
     public List<EnemyXML> enemies = new List<EnemyXML>();
     [XmlIgnore]
-    public string path = Path.Combine(Application.dataPath + "/Data/Enemies", "enemies.xml");
+    public string path;
 
-    public EnemyXMLContainer() {
-        this.Load();
+    public EnemyXMLContainer() { } //Needed for XMLSerializer
+
+    public EnemyXMLContainer(string fileName) {
+        path = Path.Combine(base.basePath + "Characters/Enemies", fileName);
     }
 
     public void Save() {
         base.Save(this.path);
     }
 
-    public EnemyXMLContainer Load() {
-        return base.Load(this.path);
+    public void Load() {
+        var loaded = base.Load(this.path);
+        enemies = loaded.enemies;
     }
 
     public override void Push(EnemyXML enemy) {
