@@ -10,6 +10,7 @@ using UnityEngine;
 public abstract class XMLContainer<T, P> where T : class
                                          where P : class {
 
+    //basePath might change on mobile
     protected string basePath = Application.dataPath + "/Data/";
 
     protected void Save(string path) {

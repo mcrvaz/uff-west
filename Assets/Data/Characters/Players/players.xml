@@ -4,19 +4,31 @@
   
     <Player characterName="First Player">
       <health>100</health>
-      <damage>5</damage>
-      <minTimeToClick>0.2</minTimeToClick>
-      <maxTimeToClick>0.5</maxTimeToClick>
+      <damage>100</damage>
       <Dialogs>
         <Dialog>
-            <text>"Hello"</text>
+            <text>Hello</text>
             <source>Player</source>
             <phase>Beginning</phase>
+            <sequential>true</sequential>
         </Dialog>
         <Dialog>
-            <text>"How you doin'?"</text>
+            <text>How you doin'?</text>
             <source>Player</source>
             <phase>Beginning</phase>
+            <sequential>false</sequential>
+        </Dialog>
+        <Dialog>
+            <text>hein?</text>
+            <source>Player</source>
+            <phase>Beginning</phase>
+            <sequential>false</sequential>
+        </Dialog>
+        <Dialog>
+            <text>DEFEAT</text>
+            <source>Player</source>
+            <phase>Defeat</phase>
+            <sequential>false</sequential>
         </Dialog>
       </Dialogs>
     </Player>
@@ -24,18 +36,18 @@
     <Player characterName="Second Player">
       <health>100</health>
       <damage>5</damage>
-      <minTimeToClick>0.2</minTimeToClick>
-      <maxTimeToClick>0.5</maxTimeToClick>
       <Dialogs>
         <Dialog>
-            <text>"Hello"</text>
+            <text>Hello</text>
             <source>Player</source>
             <phase>Beginning</phase>
+            <sequential>true</sequential>
         </Dialog>
         <Dialog>
-            <text>"How you doin'?"</text>
+            <text>How you doin'?</text>
             <source>Player</source>
             <phase>Beginning</phase>
+            <sequential>false</sequential>
         </Dialog>
       </Dialogs>
     </Player>
@@ -43,18 +55,18 @@
     <Player characterName="Third Player">
       <health>100</health>
       <damage>5</damage>
-      <minTimeToClick>0.2</minTimeToClick>
-      <maxTimeToClick>0.5</maxTimeToClick>
       <Dialogs>
         <Dialog>
-            <text>"Hello"</text>
+            <text>Hello</text>
             <source>Player</source>
             <phase>Beginning</phase>
+            <sequential>true</sequential>
         </Dialog>
         <Dialog>
-            <text>"How you doin'?"</text>
+            <text>How you doin'?</text>
             <source>Player</source>
             <phase>Beginning</phase>
+            <sequential>false</sequential>
         </Dialog>
       </Dialogs>
     </Player>

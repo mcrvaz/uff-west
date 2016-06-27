@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using System.Collections;
+using System.Collections.Generic;
 
 public class DuelController : MonoBehaviour {
 
@@ -10,11 +10,13 @@ public class DuelController : MonoBehaviour {
     private DuelCharacterController winner;
     private DuelTimeController timer;
     private DialogController beginningDialog, victoryDialog, defeatDialog;
+    private List<SpeechText> playerDialogs, enemyDialogs;
     private ObjectSpawner[] spawners;
 
     void Awake() {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<DuelCharacterController>();
         enemy = GameObject.FindGameObjectWithTag("Enemy").GetComponent<EnemyCharacterController>();
+        beginningDialog = GameObject.FindGameObjectWithTag("BeginningDialog").GetComponent<DialogController>();
         victoryDialog = GameObject.FindGameObjectWithTag("VictoryDialog").GetComponent<DialogController>();
         defeatDialog = GameObject.FindGameObjectWithTag("DefeatDialog").GetComponent<DialogController>();
         stats = GameObject.FindObjectOfType<StatisticsController>();
@@ -25,6 +27,7 @@ public class DuelController : MonoBehaviour {
         GetEnemy();
         GetPlayer();
         EvaluateTimer();
+        SetDialogs(playerDialogs, enemyDialogs);
     }
 
     private void GetDuel() {
@@ -55,6 +58,7 @@ public class DuelController : MonoBehaviour {
         enemy.health = e.health;
         enemy.minTimeToClick = e.minTimeToClick;
         enemy.maxTimeToClick = e.maxTimeToClick;
+        enemyDialogs = e.dialogs;
     }
 
     private void GetPlayer() {
@@ -62,6 +66,59 @@ public class DuelController : MonoBehaviour {
         player.characterName = p.characterName;
         player.damage = p.damage;
         player.health = p.health;
+        playerDialogs = p.dialogs;
+    }
+
+    private void SetDialogs(List<SpeechText> playerDialogs, List<SpeechText> enemyDialogs) {
+        bool playerHasNext = true, enemyHasNext = true;
+        SpeechText currentDialog;
+        var playerEnumerator = playerDialogs.GetEnumerator();
+        var enemyEnumerator = enemyDialogs.GetEnumerator();
+        playerEnumerator.MoveNext();
+        enemyEnumerator.MoveNext();
+
+        bool turn = false; //if true player starts talking
+        bool playerIsStuck;
+        bool enemyIsStuck;
+
+        while (playerHasNext || enemyHasNext) {
+            currentDialog = playerEnumerator.Current;
+            while (turn && playerHasNext) {
+                SetDialog(currentDialog);
+                turn = currentDialog.sequential;
+                playerHasNext = playerEnumerator.MoveNext();
+                currentDialog = playerEnumerator.Current;
+            }
+
+            currentDialog = enemyEnumerator.Current;
+            while (!turn && enemyHasNext) {
+                SetDialog(currentDialog);
+                turn = !currentDialog.sequential;
+                enemyHasNext = enemyEnumerator.MoveNext();
+                currentDialog = enemyEnumerator.Current;
+            }
+
+            playerIsStuck = (!turn && playerHasNext);
+            enemyIsStuck = (turn && enemyHasNext);
+
+            if ((playerIsStuck && !enemyHasNext) || (enemyIsStuck && !playerHasNext)) {
+                turn = !turn;
+            }
+        }
+    }
+
+    private void SetDialog(SpeechText dialog) {
+        switch (dialog.phase) {
+            case SpeechText.Phase.Beginning:
+                beginningDialog.dialogs.Add(dialog);
+                break;
+            case SpeechText.Phase.Victory:
+                victoryDialog.dialogs.Add(dialog);
+                break;
+            case SpeechText.Phase.Defeat:
+                defeatDialog.dialogs.Add(dialog);
+                break;
+        }
     }
 
     private void EvaluateTimer() {

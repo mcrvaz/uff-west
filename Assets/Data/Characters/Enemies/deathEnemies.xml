@@ -9,14 +9,16 @@
       <maxTimeToClick>0.5</maxTimeToClick>
       <Dialogs>
         <Dialog>
-            <text>"Hello"</text>
+            <text>Hello</text>
             <source>Enemy</source>
             <phase>Beginning</phase>
+            <sequential>true</sequential>
         </Dialog>
         <Dialog>
-            <text>"How you doin'?"</text>
+            <text>How you doin'?</text>
             <source>Enemy</source>
             <phase>Beginning</phase>
+            <sequential>false</sequential>
         </Dialog>
       </Dialogs>
     </Enemy>
@@ -28,14 +30,16 @@
       <maxTimeToClick>0.5</maxTimeToClick>
       <Dialogs>
         <Dialog>
-            <text>"Hello"</text>
+            <text>Hello</text>
             <source>Enemy</source>
             <phase>Beginning</phase>
+            <sequential>true</sequential>
         </Dialog>
         <Dialog>
-            <text>"How you doin'?"</text>
+            <text>How you doin'?</text>
             <source>Enemy</source>
             <phase>Beginning</phase>
+            <sequential>false</sequential>
         </Dialog>
       </Dialogs>
     </Enemy>
@@ -47,14 +51,16 @@
       <maxTimeToClick>0.5</maxTimeToClick>
       <Dialogs>
         <Dialog>
-            <text>"Hello"</text>
+            <text>Hello</text>
             <source>Enemy</source>
             <phase>Beginning</phase>
+            <sequential>true</sequential>
         </Dialog>
         <Dialog>
-            <text>"How you doin'?"</text>
+            <text>How you doin'?</text>
             <source>Enemy</source>
             <phase>Beginning</phase>
+            <sequential>false</sequential>
         </Dialog>
       </Dialogs>
     </Enemy>

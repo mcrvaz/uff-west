@@ -9,14 +9,40 @@
       <maxTimeToClick>0.5</maxTimeToClick>
       <Dialogs>
         <Dialog>
-            <text>"Hello"</text>
+            <text>Hello</text>
             <source>Enemy</source>
             <phase>Beginning</phase>
+            <sequential>true</sequential>
         </Dialog>
         <Dialog>
-            <text>"How you doin'?"</text>
+            <text>How you doin'?</text>
             <source>Enemy</source>
             <phase>Beginning</phase>
+            <sequential>false</sequential>
+        </Dialog>
+        <Dialog>
+            <text>fiudfuiqrijoq</text>
+            <source>Enemy</source>
+            <phase>Beginning</phase>
+            <sequential>false</sequential>
+        </Dialog>
+        <Dialog>
+            <text>empty</text> <!-- Must be empty if victory -->
+            <source>Enemy</source>
+            <phase>Victory</phase>
+            <sequential>true</sequential>
+        </Dialog>
+        <Dialog>
+            <text>EZ GAME</text>
+            <source>Enemy</source>
+            <phase>Victory</phase>
+            <sequential>false</sequential>
+        </Dialog>
+        <Dialog>
+            <text>ENEMY DEFEATED</text>
+            <source>Enemy</source>
+            <phase>Defeat</phase>
+            <sequential>false</sequential>
         </Dialog>
       </Dialogs>
     </Enemy>
@@ -28,14 +54,16 @@
       <maxTimeToClick>0.5</maxTimeToClick>
       <Dialogs>
         <Dialog>
-            <text>"Hello"</text>
+            <text>Hello</text>
             <source>Enemy</source>
             <phase>Beginning</phase>
+            <sequential>true</sequential>
         </Dialog>
         <Dialog>
-            <text>"How you doin'?"</text>
+            <text>How you doin'?</text>
             <source>Enemy</source>
             <phase>Beginning</phase>
+            <sequential>false</sequential>
         </Dialog>
       </Dialogs>
     </Enemy>
@@ -47,14 +75,16 @@
       <maxTimeToClick>0.5</maxTimeToClick>
       <Dialogs>
         <Dialog>
-            <text>"Hello"</text>
+            <text>Hello</text>
             <source>Enemy</source>
             <phase>Beginning</phase>
+            <sequential>true</sequential>
         </Dialog>
         <Dialog>
-            <text>"How you doin'?"</text>
+            <text>How you doin'?</text>
             <source>Enemy</source>
             <phase>Beginning</phase>
+            <sequential>false</sequential>
         </Dialog>
       </Dialogs>
     </Enemy>

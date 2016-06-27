@@ -11,16 +11,16 @@ public class GameController : Singleton<GameController> {
     //if the player wins death duel, restart previous duel, else, game over.
     private bool isDeathDuel;
 
-    private List<Enemy> enemies;
+    private List<Enemy> enemies = new List<Enemy>();
     private IEnumerator<Enemy> enemyEnumerator;
 
-    private List<Enemy> deathEnemies;
+    private List<Enemy> deathEnemies = new List<Enemy>();
     private IEnumerator<Enemy> deathEnumerator;
 
-    private List<Player> players;
+    private List<Player> players = new List<Player>();
     private IEnumerator<Player> playerEnumerator;
 
-    private List<Duel> duels;
+    private List<Duel> duels = new List<Duel>();
     private IEnumerator<Duel> duelEnumerator;
 
     void Awake() {
@@ -35,7 +35,6 @@ public class GameController : Singleton<GameController> {
     }
 
     private void LoadDuels() {
-        this.duels = new List<Duel>();
         var container = new DuelXMLContainer("duels.xml");
         container.Load();
         this.duels = container.duels;
@@ -43,7 +42,6 @@ public class GameController : Singleton<GameController> {
     }
 
     private void LoadPlayers() {
-        this.players = new List<Player>();
         var container = new PlayerXMLContainer("players.xml");
         container.Load();
         this.players = container.players;
@@ -51,7 +49,6 @@ public class GameController : Singleton<GameController> {
     }
 
     private void LoadEnemies() {
-        this.enemies = new List<Enemy>();
         var container = new EnemyXMLContainer("enemies.xml");
         container.Load();
         this.enemies = container.enemies;
@@ -59,7 +56,6 @@ public class GameController : Singleton<GameController> {
     }
 
     private void LoadDeathEnemies() {
-        this.deathEnemies = new List<Enemy>();
         var container = new EnemyXMLContainer("deathEnemies.xml");
         container.Load();
         this.deathEnemies = container.enemies;

@@ -11,5 +11,15 @@
       <powerupMinTime>0</powerupMinTime>
       <powerupMaxTime>20</powerupMaxTime>
     </Duel>
+    <Duel>
+      <timeLimit>20</timeLimit>
+      <backgroundPath>"help_me.png"</backgroundPath>
+      <targetMinTime>0.2</targetMinTime>
+      <targetMaxTime>0.5</targetMaxTime>
+      <evadeMinTime>1</evadeMinTime>
+      <evadeMaxTime>5</evadeMaxTime>
+      <powerupMinTime>0</powerupMinTime>
+      <powerupMaxTime>20</powerupMaxTime>
+    </Duel>
   </Duels>
 </DuelCollection>
