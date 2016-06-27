@@ -20,8 +20,8 @@ public class GameController : Singleton<GameController> {
     private List<Player> players;
     private IEnumerator<Player> playerEnumerator;
 
-    private List<DuelXML> duels;
-    private IEnumerator<DuelXML> duelEnumerator;
+    private List<Duel> duels;
+    private IEnumerator<Duel> duelEnumerator;
 
     void Awake() {
         LoadCharacters();
@@ -35,7 +35,7 @@ public class GameController : Singleton<GameController> {
     }
 
     private void LoadDuels() {
-        this.duels = new List<DuelXML>();
+        this.duels = new List<Duel>();
         var container = new DuelXMLContainer("duels.xml");
         container.Load();
         this.duels = container.duels;
@@ -66,7 +66,7 @@ public class GameController : Singleton<GameController> {
         deathEnumerator = deathEnemies.GetEnumerator();
     }
 
-    public DuelXML GetNextDuel() {
+    public Duel GetNextDuel() {
         duelEnumerator.MoveNext();
         return duelEnumerator.Current;
     }

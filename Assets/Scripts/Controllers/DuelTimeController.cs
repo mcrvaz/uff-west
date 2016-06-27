@@ -11,10 +11,15 @@ public class DuelTimeController : MonoBehaviour {
     private Timer timer;
     private Text visualTimer;
     private bool isRunning;
+    private DuelController duelController;
 
     void Awake() {
-        timeLimit = GameObject.FindObjectOfType<DuelController>().timeLimit;
         visualTimer = GetComponent<Text>();
+        duelController = GameObject.FindObjectOfType<DuelController>();
+    }
+
+    void Start() {
+        timeLimit = duelController.timeLimit;
         timer = new Timer(timeLimit, loop: false);
     }
 

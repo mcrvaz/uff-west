@@ -1,7 +1,7 @@
 ﻿using System.Xml;
 using System.Xml.Serialization;
 
-public class DuelXML {
+public class Duel {
 
     public float timeLimit;
     public string backgroundPath;
@@ -9,9 +9,9 @@ public class DuelXML {
     public float evadeMinTime, evadeMaxTime;
     public float powerupMinTime, powerupMaxTime;
 
-    public DuelXML() { }
+    public Duel() { }
 
-    public DuelXML(
+    public Duel(
         float timeLimit, string backgroundPath,
         float targetMinTime, float targetMaxTime,
         float evadeMinTime, float evadeMaxTime,

@@ -3,11 +3,11 @@ using System.Xml.Serialization;
 using System.IO;
 
 [XmlRoot("DuelCollection")]
-public class DuelXMLContainer : XMLContainer<DuelXMLContainer, DuelXML> {
+public class DuelXMLContainer : XMLContainer<DuelXMLContainer, Duel> {
 
     [XmlArray("Duels")]
     [XmlArrayItem("Duel")]
-    public List<DuelXML> duels = new List<DuelXML>();
+    public List<Duel> duels = new List<Duel>();
     [XmlIgnore]
     public string path;
 
@@ -26,11 +26,11 @@ public class DuelXMLContainer : XMLContainer<DuelXMLContainer, DuelXML> {
         duels = loaded.duels;
     }
 
-    public override void Push(DuelXML duel) {
+    public override void Push(Duel duel) {
         duels.Add(duel);
     }
 
-    public override void Remove(DuelXML duel) {
+    public override void Remove(Duel duel) {
         duels.Remove(duel);
     }
 

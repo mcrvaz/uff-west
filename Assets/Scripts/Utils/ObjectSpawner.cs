@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 
 public class ObjectSpawner : MonoBehaviour {
+    public enum Type {
+        Target, Evade, Powerup
+    }
+
     [Tooltip("Object in the scene that the instantiated objects will be parented to.")]
     public GameObject container;
     [Tooltip("Objects to be instantiated.")]
@@ -10,6 +14,7 @@ public class ObjectSpawner : MonoBehaviour {
     public float minTime;
     [Tooltip("Maximum time in seconds before instantiating.")]
     public float maxTime;
+    public Type type;
 
     private Collider2D spawnArea;
     private Renderer prefabRenderer;

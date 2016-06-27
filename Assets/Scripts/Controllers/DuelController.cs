@@ -21,28 +21,47 @@ public class DuelController : MonoBehaviour {
         timer = GameObject.FindObjectOfType<DuelTimeController>();
         spawners = GameObject.FindObjectsOfType<ObjectSpawner>();
 
-        EvaluateTimer();
         GetDuel();
         GetEnemy();
         GetPlayer();
+        EvaluateTimer();
     }
 
     private void GetDuel() {
         var duel = GameController.Instance.GetNextDuel();
-        print(duel.timeLimit);
+        timeLimit = duel.timeLimit;
+        foreach (var spawner in spawners) {
+            switch (spawner.type) {
+                case ObjectSpawner.Type.Target:
+                    spawner.minTime = duel.targetMinTime;
+                    spawner.maxTime = duel.targetMaxTime;
+                    break;
+                case ObjectSpawner.Type.Evade:
+                    spawner.minTime = duel.evadeMinTime;
+                    spawner.maxTime = duel.evadeMaxTime;
+                    break;
+                case ObjectSpawner.Type.Powerup:
+                    spawner.minTime = duel.powerupMinTime;
+                    spawner.maxTime = duel.powerupMaxTime;
+                    break;
+            }
+        }
     }
 
     private void GetEnemy() {
-        var enemy = GameController.Instance.GetNextEnemy();
-        print(enemy.characterName);
+        var e = GameController.Instance.GetNextEnemy();
+        enemy.characterName = e.characterName;
+        enemy.damage = e.damage;
+        enemy.health = e.health;
+        enemy.minTimeToClick = e.minTimeToClick;
+        enemy.maxTimeToClick = e.maxTimeToClick;
     }
 
     private void GetPlayer() {
-        var player = GameController.Instance.GetNextPlayer();
-        print(player.characterName);
-        foreach (var d in player.dialogs) {
-            print(d);
-        }
+        var p = GameController.Instance.GetNextPlayer();
+        player.characterName = p.characterName;
+        player.damage = p.damage;
+        player.health = p.health;
     }
 
     private void EvaluateTimer() {
