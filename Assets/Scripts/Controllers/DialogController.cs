@@ -88,7 +88,7 @@ public class DialogController : MonoBehaviour {
     private void NextDialog() {
         var hasNext = enumerator.MoveNext();
         currentDialog = enumerator.Current;
-        print(currentDialog.text);
+        //print(currentDialog.text);
         ShowDialog();
 
         if (!hasNext) {

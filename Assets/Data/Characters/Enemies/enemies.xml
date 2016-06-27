@@ -1,23 +1,63 @@
 <?xml version="1.0" encoding="Windows-1252"?>
 <EnemyCollection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Enemies>
+
     <Enemy characterName="First Enemy">
       <health>100</health>
       <damage>5</damage>
       <minTimeToClick>0.2</minTimeToClick>
       <maxTimeToClick>0.5</maxTimeToClick>
+      <Dialogs>
+        <Dialog>
+            <text>"Hello"</text>
+            <source>Enemy</source>
+            <phase>Beginning</phase>
+        </Dialog>
+        <Dialog>
+            <text>"How you doin'?"</text>
+            <source>Enemy</source>
+            <phase>Beginning</phase>
+        </Dialog>
+      </Dialogs>
     </Enemy>
+
     <Enemy characterName="Second Enemy">
       <health>100</health>
       <damage>5</damage>
       <minTimeToClick>0.2</minTimeToClick>
       <maxTimeToClick>0.5</maxTimeToClick>
+      <Dialogs>
+        <Dialog>
+            <text>"Hello"</text>
+            <source>Enemy</source>
+            <phase>Beginning</phase>
+        </Dialog>
+        <Dialog>
+            <text>"How you doin'?"</text>
+            <source>Enemy</source>
+            <phase>Beginning</phase>
+        </Dialog>
+      </Dialogs>
     </Enemy>
+
     <Enemy characterName="Third Enemy">
       <health>100</health>
       <damage>5</damage>
       <minTimeToClick>0.2</minTimeToClick>
       <maxTimeToClick>0.5</maxTimeToClick>
+      <Dialogs>
+        <Dialog>
+            <text>"Hello"</text>
+            <source>Enemy</source>
+            <phase>Beginning</phase>
+        </Dialog>
+        <Dialog>
+            <text>"How you doin'?"</text>
+            <source>Enemy</source>
+            <phase>Beginning</phase>
+        </Dialog>
+      </Dialogs>
     </Enemy>
+
   </Enemies>
 </EnemyCollection>

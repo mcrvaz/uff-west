@@ -4,11 +4,11 @@ using System.IO;
 using UnityEngine;
 
 [XmlRoot("EnemyCollection")]
-public class EnemyXMLContainer : XMLContainer<EnemyXMLContainer, EnemyXML> {
+public class EnemyXMLContainer : XMLContainer<EnemyXMLContainer, Enemy> {
 
     [XmlArray("Enemies")]
     [XmlArrayItem("Enemy")]
-    public List<EnemyXML> enemies = new List<EnemyXML>();
+    public List<Enemy> enemies = new List<Enemy>();
     [XmlIgnore]
     public string path;
 
@@ -27,11 +27,11 @@ public class EnemyXMLContainer : XMLContainer<EnemyXMLContainer, EnemyXML> {
         enemies = loaded.enemies;
     }
 
-    public override void Push(EnemyXML enemy) {
+    public override void Push(Enemy enemy) {
         enemies.Add(enemy);
     }
 
-    public override void Remove(EnemyXML enemy) {
+    public override void Remove(Enemy enemy) {
         enemies.Remove(enemy);
     }
 

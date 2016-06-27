@@ -12,10 +12,16 @@
     public Source source { get; private set; }
     public Phase phase { get; private set; }
 
+    public SpeechText() { } //Needed for XMLSerializer
+
     public SpeechText(string text, Source source, Phase phase) {
         this.text = text;
         this.source = source;
         this.phase = phase;
+    }
+
+    public override string ToString() {
+        return "Text: " + text + " Source: " + source + " Phase: " + phase;
     }
 
 }

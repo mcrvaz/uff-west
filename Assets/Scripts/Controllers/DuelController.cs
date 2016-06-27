@@ -9,11 +9,10 @@ public class DuelController : MonoBehaviour {
     private EnemyCharacterController enemy;
     private DuelCharacterController winner;
     private DuelTimeController timer;
-    private DialogController victoryDialog, defeatDialog; //no need for beginning dialog
+    private DialogController beginningDialog, victoryDialog, defeatDialog;
     private ObjectSpawner[] spawners;
 
     void Awake() {
-        EvaluateTimer();
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<DuelCharacterController>();
         enemy = GameObject.FindGameObjectWithTag("Enemy").GetComponent<EnemyCharacterController>();
         victoryDialog = GameObject.FindGameObjectWithTag("VictoryDialog").GetComponent<DialogController>();
@@ -22,6 +21,7 @@ public class DuelController : MonoBehaviour {
         timer = GameObject.FindObjectOfType<DuelTimeController>();
         spawners = GameObject.FindObjectsOfType<ObjectSpawner>();
 
+        EvaluateTimer();
         GetDuel();
         GetEnemy();
         GetPlayer();
@@ -40,6 +40,9 @@ public class DuelController : MonoBehaviour {
     private void GetPlayer() {
         var player = GameController.Instance.GetNextPlayer();
         print(player.characterName);
+        foreach (var d in player.dialogs) {
+            print(d);
+        }
     }
 
     private void EvaluateTimer() {

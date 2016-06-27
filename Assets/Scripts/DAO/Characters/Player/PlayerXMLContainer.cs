@@ -4,11 +4,11 @@ using System.IO;
 using UnityEngine;
 
 [XmlRoot("PlayerCollection")]
-public class PlayerXMLContainer : XMLContainer<PlayerXMLContainer, PlayerXML> {
+public class PlayerXMLContainer : XMLContainer<PlayerXMLContainer, Player> {
 
     [XmlArray("Players")]
     [XmlArrayItem("Player")]
-    public List<PlayerXML> players = new List<PlayerXML>();
+    public List<Player> players = new List<Player>();
     [XmlIgnore]
     public string path;
 
@@ -27,11 +27,11 @@ public class PlayerXMLContainer : XMLContainer<PlayerXMLContainer, PlayerXML> {
         players = loaded.players;
     }
 
-    public override void Push(PlayerXML player) {
+    public override void Push(Player player) {
         players.Add(player);
     }
 
-    public override void Remove(PlayerXML player) {
+    public override void Remove(Player player) {
         players.Remove(player);
     }
 }

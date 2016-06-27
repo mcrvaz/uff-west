@@ -1011,7 +1011,7 @@ Prefab:
       objectReference: {fileID: 166110, guid: aeab2fbd3ea579c499cfa40df85469ef, type: 2}
     - target: {fileID: 11430534, guid: 758331f8da77a2d4486fff0a55a09cad, type: 2}
       propertyPath: minTime
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11430534, guid: 758331f8da77a2d4486fff0a55a09cad, type: 2}
       propertyPath: maxTime

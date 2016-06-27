@@ -11,14 +11,14 @@ public class GameController : Singleton<GameController> {
     //if the player wins death duel, restart previous duel, else, game over.
     private bool isDeathDuel;
 
-    private List<EnemyXML> enemies;
-    private IEnumerator<EnemyXML> enemyEnumerator;
+    private List<Enemy> enemies;
+    private IEnumerator<Enemy> enemyEnumerator;
 
-    private List<EnemyXML> deathEnemies;
-    private IEnumerator<EnemyXML> deathEnumerator;
+    private List<Enemy> deathEnemies;
+    private IEnumerator<Enemy> deathEnumerator;
 
-    private List<PlayerXML> players;
-    private IEnumerator<PlayerXML> playerEnumerator;
+    private List<Player> players;
+    private IEnumerator<Player> playerEnumerator;
 
     private List<DuelXML> duels;
     private IEnumerator<DuelXML> duelEnumerator;
@@ -43,7 +43,7 @@ public class GameController : Singleton<GameController> {
     }
 
     private void LoadPlayers() {
-        this.players = new List<PlayerXML>();
+        this.players = new List<Player>();
         var container = new PlayerXMLContainer("players.xml");
         container.Load();
         this.players = container.players;
@@ -51,7 +51,7 @@ public class GameController : Singleton<GameController> {
     }
 
     private void LoadEnemies() {
-        this.enemies = new List<EnemyXML>();
+        this.enemies = new List<Enemy>();
         var container = new EnemyXMLContainer("enemies.xml");
         container.Load();
         this.enemies = container.enemies;
@@ -59,7 +59,7 @@ public class GameController : Singleton<GameController> {
     }
 
     private void LoadDeathEnemies() {
-        this.deathEnemies = new List<EnemyXML>();
+        this.deathEnemies = new List<Enemy>();
         var container = new EnemyXMLContainer("deathEnemies.xml");
         container.Load();
         this.deathEnemies = container.enemies;
@@ -71,8 +71,8 @@ public class GameController : Singleton<GameController> {
         return duelEnumerator.Current;
     }
 
-    public EnemyXML GetNextEnemy() {
-        EnemyXML enemy;
+    public Enemy GetNextEnemy() {
+        Enemy enemy;
         if (!isDeathDuel) {
             enemyEnumerator.MoveNext();
             enemy = enemyEnumerator.Current;
@@ -83,7 +83,7 @@ public class GameController : Singleton<GameController> {
         return enemy;
     }
 
-    public PlayerXML GetNextPlayer() {
+    public Player GetNextPlayer() {
         playerEnumerator.MoveNext();
         return playerEnumerator.Current;
     }
