@@ -22,4 +22,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Menu/GameMode.unity
   - enabled: 1
-    path: Assets/Scenes/Duel/GameOver.unity
+    path: Assets/Scenes/Menu/GameOver.unity
+  - enabled: 1
+    path: Assets/Scenes/Menu/Credits.unity
+  - enabled: 1
+    path: Assets/Scenes/Menu/EndGame.unity

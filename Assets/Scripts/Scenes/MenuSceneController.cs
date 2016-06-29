@@ -63,4 +63,12 @@ public class MenuSceneController : MonoBehaviour {
         StartCoroutine(ChangeScene(SceneNames.GAME_OVER));
     }
 
+    public void Credits() {
+        StartCoroutine(ChangeScene(SceneNames.CREDITS));
+    }
+
+    public void EndGame() {
+        StartCoroutine(ChangeScene(SceneNames.END_GAME));
+    }
+
 }

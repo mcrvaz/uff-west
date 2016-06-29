@@ -7,9 +7,11 @@ public class GameController : Singleton<GameController> {
     // guarantee this will be always a singleton only - can't use the constructor!
     protected GameController() { }
 
+    public bool lastDuel { get; private set; }
+    public bool victory { get; private set; } //true if player won last duel
     //everytime the player loses a regular duel, start a death duel
     //if the player wins death duel, restart previous duel, else, game over.
-    private bool isDeathDuel;
+    public bool isDeathDuel { get; private set; }
 
     private List<Enemy> enemies = new List<Enemy>();
     private IEnumerator<Enemy> enemyEnumerator;
@@ -63,7 +65,7 @@ public class GameController : Singleton<GameController> {
     }
 
     public Duel GetNextDuel() {
-        duelEnumerator.MoveNext();
+        lastDuel = !duelEnumerator.MoveNext();
         return duelEnumerator.Current;
     }
 
@@ -85,20 +87,21 @@ public class GameController : Singleton<GameController> {
     }
 
     public void EndDuel(DuelCharacterController winnerCharacter) {
+        //should refactor
         if (winnerCharacter is EnemyCharacterController) {
+            victory = false;
             if (isDeathDuel) {
                 print("Player died. Forever.");
-                SceneManager.LoadScene(SceneNames.GAME_OVER);
             } else {
                 isDeathDuel = true;
                 print("Player lost!");
-                SceneManager.LoadScene(SceneNames.CONTRACT);
             }
         } else {
             print("Player won!");
+            victory = true;
             isDeathDuel = false;
-            SceneManager.LoadScene(SceneNames.DUEL_STATISTICS);
         }
+        SceneManager.LoadScene(SceneNames.DUEL_STATISTICS);
     }
 
 }
