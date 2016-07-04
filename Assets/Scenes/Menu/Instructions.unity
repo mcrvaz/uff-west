@@ -685,6 +685,10 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 22400610, guid: b1f9f8bf0f4aed5408c4011bdbfa43b7, type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 75
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b1f9f8bf0f4aed5408c4011bdbfa43b7, type: 2}
   m_IsPrefabParent: 0
