@@ -14,7 +14,8 @@ public class DuelXMLContainer : XMLContainer<DuelXMLContainer, Duel> {
     public DuelXMLContainer() { } //Needed for XMLSerializer
 
     public DuelXMLContainer(string fileName) {
-        path = Path.Combine(base.basePath + "Duels/", fileName);
+        path = Path.Combine(base.basePath, "Duels");
+        path = Path.Combine(path, fileName);
     }
 
     public void Save() {

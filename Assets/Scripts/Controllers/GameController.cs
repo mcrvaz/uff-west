@@ -37,28 +37,28 @@ public class GameController : Singleton<GameController> {
     }
 
     private void LoadDuels() {
-        var container = new DuelXMLContainer("duels.xml");
+        var container = new DuelXMLContainer("duels");
         container.Load();
         this.duels = container.duels;
         duelEnumerator = duels.GetEnumerator();
     }
 
     private void LoadPlayers() {
-        var container = new PlayerXMLContainer("players.xml");
+        var container = new PlayerXMLContainer("players");
         container.Load();
         this.players = container.players;
         playerEnumerator = players.GetEnumerator();
     }
 
     private void LoadEnemies() {
-        var container = new EnemyXMLContainer("enemies.xml");
+        var container = new EnemyXMLContainer("enemies");
         container.Load();
         this.enemies = container.enemies;
         enemyEnumerator = enemies.GetEnumerator();
     }
 
     private void LoadDeathEnemies() {
-        var container = new EnemyXMLContainer("deathEnemies.xml");
+        var container = new EnemyXMLContainer("deathEnemies");
         container.Load();
         this.deathEnemies = container.enemies;
         deathEnumerator = deathEnemies.GetEnumerator();

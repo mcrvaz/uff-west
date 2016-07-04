@@ -15,7 +15,9 @@ public class PlayerXMLContainer : XMLContainer<PlayerXMLContainer, Player> {
     public PlayerXMLContainer() { } //Needed for XMLSerializer
 
     public PlayerXMLContainer(string fileName) {
-        path = Path.Combine(base.basePath + "Characters/Players", fileName);
+        path = Path.Combine(base.basePath, "Characters");
+        path = Path.Combine(path, "Players");
+        path = Path.Combine(path, fileName);
     }
 
     public void Save() {

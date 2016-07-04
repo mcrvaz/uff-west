@@ -15,7 +15,9 @@ public class EnemyXMLContainer : XMLContainer<EnemyXMLContainer, Enemy> {
     public EnemyXMLContainer() { } //Needed for XMLSerializer
 
     public EnemyXMLContainer(string fileName) {
-        path = Path.Combine(base.basePath + "Characters/Enemies", fileName);
+        path = Path.Combine(base.basePath, "Characters");
+        path = Path.Combine(path, "Enemies");
+        path = Path.Combine(path, fileName);
     }
 
     public void Save() {

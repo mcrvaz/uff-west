@@ -4,7 +4,7 @@
   
     <Player characterName="First Player">
       <health>100</health>
-      <damage>5</damage>
+      <damage>25</damage>
       <Dialogs>
         <Dialog>
             <text>Hello</text>

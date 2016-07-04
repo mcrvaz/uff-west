@@ -10,14 +10,7 @@ using UnityEngine;
 public abstract class XMLContainer<T, P> where T : class
                                          where P : class {
 
-#if UNITY_EDITOR
-    protected string basePath = Application.dataPath + "/Data/";
-#endif
-
-#if UNITY_ANDROID && !UNITY_EDITOR
-        protected string basePath = Application.persistentDataPath + "/Data/";
-#endif
-
+    protected string basePath = "XML";
 
     protected void Save(string path) {
         var serializer = new XmlSerializer(typeof(T));
@@ -28,9 +21,11 @@ public abstract class XMLContainer<T, P> where T : class
 
     protected T Load(string path) {
         var serializer = new XmlSerializer(typeof(T));
-        using (var stream = new FileStream(path, FileMode.Open)) {
-            return serializer.Deserialize(stream) as T;
-        }
+        Stream reader = new MemoryStream((Resources.Load(path, typeof(TextAsset)) as TextAsset).bytes);
+        StreamReader textReader = new StreamReader(reader);
+        T result = serializer.Deserialize(textReader) as T;
+        reader.Dispose();
+        return result;
     }
 
     public abstract void Push(P obj);
