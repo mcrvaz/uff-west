@@ -10,8 +10,14 @@ using UnityEngine;
 public abstract class XMLContainer<T, P> where T : class
                                          where P : class {
 
-    //basePath might change on mobile
+#if UNITY_EDITOR
     protected string basePath = Application.dataPath + "/Data/";
+#endif
+
+#if UNITY_ANDROID && !UNITY_EDITOR
+        protected string basePath = Application.persistentDataPath + "/Data/";
+#endif
+
 
     protected void Save(string path) {
         var serializer = new XmlSerializer(typeof(T));

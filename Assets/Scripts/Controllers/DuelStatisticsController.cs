@@ -13,12 +13,13 @@ public class DuelStatisticsController : MonoBehaviour {
     }
 
     void Start() {
-        victoryText.enabled = gameController.victory;
-        defeatText.enabled = !gameController.victory;
+        victoryText.gameObject.SetActive(gameController.victory);
+        defeatText.gameObject.SetActive(!gameController.victory);
     }
 
     public void Continue() {
         if (gameController.victory) {
+            print(gameController.lastDuel);
             if (gameController.lastDuel) {
                 EndGame();
             } else {

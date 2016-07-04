@@ -27,7 +27,7 @@
             <sequential>false</sequential>
         </Dialog>
         <Dialog>
-            <text>empty</text> <!-- Must be empty if victory -->
+            <text>empty</text> <!-- Must be empty and sequential if phase is victory -->
             <source>Enemy</source>
             <phase>Victory</phase>
             <sequential>true</sequential>
@@ -39,7 +39,7 @@
             <sequential>false</sequential>
         </Dialog>
         <Dialog>
-            <text>ENEMY DEFEATED</text>
+            <text>:(</text>
             <source>Enemy</source>
             <phase>Defeat</phase>
             <sequential>false</sequential>
@@ -48,27 +48,6 @@
     </Enemy>
 
     <Enemy characterName="Second Enemy">
-      <health>100</health>
-      <damage>5</damage>
-      <minTimeToClick>0.2</minTimeToClick>
-      <maxTimeToClick>0.5</maxTimeToClick>
-      <Dialogs>
-        <Dialog>
-            <text>Hello</text>
-            <source>Enemy</source>
-            <phase>Beginning</phase>
-            <sequential>true</sequential>
-        </Dialog>
-        <Dialog>
-            <text>How you doin'?</text>
-            <source>Enemy</source>
-            <phase>Beginning</phase>
-            <sequential>false</sequential>
-        </Dialog>
-      </Dialogs>
-    </Enemy>
-
-    <Enemy characterName="Third Enemy">
       <health>100</health>
       <damage>5</damage>
       <minTimeToClick>0.2</minTimeToClick>
