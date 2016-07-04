@@ -2,22 +2,20 @@
 
 public class QuitModalController : MonoBehaviour {
 
-    public void Quit() {
-        //show modal for confirmation before quitting
+    void Start() {
         Pause();
-        gameObject.SetActive(true);
     }
 
     public void ConfirmQuit() {
         //doesnt work on editor or webplayer
         print("Quit!");
-        gameObject.SetActive(false);
+        Destroy(transform.parent.gameObject);
         Application.Quit();
     }
 
     public void CancelQuit() {
         Unpause();
-        gameObject.SetActive(false);
+        Destroy(transform.parent.gameObject);
     }
 
     private void Pause() {

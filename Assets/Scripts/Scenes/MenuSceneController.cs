@@ -23,6 +23,10 @@ public class MenuSceneController : MonoBehaviour {
         SceneManager.LoadScene(sceneName);
     }
 
+    public void Quit() {
+        GameController.Instance.OpenQuitModal();
+    }
+
     public void StartGame() {
         StartCoroutine(ChangeScene(SceneNames.CONTRACT));
     }

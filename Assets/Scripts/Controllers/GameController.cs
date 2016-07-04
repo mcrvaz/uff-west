@@ -24,9 +24,22 @@ public class GameController : Singleton<GameController> {
     private List<Duel> duels = new List<Duel>();
     private IEnumerator<Duel> duelEnumerator;
 
+    private GameObject quitModal;
+
     void Awake() {
+        quitModal = Resources.Load("Prefabs/ModalCanvas") as GameObject;
         LoadCharacters();
         LoadDuels();
+    }
+
+    void Update() {
+        if (Input.GetKeyUp(KeyCode.Escape)) {
+            OpenQuitModal();
+        }
+    }
+
+    public void OpenQuitModal() {
+        Instantiate(quitModal);
     }
 
     private void LoadCharacters() {

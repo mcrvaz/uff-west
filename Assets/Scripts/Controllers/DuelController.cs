@@ -32,7 +32,6 @@ public class DuelController : MonoBehaviour {
 
     private void GetDuel() {
         var duel = GameController.Instance.GetDuel();
-        print(duel);
         timeLimit = duel.timeLimit;
         foreach (var spawner in spawners) {
             switch (spawner.type) {
