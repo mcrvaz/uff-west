@@ -31,7 +31,8 @@ public class DuelController : MonoBehaviour {
     }
 
     private void GetDuel() {
-        var duel = GameController.Instance.GetNextDuel();
+        var duel = GameController.Instance.GetDuel();
+        print(duel);
         timeLimit = duel.timeLimit;
         foreach (var spawner in spawners) {
             switch (spawner.type) {
@@ -52,7 +53,7 @@ public class DuelController : MonoBehaviour {
     }
 
     private void GetEnemy() {
-        var e = GameController.Instance.GetNextEnemy();
+        var e = GameController.Instance.GetEnemy();
         enemy.characterName = e.characterName;
         enemy.damage = e.damage;
         enemy.health = e.health;
@@ -62,7 +63,7 @@ public class DuelController : MonoBehaviour {
     }
 
     private void GetPlayer() {
-        var p = GameController.Instance.GetNextPlayer();
+        var p = GameController.Instance.GetPlayer();
         player.characterName = p.characterName;
         player.damage = p.damage;
         player.health = p.health;

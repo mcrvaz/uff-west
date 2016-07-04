@@ -14,9 +14,11 @@ public abstract class XMLContainer<T, P> where T : class
 
     protected void Save(string path) {
         var serializer = new XmlSerializer(typeof(T));
-        using (var stream = new FileStream(path, FileMode.Create)) {
-            serializer.Serialize(stream, this);
-        }
+        var combinedPath = Path.Combine(Application.dataPath, "Resources");
+        combinedPath = Path.Combine(combinedPath, path);
+        Stream stream = new FileStream(combinedPath, FileMode.Create, FileAccess.Write);
+        serializer.Serialize(stream, this);
+        stream.Close();
     }
 
     protected T Load(string path) {

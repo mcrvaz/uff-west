@@ -2,7 +2,6 @@
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
 
-//should have every attribute needed for generating a new duel or contract
 public class GameController : Singleton<GameController> {
     // guarantee this will be always a singleton only - can't use the constructor!
     protected GameController() { }
@@ -41,6 +40,7 @@ public class GameController : Singleton<GameController> {
         container.Load();
         this.duels = container.duels;
         duelEnumerator = duels.GetEnumerator();
+        duelEnumerator.MoveNext();
     }
 
     private void LoadPlayers() {
@@ -48,6 +48,7 @@ public class GameController : Singleton<GameController> {
         container.Load();
         this.players = container.players;
         playerEnumerator = players.GetEnumerator();
+        playerEnumerator.MoveNext();
     }
 
     private void LoadEnemies() {
@@ -55,6 +56,7 @@ public class GameController : Singleton<GameController> {
         container.Load();
         this.enemies = container.enemies;
         enemyEnumerator = enemies.GetEnumerator();
+        enemyEnumerator.MoveNext();
     }
 
     private void LoadDeathEnemies() {
@@ -62,32 +64,46 @@ public class GameController : Singleton<GameController> {
         container.Load();
         this.deathEnemies = container.enemies;
         deathEnumerator = deathEnemies.GetEnumerator();
+        deathEnumerator.MoveNext();
     }
 
-    public Duel GetNextDuel() {
-        lastDuel = !duelEnumerator.MoveNext();
+    public Duel GetDuel() {
         return duelEnumerator.Current;
     }
 
-    public Enemy GetNextEnemy() {
-        Enemy enemy;
+    public Enemy GetEnemy() {
         if (!isDeathDuel) {
-            enemyEnumerator.MoveNext();
-            enemy = enemyEnumerator.Current;
+            return enemyEnumerator.Current;
         } else {
-            deathEnumerator.MoveNext();
-            enemy = deathEnumerator.Current;
+            return deathEnumerator.Current;
         }
-        return enemy;
     }
 
-    public Player GetNextPlayer() {
-        playerEnumerator.MoveNext();
+    public Player GetPlayer() {
         return playerEnumerator.Current;
     }
 
+    private void SetNextPlayer() {
+        playerEnumerator.MoveNext();
+    }
+
+    private void SetNextEnemy() {
+        if (!isDeathDuel) {
+            enemyEnumerator.MoveNext();
+        } else {
+            deathEnumerator.MoveNext();
+        }
+    }
+
+    private void SetNextDuel() {
+        lastDuel = !duelEnumerator.MoveNext();
+    }
+
     public void EndDuel(DuelCharacterController winnerCharacter) {
-        //should refactor
+        SetNextDuel();
+        SetNextPlayer();
+        SetNextEnemy();
+
         if (winnerCharacter is EnemyCharacterController) {
             victory = false;
             if (isDeathDuel) {
