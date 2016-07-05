@@ -24,12 +24,16 @@ public class GameController : Singleton<GameController> {
     private List<Duel> duels = new List<Duel>();
     private IEnumerator<Duel> duelEnumerator;
 
+    private List<Contract> contracts = new List<Contract>();
+    private IEnumerator<Contract> contractEnumerator;
+
     private GameObject quitModal;
 
     void Awake() {
         quitModal = Resources.Load("Prefabs/ModalCanvas") as GameObject;
         LoadCharacters();
         LoadDuels();
+        LoadContracts();
     }
 
     void Update() {
@@ -54,6 +58,14 @@ public class GameController : Singleton<GameController> {
         this.duels = container.duels;
         duelEnumerator = duels.GetEnumerator();
         duelEnumerator.MoveNext();
+    }
+
+    private void LoadContracts() {
+        var container = new ContractXMLContainer("contracts");
+        container.Load();
+        this.contracts = container.contracts;
+        contractEnumerator = contracts.GetEnumerator();
+        contractEnumerator.MoveNext();
     }
 
     private void LoadPlayers() {
@@ -84,6 +96,10 @@ public class GameController : Singleton<GameController> {
         return duelEnumerator.Current;
     }
 
+    public Contract GetContract() {
+        return contractEnumerator.Current;
+    }
+
     public Enemy GetEnemy() {
         if (!isDeathDuel) {
             return enemyEnumerator.Current;
@@ -112,10 +128,15 @@ public class GameController : Singleton<GameController> {
         lastDuel = !duelEnumerator.MoveNext();
     }
 
+    private void SetNextContract() {
+        contractEnumerator.MoveNext();
+    }
+
     public void EndDuel(DuelCharacterController winnerCharacter) {
         SetNextDuel();
         SetNextPlayer();
         SetNextEnemy();
+        SetNextContract();
 
         if (winnerCharacter is EnemyCharacterController) {
             victory = false;

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<ContractCollection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Contracts>
+
+	<Contract>
+      <name>Jon Snow</name>
+      <crime>Knows Nothing</crime>
+      <reward>$200.00</reward>
+    </Contract>
+
+    <Contract>
+      <name>Jãohammed</name>
+      <crime>Terrorism</crime>
+      <reward>$500.00</reward>
+	</Contract>
+
+  </Contracts>
+</ContractCollection>
