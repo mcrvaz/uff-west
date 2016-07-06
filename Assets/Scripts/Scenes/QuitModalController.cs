@@ -2,6 +2,8 @@
 
 public class QuitModalController : MonoBehaviour {
 
+    private static bool active;
+
     void Start() {
         Pause();
     }
@@ -16,6 +18,10 @@ public class QuitModalController : MonoBehaviour {
     public void CancelQuit() {
         Unpause();
         Destroy(transform.parent.gameObject);
+    }
+
+    void OnDestroy() {
+        GameController.Instance.modalActive = false; //sorry
     }
 
     private void Pause() {

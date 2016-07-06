@@ -28,6 +28,7 @@ public class GameController : Singleton<GameController> {
     private IEnumerator<Contract> contractEnumerator;
 
     private GameObject quitModal;
+    public bool modalActive;
 
     void Awake() {
         quitModal = Resources.Load("Prefabs/ModalCanvas") as GameObject;
@@ -38,7 +39,10 @@ public class GameController : Singleton<GameController> {
 
     void Update() {
         if (Input.GetKeyUp(KeyCode.Escape)) {
-            OpenQuitModal();
+            if (!modalActive) {
+                OpenQuitModal();
+                modalActive = true;
+            }
         }
     }
 

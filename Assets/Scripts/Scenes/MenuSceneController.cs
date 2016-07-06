@@ -24,7 +24,7 @@ public class MenuSceneController : MonoBehaviour {
     }
 
     public void Quit() {
-        GameController.Instance.OpenQuitModal();
+        Application.Quit();
     }
 
     public void StartGame() {

@@ -8,7 +8,7 @@ public class DuelCharacterController : MonoBehaviour {
     public float health;
     public float damage;
     public bool invulnerable;
-    public Text healthText;
+    public Image healthBar;
     public RevolverCylinderController revolver;
     [HideInInspector]
     public int hasPowerup; //tells how many empowered shots are left
@@ -21,7 +21,7 @@ public class DuelCharacterController : MonoBehaviour {
     }
 
     private void UpdateUIHealth() {
-        healthText.text = health.ToString();
+        healthBar.fillAmount = health / 100;
     }
 
     public void Fire() {
