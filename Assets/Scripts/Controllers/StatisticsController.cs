@@ -113,6 +113,9 @@ public class StatisticsController : MonoBehaviour {
     }
 
     private int CalculateShootingTime(List<DateTime> shotTimes) {
+        if (shotTimes.Count == 0) {
+            return 0;
+        }
         var endIndex = shotTimes.Count - 1;
         var firstShot = shotTimes[0].Millisecond + shotTimes[0].Second * 1000 + shotTimes[0].Minute * 60000;
         var lastShot = shotTimes[endIndex].Millisecond + shotTimes[endIndex].Second * 1000 + shotTimes[endIndex].Minute * 60000;
@@ -130,22 +133,44 @@ public class StatisticsController : MonoBehaviour {
     }
 
     private float CalculatePlayerTimeBetweenShots() {
+        if (playerShotsPerSecond == 0) {
+            playerTimeBetweenShots = 0;
+            return playerTimeBetweenShots;
+        }
         playerTimeBetweenShots = 1000 / playerShotsPerSecond;
         return playerTimeBetweenShots;
     }
 
     private float CalculateEnemyTimeBetweenShots() {
+        if (enemyShotsPerSecond == 0) {
+            enemyTimeBetweenShots = 0;
+            return enemyTimeBetweenShots;
+        }
         enemyTimeBetweenShots = 1000 / enemyShotsPerSecond;
         return enemyTimeBetweenShots;
     }
 
     private float CalculatePlayerShotsPerSecond() {
-        playerShotsPerSecond = CalculatePlayerShots() / (CalculatePlayerShootingTime() / 1000f);
+        var shootingTime = CalculatePlayerShootingTime();
+        var shots = CalculatePlayerShots();
+        if (shots == 0) {
+            playerShotsPerSecond = 0;
+            return playerShotsPerSecond;
+        }
+
+        playerShotsPerSecond = shots / (shootingTime / 1000f);
         return playerShotsPerSecond;
     }
 
     private float CalculateEnemyShotsPerSecond() {
-        enemyShotsPerSecond = CalculateEnemyShots() / (CalculateEnemyShootingTime() / 1000f);
+        var shootingTime = CalculateEnemyShootingTime();
+        var shots = CalculateEnemyShots();
+        if (shots == 0) {
+            enemyShotsPerSecond = 0;
+            return enemyShotsPerSecond;
+        }
+
+        enemyShotsPerSecond = shots / (shootingTime / 1000f);
         return enemyShotsPerSecond;
     }
 
