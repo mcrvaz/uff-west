@@ -4,7 +4,7 @@ using System.Xml.Serialization;
 public class Duel {
 
     public float timeLimit;
-    public string backgroundPath;
+    public string background;
     public float targetMinTime, targetMaxTime;
     public float evadeMinTime, evadeMaxTime;
     public float powerupMinTime, powerupMaxTime;
@@ -12,13 +12,13 @@ public class Duel {
     public Duel() { }
 
     public Duel(
-        float timeLimit, string backgroundPath,
+        float timeLimit, string background,
         float targetMinTime, float targetMaxTime,
         float evadeMinTime, float evadeMaxTime,
         float powerupMinTime, float powerupMaxTime
     ) {
         this.timeLimit = timeLimit;
-        this.backgroundPath = backgroundPath;
+        this.background = background;
         this.targetMinTime = targetMinTime;
         this.targetMaxTime = targetMaxTime;
         this.evadeMinTime = evadeMinTime;

@@ -2,8 +2,11 @@
 using System.Xml.Serialization;
 using System.IO;
 
+[XmlRoot("Statistics")]
 public class StatisticsXMLContainer : XMLContainer<StatisticsXMLContainer, Statistics> {
-    public List<Statistics> statistics = new List<Statistics>();
+
+    public Statistics stats = new Statistics();
+
     [XmlIgnore]
     public string path;
 
@@ -20,16 +23,7 @@ public class StatisticsXMLContainer : XMLContainer<StatisticsXMLContainer, Stati
 
     public void Load() {
         var loaded = base.Load(this.path);
-        statistics = loaded.statistics;
+        stats = loaded.stats;
     }
-
-    public override void Push(Statistics statistic) {
-        statistics.Add(statistic);
-    }
-
-    public override void Remove(Statistics statistic) {
-        statistics.Remove(statistic);
-    }
-
 
 }

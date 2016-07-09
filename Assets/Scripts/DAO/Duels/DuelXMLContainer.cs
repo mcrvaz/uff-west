@@ -27,11 +27,11 @@ public class DuelXMLContainer : XMLContainer<DuelXMLContainer, Duel> {
         duels = loaded.duels;
     }
 
-    public override void Push(Duel duel) {
+    public void Push(Duel duel) {
         duels.Add(duel);
     }
 
-    public override void Remove(Duel duel) {
+    public void Remove(Duel duel) {
         duels.Remove(duel);
     }
 

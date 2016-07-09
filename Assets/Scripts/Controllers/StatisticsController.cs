@@ -1,8 +1,13 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System;
 using System.Collections.Generic;
 
 public class StatisticsController : MonoBehaviour {
+
+    public bool showStats;
+    public Text p_targetsHit, p_doubleDamagesHit, p_bulletTimesHit, p_totalShots, p_timeBetweenShots, p_shotsPerSecond;
+    private Statistics stats;
 
     private int _playerTargetsHit = 0;
     public int playerTargetsHit {
@@ -79,6 +84,24 @@ public class StatisticsController : MonoBehaviour {
         enemyShotTimes = new List<DateTime>();
     }
 
+    void Start() {
+        LoadXML();
+        SetStats();
+        SaveXML();
+    }
+
+    public void CalculateStats() {
+        CalculateEnemyShots();
+        CalculateEnemyShootingTime();
+        CalculateEnemyShotsPerSecond();
+        CalculateEnemyTimeBetweenShots();
+
+        CalculatePlayerShots();
+        CalculatePlayerShootingTime();
+        CalculatePlayerShotsPerSecond();
+        CalculatePlayerTimeBetweenShots();
+    }
+
     private int CalculatePlayerShots() {
         playerShots = playerTargetsHit + playerDoubleDamageHit + playerBulletTimeHit + shotsMissed;
         return playerShots;
@@ -124,6 +147,31 @@ public class StatisticsController : MonoBehaviour {
     private float CalculateEnemyShotsPerSecond() {
         enemyShotsPerSecond = CalculateEnemyShots() / (CalculateEnemyShootingTime() / 1000f);
         return enemyShotsPerSecond;
+    }
+
+    private Statistics LoadXML() {
+        var container = new StatisticsXMLContainer("statistics");
+        container.Load();
+        stats = container.stats;
+        return stats;
+    }
+
+    private void SetStats() {
+        if (!showStats) {
+            return;
+        }
+        p_targetsHit.text = stats.playerTargetsHit.ToString();
+        p_doubleDamagesHit.text = stats.playerDoubleDamageHit.ToString();
+        p_bulletTimesHit.text = stats.playerBulletTimeHit.ToString();
+        p_totalShots.text = stats.playerShots.ToString();
+        p_timeBetweenShots.text = stats.playerTimeBetweenShots.ToString();
+        p_shotsPerSecond.text = stats.playerShotsPerSecond.ToString();
+    }
+
+    private void SaveXML() {
+        var container = new StatisticsXMLContainer("statistics");
+        container.stats = this.stats;
+        container.Save();
     }
 
 }

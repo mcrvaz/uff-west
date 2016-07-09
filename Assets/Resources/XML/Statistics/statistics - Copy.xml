@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<Statistics xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <stats>
+        <playerTargetsHit>1</playerTargetsHit>
+        <enemyTargetsHit>2</enemyTargetsHit>
+        <playerDoubleDamageHit>3</playerDoubleDamageHit>
+        <enemyDoubleDamageHit>4</enemyDoubleDamageHit>
+        <playerBulletTimeHit>5</playerBulletTimeHit>
+        <enemyBulletTimeHit>6</enemyBulletTimeHit>
+        <targetsExpired>7</targetsExpired>
+        <playerShots>8</playerShots>
+        <enemyShots>9</enemyShots>
+        <timeElapsed>10</timeElapsed>
+        <timeRemaining>11</timeRemaining>
+        <playerTimeBetweenShots>12</playerTimeBetweenShots>
+        <enemyTimeBetweenShots>13</enemyTimeBetweenShots>
+        <playerShotsPerSecond>14</playerShotsPerSecond>
+        <enemyShotsPerSecond>15</enemyShotsPerSecond>
+    </stats>
+</Statistics>

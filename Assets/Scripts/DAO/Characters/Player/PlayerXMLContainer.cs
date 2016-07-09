@@ -29,11 +29,11 @@ public class PlayerXMLContainer : XMLContainer<PlayerXMLContainer, Player> {
         players = loaded.players;
     }
 
-    public override void Push(Player player) {
+    public void Push(Player player) {
         players.Add(player);
     }
 
-    public override void Remove(Player player) {
+    public void Remove(Player player) {
         players.Remove(player);
     }
 }

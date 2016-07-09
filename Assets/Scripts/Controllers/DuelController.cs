@@ -1,9 +1,11 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections.Generic;
 
 public class DuelController : MonoBehaviour {
 
     public float timeLimit;
+    public Image background;
     private StatisticsController stats;
     private DuelCharacterController player;
     private EnemyCharacterController enemy;
@@ -33,6 +35,7 @@ public class DuelController : MonoBehaviour {
     private void GetDuel() {
         var duel = GameController.Instance.GetDuel();
         timeLimit = duel.timeLimit;
+        background.sprite = Resources.Load<Sprite>("Backgrounds/" + duel.background);
         foreach (var spawner in spawners) {
             switch (spawner.type) {
                 case ObjectSpawner.Type.Target:
@@ -155,6 +158,7 @@ public class DuelController : MonoBehaviour {
         EndDuelPhase();
         stats.timeElapsed = timer.currentTime; //statistics
         stats.timeRemaining = timeLimit - timer.currentTime; //statistics
+        GameController.Instance.stats = this.stats;
         winner = player.health > enemy.health ? player : enemy;
 
         if (winner == player) {

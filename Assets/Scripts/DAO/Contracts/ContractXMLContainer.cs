@@ -26,11 +26,11 @@ public class ContractXMLContainer : XMLContainer<ContractXMLContainer, Contract>
         contracts = loaded.contracts;
     }
 
-    public override void Push(Contract contract) {
+    public void Push(Contract contract) {
         contracts.Add(contract);
     }
 
-    public override void Remove(Contract contract) {
+    public void Remove(Contract contract) {
         contracts.Remove(contract);
     }
 }

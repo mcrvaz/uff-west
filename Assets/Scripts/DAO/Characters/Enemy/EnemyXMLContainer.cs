@@ -29,11 +29,11 @@ public class EnemyXMLContainer : XMLContainer<EnemyXMLContainer, Enemy> {
         enemies = loaded.enemies;
     }
 
-    public override void Push(Enemy enemy) {
+    public void Push(Enemy enemy) {
         enemies.Add(enemy);
     }
 
-    public override void Remove(Enemy enemy) {
+    public void Remove(Enemy enemy) {
         enemies.Remove(enemy);
     }
 

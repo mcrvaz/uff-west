@@ -6,6 +6,7 @@ public class GameController : Singleton<GameController> {
     // guarantee this will be always a singleton only - can't use the constructor!
     protected GameController() { }
 
+    public StatisticsController stats;
     public bool lastDuel { get; private set; }
     public bool victory { get; private set; } //true if player won last duel
     //everytime the player loses a regular duel, start a death duel

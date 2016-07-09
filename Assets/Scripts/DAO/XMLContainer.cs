@@ -30,7 +30,4 @@ public abstract class XMLContainer<T, P> where T : class
         return result;
     }
 
-    public abstract void Push(P obj);
-    public abstract void Remove(P obj);
-
 }

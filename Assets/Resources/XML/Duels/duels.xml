@@ -4,7 +4,7 @@
   
     <Duel>
       <timeLimit>20</timeLimit>
-      <backgroundPath>"help_me.png"</backgroundPath>
+      <background>map-5</background>
       <targetMinTime>0.2</targetMinTime>
       <targetMaxTime>0.5</targetMaxTime>
       <evadeMinTime>1</evadeMinTime>
@@ -15,7 +15,7 @@
 
     <Duel>
       <timeLimit>20</timeLimit>
-      <backgroundPath>"help_me.png"</backgroundPath>
+      <background>map-6</background>
       <targetMinTime>0.2</targetMinTime>
       <targetMaxTime>0.5</targetMaxTime>
       <evadeMinTime>1</evadeMinTime>

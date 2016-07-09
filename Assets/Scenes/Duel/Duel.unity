@@ -258,6 +258,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49ecdadf0649c154aab1e028f135fab6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  showStats: 0
+  t_targetsHit: {fileID: 0}
+  t_doubleDamagesHit: {fileID: 0}
+  t_bulletTimesHit: {fileID: 0}
+  t_totalShots: {fileID: 0}
+  t_timeBetweenShots: {fileID: 0}
+  t_shotsPerSecond: {fileID: 0}
 --- !u!1001 &371080319
 Prefab:
   m_ObjectHideFlags: 0
@@ -447,6 +454,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeLimit: 20
+  background: {fileID: 1690429658}
 --- !u!4 &712849604
 Transform:
   m_ObjectHideFlags: 0
@@ -1066,6 +1074,12 @@ Transform:
   - {fileID: 1374278975}
   m_Father: {fileID: 0}
   m_RootOrder: 7
+--- !u!114 &1690429658 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11445692, guid: 5e7e9367de55b424491ec91faf01685b,
+    type: 2}
+  m_PrefabInternal: {fileID: 1277516710}
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 --- !u!1 &1785554977
 GameObject:
   m_ObjectHideFlags: 0
