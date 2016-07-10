@@ -36,6 +36,7 @@ public class DuelCharacterController : MonoBehaviour {
             return health;
         }
         health -= damage;
+        animator.SetTrigger("hit");
         UpdateUIHealth();
         return health;
     }

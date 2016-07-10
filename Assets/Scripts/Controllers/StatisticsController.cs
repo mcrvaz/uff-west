@@ -63,7 +63,6 @@ public class StatisticsController : MonoBehaviour {
         }
     }
 
-    public int shotsMissed { get; set; } //not captured yet
     public int targetsExpired { get; set; }
     public float timeElapsed { get; set; }
     public float timeRemaining { get; set; }
@@ -87,7 +86,6 @@ public class StatisticsController : MonoBehaviour {
     void Start() {
         LoadXML();
         SetStats();
-        SaveXML();
     }
 
     public void CalculateStats() {
@@ -103,7 +101,7 @@ public class StatisticsController : MonoBehaviour {
     }
 
     private int CalculatePlayerShots() {
-        playerShots = playerTargetsHit + playerDoubleDamageHit + playerBulletTimeHit + shotsMissed;
+        playerShots = playerTargetsHit + playerDoubleDamageHit + playerBulletTimeHit;
         return playerShots;
     }
 
@@ -177,8 +175,8 @@ public class StatisticsController : MonoBehaviour {
     private Statistics LoadXML() {
         var container = new StatisticsXMLContainer("statistics");
         container.Load();
-        stats = container.stats;
-        return stats;
+        this.stats = container.stats;
+        return this.stats;
     }
 
     private void SetStats() {
@@ -193,10 +191,27 @@ public class StatisticsController : MonoBehaviour {
         p_shotsPerSecond.text = stats.playerShotsPerSecond.ToString();
     }
 
-    private void SaveXML() {
-        var container = new StatisticsXMLContainer("statistics");
-        container.stats = this.stats;
+    public void SaveXML() {
+        var container = new StatisticsXMLContainer("statistics.xml");
+        var duelStatsController = GameController.Instance.stats;
+        var duelStats = new Statistics(
+            duelStatsController.playerTargetsHit, duelStatsController.playerDoubleDamageHit,
+            duelStatsController.playerBulletTimeHit, duelStatsController.playerShots,
+            duelStatsController.playerTimeBetweenShots, duelStatsController.playerShotsPerSecond
+        );
+        container.stats = AddStats(this.stats, duelStats);
+
         container.Save();
+    }
+
+    private Statistics AddStats(Statistics oldStats, Statistics newStats) {
+        var targetsHit = oldStats.playerTargetsHit + newStats.playerTargetsHit;
+        var doubleDamageHit = oldStats.playerDoubleDamageHit + newStats.playerDoubleDamageHit;
+        var bulletTimeHit = oldStats.playerBulletTimeHit + newStats.playerBulletTimeHit;
+        var shots = oldStats.playerShots + newStats.playerShots;
+        var timeBetweenShots = (oldStats.playerTimeBetweenShots + newStats.playerTimeBetweenShots) / 2;
+        var shotsPerSecond = (oldStats.playerShotsPerSecond + newStats.playerShotsPerSecond) / 2;
+        return new Statistics(targetsHit, doubleDamageHit, bulletTimeHit, shots, timeBetweenShots, shotsPerSecond);
     }
 
 }

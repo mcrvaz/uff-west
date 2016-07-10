@@ -1,14 +1,15 @@
-﻿public class Statistics {
+﻿using System.Collections.Generic;
+using System.Xml;
+using System.Xml.Serialization;
+
+public class Statistics {
 
     public int playerTargetsHit;
     public int playerDoubleDamageHit;
     public int playerBulletTimeHit;
     public int playerShots;
-    public int enemyShots;
     public float playerTimeBetweenShots;
-    public float enemyTimeBetweenShots;
     public float playerShotsPerSecond;
-    public float enemyShotsPerSecond;
 
     public Statistics() { }
 

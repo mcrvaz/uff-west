@@ -60,6 +60,8 @@ public class DuelStatisticsController : MonoBehaviour {
 
     private void SetStats() {
         stats.CalculateStats();
+        stats.SaveXML();
+
         SetPlayerStats();
         SetEnemyStats();
         SetDuelStats();

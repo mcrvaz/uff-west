@@ -14,7 +14,6 @@ public class TargetController : MonoBehaviour {
     protected DuelController duelController;
 
     private bool hit;
-    private Collider2D container;
     private CircleCollider2D targetCollider;
     private SpriteRenderer[] sprites;
 

@@ -2,8 +2,6 @@
 
 public class QuitModalController : MonoBehaviour {
 
-    private static bool active;
-
     void Start() {
         Pause();
     }

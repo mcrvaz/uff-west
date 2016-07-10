@@ -253,6 +253,42 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ce58dfb9bcbfcf847883252701d09113, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &76148344 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11452894, guid: ce58dfb9bcbfcf847883252701d09113,
+    type: 2}
+  m_PrefabInternal: {fileID: 76148343}
+  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+--- !u!114 &76148345 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11441052, guid: ce58dfb9bcbfcf847883252701d09113,
+    type: 2}
+  m_PrefabInternal: {fileID: 76148343}
+  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+--- !u!114 &76148346 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11403096, guid: ce58dfb9bcbfcf847883252701d09113,
+    type: 2}
+  m_PrefabInternal: {fileID: 76148343}
+  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+--- !u!114 &76148347 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11494674, guid: ce58dfb9bcbfcf847883252701d09113,
+    type: 2}
+  m_PrefabInternal: {fileID: 76148343}
+  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+--- !u!114 &76148348 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11468714, guid: ce58dfb9bcbfcf847883252701d09113,
+    type: 2}
+  m_PrefabInternal: {fileID: 76148343}
+  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+--- !u!114 &76148349 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11493510, guid: ce58dfb9bcbfcf847883252701d09113,
+    type: 2}
+  m_PrefabInternal: {fileID: 76148343}
+  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 --- !u!1 &586196435
 GameObject:
   m_ObjectHideFlags: 0
@@ -479,12 +515,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   showStats: 1
-  p_targetsHit: {fileID: 0}
-  p_doubleDamagesHit: {fileID: 0}
-  p_bulletTimesHit: {fileID: 0}
-  p_totalShots: {fileID: 0}
-  p_timeBetweenShots: {fileID: 0}
-  p_shotsPerSecond: {fileID: 0}
+  p_targetsHit: {fileID: 76148349}
+  p_doubleDamagesHit: {fileID: 76148348}
+  p_bulletTimesHit: {fileID: 76148347}
+  p_totalShots: {fileID: 76148346}
+  p_timeBetweenShots: {fileID: 76148345}
+  p_shotsPerSecond: {fileID: 76148344}
 --- !u!1 &1305822243
 GameObject:
   m_ObjectHideFlags: 0
