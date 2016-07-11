@@ -13,7 +13,7 @@ public class EvasionTargetController : TimedTargetController {
     }
 
     protected override IEnumerator TimedAction() {
-        base.HideSelf();
+        StartCoroutine(base.HideSelf());
         yield return new WaitForSeconds(evasionTime);
 
         character.invulnerable = false;
@@ -27,13 +27,13 @@ public class EvasionTargetController : TimedTargetController {
 
     void OnMouseDown() {
         if (duelController.RegisterPlayerEvasion(this)) {
-            base.HideSelf();
+            StartCoroutine(base.HideSelf());
         }
     }
 
     public override void OnEnemyMouseDown() {
         duelController.RegisterEnemyEvasion(this);
-        base.HideSelf();
+        StartCoroutine(base.HideSelf());
     }
 
 }

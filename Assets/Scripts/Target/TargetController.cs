@@ -23,11 +23,11 @@ public class TargetController : MonoBehaviour {
         targetCollider = GetComponent<CircleCollider2D>();
         sprites = GetComponentsInChildren<SpriteRenderer>();
         timeToLive = Random.Range(minTimeToLive, maxTimeToLive);
-        HideSelf();
         duelController = FindObjectOfType<DuelController>();
     }
 
     void Start() {
+        StartCoroutine(HideSelf(false)); //hide before checking collision
         if (CheckCollision()) {
             //fuck this shit
             DestroySelf();
@@ -37,8 +37,12 @@ public class TargetController : MonoBehaviour {
         }
     }
 
-    protected void HideSelf() {
+    protected IEnumerator HideSelf(bool playAnim = true) {
         targetCollider.enabled = false;
+        if (playAnim) {
+            var anim = PlayDestroyAnimation();
+            yield return new WaitForSeconds(anim.length);
+        }
         foreach (var sprite in sprites) {
             sprite.enabled = false;
         }
@@ -65,8 +69,9 @@ public class TargetController : MonoBehaviour {
         Destroy(gameObject, anim.length);
     }
 
-    protected void TimedHide(float time) {
-        Invoke("HideSelf", time);
+    protected IEnumerator TimedHide(float time) {
+        yield return new WaitForSeconds(time);
+        StartCoroutine(this.HideSelf());
     }
 
     protected void TimedDestroy(float time) {

@@ -26,7 +26,7 @@ public class BulletTimePowerup : TimedTargetController {
     protected override IEnumerator TimedAction() {
         SetTimeScale();
 
-        base.HideSelf();
+        yield return StartCoroutine(base.HideSelf());
         yield return new WaitForSeconds(duration * currentSlowFactor);
 
         ResetTimeScale();
@@ -40,13 +40,13 @@ public class BulletTimePowerup : TimedTargetController {
 
     void OnMouseDown() {
         if (duelController.RegisterPlayerBulletTime(this)) {
-            base.HideSelf();
+            StartCoroutine(base.HideSelf());
         }
     }
 
     public override void OnEnemyMouseDown() {
         duelController.RegisterEnemyBulletTime(this);
-        base.HideSelf();
+        StartCoroutine(base.HideSelf());
     }
 
 }

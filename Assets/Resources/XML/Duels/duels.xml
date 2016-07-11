@@ -9,7 +9,7 @@
       <evadeMinTime>1</evadeMinTime>
       <evadeMaxTime>5</evadeMaxTime>
       <powerupMinTime>1</powerupMinTime>
-      <powerupMaxTime>2</powerupMaxTime>
+      <powerupMaxTime>5</powerupMaxTime>
 	</Duel>
 
     <Duel>
@@ -19,8 +19,8 @@
       <targetMaxTime>0.5</targetMaxTime>
       <evadeMinTime>1</evadeMinTime>
       <evadeMaxTime>5</evadeMaxTime>
-      <powerupMinTime>0</powerupMinTime>
-      <powerupMaxTime>20</powerupMaxTime>
+      <powerupMinTime>1</powerupMinTime>
+      <powerupMaxTime>5</powerupMaxTime>
     </Duel>
 	
   </Duels>

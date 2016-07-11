@@ -9,7 +9,8 @@ public abstract class TimedTargetController : TargetController {
 
     void Start() {
         base.ShowSelf();
-        base.TimedHide(base.timeToLive);
+
+        StartCoroutine(base.TimedHide(base.timeToLive));
     }
 
     protected new void DestroySelf() {
