@@ -25,8 +25,10 @@ public class BulletTimePowerup : TimedTargetController {
 
     protected override IEnumerator TimedAction() {
         SetTimeScale();
+
         base.HideSelf();
         yield return new WaitForSeconds(duration * currentSlowFactor);
+
         ResetTimeScale();
         Destroy(gameObject);
     }

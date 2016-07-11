@@ -8,8 +8,8 @@
       <targetMaxTime>0.5</targetMaxTime>
       <evadeMinTime>1</evadeMinTime>
       <evadeMaxTime>5</evadeMaxTime>
-      <powerupMinTime>0</powerupMinTime>
-      <powerupMaxTime>20</powerupMaxTime>
+      <powerupMinTime>1</powerupMinTime>
+      <powerupMaxTime>2</powerupMaxTime>
 	</Duel>
 
     <Duel>

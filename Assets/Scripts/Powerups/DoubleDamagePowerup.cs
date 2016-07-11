@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Collections;
 
 public class DoubleDamagePowerup : TargetController {
     [Tooltip("Number of shots before this powerup expires.")]
@@ -14,13 +15,13 @@ public class DoubleDamagePowerup : TargetController {
 
     void OnMouseDown() {
         if (duelController.RegisterPlayerDoubleDamage(this)) {
-            DestroySelf();
+            base.DestroySelf();
         }
     }
 
     public override void OnEnemyMouseDown() {
         duelController.RegisterEnemyDoubleDamage(this);
-        DestroySelf();
+        base.DestroySelf();
     }
 
 }

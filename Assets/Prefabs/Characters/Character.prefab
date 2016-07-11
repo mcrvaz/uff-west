@@ -164,9 +164,9 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
-    m_FontStyle: 3
+    m_Font: {fileID: 12800000, guid: 46c0f9904e1e07c48ad0bafe5915e454, type: 3}
+    m_FontSize: 24
+    m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 114
@@ -176,15 +176,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Lorem Ipsum
-
-    Lorem Ipsum
-
-    Lorem Ipsum
-
-    Lorem Ipsum
-
-    Lorem Ipsum'
+  m_Text: Lorem Ipsum
 --- !u!114 &11420200
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -204,9 +196,9 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 146d1db23c5494246b700c9cda07e5f8, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -275,7 +267,7 @@ MonoBehaviour:
   health: 100
   damage: 100
   invulnerable: 0
-  healthText: {fileID: 0}
+  healthBar: {fileID: 0}
   revolver: {fileID: 0}
   hasPowerup: 0
 --- !u!212 &21220694
@@ -304,7 +296,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 0bb2b3012f77f43489a495ff221fba00, type: 3}
+  m_Sprite: {fileID: 21300002, guid: 1f6923ff8da91ca48ae015e2c8d1e35f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -371,7 +363,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 200, y: 160}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &22461688
 RectTransform:
@@ -389,7 +381,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -180, y: 10}
+  m_AnchoredPosition: {x: -140, y: 25}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &22492822

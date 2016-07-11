@@ -15,6 +15,7 @@ public class EvasionTargetController : TimedTargetController {
     protected override IEnumerator TimedAction() {
         base.HideSelf();
         yield return new WaitForSeconds(evasionTime);
+
         character.invulnerable = false;
         Destroy(gameObject);
     }

@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.Events;
 using System.Collections;
 
 public class TargetController : MonoBehaviour {
@@ -16,8 +15,11 @@ public class TargetController : MonoBehaviour {
     private bool hit;
     private CircleCollider2D targetCollider;
     private SpriteRenderer[] sprites;
+    private Animator animator;
+    private bool destroyAnimPlaying;
 
     protected virtual void Awake() {
+        animator = GetComponent<Animator>();
         targetCollider = GetComponent<CircleCollider2D>();
         sprites = GetComponentsInChildren<SpriteRenderer>();
         timeToLive = Random.Range(minTimeToLive, maxTimeToLive);
@@ -49,8 +51,18 @@ public class TargetController : MonoBehaviour {
         }
     }
 
+    protected AnimatorStateInfo PlayDestroyAnimation() {
+        if (destroyAnimPlaying) {
+            return animator.GetCurrentAnimatorStateInfo(0);
+        }
+        destroyAnimPlaying = true;
+        animator.SetTrigger("destroy");
+        return animator.GetCurrentAnimatorStateInfo(0);
+    }
+
     protected void DestroySelf() {
-        Destroy(gameObject);
+        var anim = PlayDestroyAnimation();
+        Destroy(gameObject, anim.length);
     }
 
     protected void TimedHide(float time) {
@@ -71,14 +83,23 @@ public class TargetController : MonoBehaviour {
     }
 
     void OnMouseDown() {
+        if (hit) {
+            return; //target was already hit
+        }
         hit = true;
+
+        //should be separated
         if (duelController.RegisterPlayerShot()) {
             DestroySelf();
         }
     }
 
     public virtual void OnEnemyMouseDown() {
+        if (hit) {
+            return; //target was already hit
+        }
         hit = true;
+
         duelController.RegisterEnemyShot();
         DestroySelf();
     }

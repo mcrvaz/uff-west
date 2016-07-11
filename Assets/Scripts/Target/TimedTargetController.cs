@@ -12,5 +12,9 @@ public abstract class TimedTargetController : TargetController {
         base.TimedHide(base.timeToLive);
     }
 
+    protected new void DestroySelf() {
+        base.DestroySelf();
+    }
+
     protected abstract IEnumerator TimedAction();
 }
