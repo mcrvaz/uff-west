@@ -158,7 +158,6 @@ public class DuelController : MonoBehaviour {
         EndDuelPhase();
         stats.timeElapsed = timer.currentTime; //statistics
         stats.timeRemaining = timeLimit - timer.currentTime; //statistics
-        GameController.Instance.stats = this.stats;
         winner = player.health > enemy.health ? player : enemy;
 
         if (winner == player) {
@@ -170,6 +169,7 @@ public class DuelController : MonoBehaviour {
     }
 
     public void EndDuelScene() {
+        GameController.Instance.stats = this.stats;
         GameController.Instance.EndDuel(winner);
     }
 

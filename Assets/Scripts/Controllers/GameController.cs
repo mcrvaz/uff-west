@@ -146,6 +146,7 @@ public class GameController : Singleton<GameController> {
         if (winnerCharacter is EnemyCharacterController) {
             victory = false;
             if (isDeathDuel) {
+                NewGame();
                 print("Player died. Forever.");
             } else {
                 isDeathDuel = true;
@@ -157,6 +158,23 @@ public class GameController : Singleton<GameController> {
             isDeathDuel = false;
         }
         SceneManager.LoadScene(SceneNames.DUEL_STATISTICS);
+    }
+
+    private void NewGame() {
+        contractEnumerator = contracts.GetEnumerator();
+        contractEnumerator.MoveNext();
+
+        playerEnumerator = players.GetEnumerator();
+        playerEnumerator.MoveNext();
+
+        enemyEnumerator = enemies.GetEnumerator();
+        enemyEnumerator.MoveNext();
+
+        deathEnumerator = deathEnemies.GetEnumerator();
+        deathEnumerator.MoveNext();
+
+        duelEnumerator = duels.GetEnumerator();
+        duelEnumerator.MoveNext();
     }
 
 }

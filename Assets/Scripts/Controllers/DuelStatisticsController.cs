@@ -13,21 +13,15 @@ public class DuelStatisticsController : MonoBehaviour {
     private GameController gameController;
     private StatisticsController stats;
 
-    void Awake() {
-        gameController = GameController.Instance;
-        stats = gameController.stats;
-    }
-
     void Start() {
+        gameController = GameController.Instance;
         victoryText.gameObject.SetActive(gameController.victory);
         defeatText.gameObject.SetActive(!gameController.victory);
-
         SetStats();
     }
 
     public void Continue() {
         if (gameController.victory) {
-            print(gameController.lastDuel);
             if (gameController.lastDuel) {
                 EndGame();
             } else {
@@ -59,6 +53,8 @@ public class DuelStatisticsController : MonoBehaviour {
     }
 
     private void SetStats() {
+        stats = gameController.stats;
+
         stats.CalculateStats();
         stats.SaveXML();
 
