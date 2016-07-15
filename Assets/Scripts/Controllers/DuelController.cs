@@ -6,6 +6,7 @@ public class DuelController : MonoBehaviour {
 
     public float timeLimit;
     public Image background;
+    private bool finished; //sorry
     private StatisticsController stats;
     private DuelCharacterController player;
     private EnemyCharacterController enemy;
@@ -169,6 +170,10 @@ public class DuelController : MonoBehaviour {
     }
 
     public void EndDuelScene() {
+        if (finished) {
+            return;
+        }
+        finished = true;
         GameController.Instance.stats = this.stats;
         GameController.Instance.EndDuel(winner);
     }

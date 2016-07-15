@@ -131,6 +131,7 @@ public class GameController : Singleton<GameController> {
 
     private void SetNextDuel() {
         lastDuel = !duelEnumerator.MoveNext();
+        print(duelEnumerator.Current.background);
     }
 
     private void SetNextContract() {
