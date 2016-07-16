@@ -14,12 +14,9 @@ public class DialogController : MonoBehaviour {
     private SpeechText currentDialog;
     private IEnumerator<SpeechText> enumerator;
 
-    void Awake() {
+    void Start() {
         playerSpeech = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<SpeechBubble>();
         enemySpeech = GameObject.FindGameObjectWithTag("Enemy").GetComponentInChildren<SpeechBubble>();
-    }
-
-    void Start() {
         StartDialogPhase(SpeechText.Phase.Beginning);
     }
 

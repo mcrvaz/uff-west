@@ -78,7 +78,7 @@ GameObject:
   - 114: {fileID: 11489202}
   m_Layer: 5
   m_Name: Health
-  m_TagString: Untagged
+  m_TagString: PlayerHealthBar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -127,7 +127,7 @@ GameObject:
   - 114: {fileID: 11492008}
   m_Layer: 5
   m_Name: Health
-  m_TagString: Untagged
+  m_TagString: EnemyHealthBar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

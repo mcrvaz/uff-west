@@ -27,7 +27,7 @@ public class RevolverCylinderController : MonoBehaviour {
     }
 
     public void Fire() {
-        return;
+        //return; //skips bullets
 
         if (index < bullets.Length) {
             bullets[index].enabled = false;

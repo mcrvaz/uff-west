@@ -6,10 +6,12 @@ public class DuelController : MonoBehaviour {
 
     public float timeLimit;
     public Image background;
-    private bool finished; //sorry
+    private bool duelFinished; //sorry
     private StatisticsController stats;
     private DuelCharacterController player;
+    private Player loadedPlayer;
     private EnemyCharacterController enemy;
+    private Enemy loadedEnemy;
     private DuelCharacterController winner;
     private DuelTimeController timer;
     private DialogController beginningDialog, victoryDialog, defeatDialog;
@@ -17,6 +19,9 @@ public class DuelController : MonoBehaviour {
     private ObjectSpawner[] spawners;
 
     void Awake() {
+        LoadPlayer();
+        LoadEnemy();
+
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<DuelCharacterController>();
         enemy = GameObject.FindGameObjectWithTag("Enemy").GetComponent<EnemyCharacterController>();
         beginningDialog = GameObject.FindGameObjectWithTag("BeginningDialog").GetComponent<DialogController>();
@@ -27,10 +32,20 @@ public class DuelController : MonoBehaviour {
         spawners = GameObject.FindObjectsOfType<ObjectSpawner>();
 
         GetDuel();
-        GetEnemy();
-        GetPlayer();
+        SetEnemy(this.loadedEnemy);
+        SetPlayer(this.loadedPlayer);
         EvaluateTimer();
         SetDialogs(playerDialogs, enemyDialogs);
+    }
+
+    private void LoadPlayer() {
+        loadedPlayer = GameController.Instance.GetPlayer();
+        Instantiate(Resources.Load<GameObject>("Characters/" + loadedPlayer.prefab));
+    }
+
+    private void LoadEnemy() {
+        loadedEnemy = GameController.Instance.GetEnemy();
+        Instantiate(Resources.Load<GameObject>("Characters/" + loadedEnemy.prefab));
     }
 
     private void GetDuel() {
@@ -55,8 +70,7 @@ public class DuelController : MonoBehaviour {
         }
     }
 
-    private void GetEnemy() {
-        var e = GameController.Instance.GetEnemy();
+    private void SetEnemy(Enemy e) {
         enemy.characterName = e.characterName;
         enemy.damage = e.damage;
         enemy.health = e.health;
@@ -65,8 +79,7 @@ public class DuelController : MonoBehaviour {
         enemyDialogs = e.dialogs;
     }
 
-    private void GetPlayer() {
-        var p = GameController.Instance.GetPlayer();
+    private void SetPlayer(Player p) {
         player.characterName = p.characterName;
         player.damage = p.damage;
         player.health = p.health;
@@ -170,10 +183,10 @@ public class DuelController : MonoBehaviour {
     }
 
     public void EndDuelScene() {
-        if (finished) {
+        if (duelFinished) {
             return;
         }
-        finished = true;
+        duelFinished = true;
         GameController.Instance.stats = this.stats;
         GameController.Instance.EndDuel(winner);
     }

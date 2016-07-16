@@ -8,16 +8,22 @@ public class DuelCharacterController : MonoBehaviour {
     public float health;
     public float damage;
     public bool invulnerable;
-    public Image healthBar;
-    public RevolverCylinderController revolver;
     [HideInInspector]
     public int hasPowerup; //tells how many empowered shots are left
+    [HideInInspector]
+    public RevolverCylinderController revolver;
 
-    private Animator animator;
+    protected Image healthBar;
+    protected Animator animator;
 
     void Awake() {
-        UpdateUIHealth();
+        healthBar = GameObject.FindGameObjectWithTag("PlayerHealthBar").GetComponent<Image>();
+        revolver = GameObject.FindGameObjectWithTag("RevolverCylinder").GetComponent<RevolverCylinderController>();
         animator = GetComponentInChildren<Animator>();
+    }
+
+    void Start() {
+        UpdateUIHealth();
     }
 
     private void UpdateUIHealth() {

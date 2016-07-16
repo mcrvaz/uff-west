@@ -9,6 +9,9 @@ TagManager:
   - BeginningDialog
   - VictoryDialog
   - DefeatDialog
+  - PlayerHealthBar
+  - EnemyHealthBar
+  - RevolverCylinder
   layers:
   - Default
   - TransparentFX

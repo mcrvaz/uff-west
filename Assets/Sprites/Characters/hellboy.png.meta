@@ -1,0 +1,160 @@
+fileFormatVersion: 2
+guid: 45f1a5836d2d6ef459979236051cfff0
+timeCreated: 1468700100
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: hellboy_0
+    21300002: hellboy_1
+    21300004: hellboy_2
+    21300006: hellboy_3
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: hellboy_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 296
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 141, y: -104}
+        - {x: 130, y: -14}
+        - {x: 127, y: 128}
+        - {x: -138, y: 128}
+        - {x: -138, y: 34}
+        - {x: 63, y: -128}
+        - {x: 148, y: -128}
+        - {x: 148, y: -102}
+        - {x: 143, y: -102}
+      - - {x: -107, y: 57}
+        - {x: -109, y: 55}
+        - {x: -109, y: 49}
+        - {x: -107, y: 47}
+        - {x: -102, y: 47}
+        - {x: -100, y: 49}
+        - {x: -100, y: 55}
+        - {x: -102, y: 57}
+      - - {x: -84, y: 63}
+        - {x: -86, y: 61}
+        - {x: -86, y: 55}
+        - {x: -84, y: 53}
+        - {x: -78, y: 53}
+        - {x: -76, y: 55}
+        - {x: -76, y: 61}
+        - {x: -78, y: 63}
+      - - {x: -148, y: 80}
+        - {x: -148, y: 70}
+        - {x: -142, y: 70}
+        - {x: -140, y: 72}
+        - {x: -140, y: 78}
+        - {x: -142, y: 80}
+      - - {x: -113, y: 97}
+        - {x: -114, y: 95}
+        - {x: -114, y: 90}
+        - {x: -113, y: 88}
+        - {x: -108, y: 88}
+        - {x: -106, y: 89}
+        - {x: -106, y: 97}
+      - - {x: -84, y: 103}
+        - {x: -86, y: 101}
+        - {x: -86, y: 96}
+        - {x: -84, y: 94}
+        - {x: -78, y: 94}
+        - {x: -76, y: 96}
+        - {x: -76, y: 101}
+        - {x: -78, y: 103}
+    - name: hellboy_1
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 0
+        width: 296
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 148, y: -12}
+        - {x: 114, y: 128}
+        - {x: 66, y: 128}
+        - {x: 50, y: -13}
+        - {x: 53, y: -26}
+        - {x: 55, y: -28}
+        - {x: 49, y: -29}
+        - {x: 49, y: -95}
+        - {x: 67, y: -101}
+        - {x: 76, y: -128}
+        - {x: 148, y: -128}
+    - name: hellboy_2
+      rect:
+        serializedVersion: 2
+        x: 592
+        y: 0
+        width: 296
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 100, y: 128}
+        - {x: 54, y: 128}
+        - {x: 40, y: -11}
+        - {x: 40, y: -107}
+        - {x: 50, y: -120}
+        - {x: 57, y: -128}
+        - {x: 148, y: -128}
+        - {x: 148, y: -65}
+        - {x: 115, y: 76}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
