@@ -313,7 +313,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22467116, guid: 2589f84c7710d204a805d1bbd6f11b3a, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 22467116, guid: 2589f84c7710d204a805d1bbd6f11b3a, type: 2}
       propertyPath: m_AnchoredPosition.x
@@ -399,6 +399,22 @@ Prefab:
     - target: {fileID: 11452278, guid: 2589f84c7710d204a805d1bbd6f11b3a, type: 2}
       propertyPath: m_Color.b
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11421090, guid: 2589f84c7710d204a805d1bbd6f11b3a, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11421090, guid: 2589f84c7710d204a805d1bbd6f11b3a, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Story
+      objectReference: {fileID: 0}
+    - target: {fileID: 11430880, guid: 2589f84c7710d204a805d1bbd6f11b3a, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11430880, guid: 2589f84c7710d204a805d1bbd6f11b3a, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Endless
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2589f84c7710d204a805d1bbd6f11b3a, type: 2}
@@ -549,7 +565,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22445320, guid: 44bed6d31b643174d9fa63b0ff02f6c1, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 22445320, guid: 44bed6d31b643174d9fa63b0ff02f6c1, type: 2}
       propertyPath: m_AnchoredPosition.x
@@ -678,7 +694,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22403994, guid: 357fb3e6b47473447a86ea9e7c449942, type: 2}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22403994, guid: 357fb3e6b47473447a86ea9e7c449942, type: 2}
       propertyPath: m_AnchoredPosition.x

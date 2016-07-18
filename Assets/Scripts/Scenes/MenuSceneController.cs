@@ -27,7 +27,8 @@ public class MenuSceneController : MonoBehaviour {
         Application.Quit();
     }
 
-    public void StartGame() {
+    public void StartGame(string mode) {
+        GameController.Instance.SetGameMode(mode);
         StartCoroutine(ChangeScene(SceneNames.CONTRACT));
     }
 

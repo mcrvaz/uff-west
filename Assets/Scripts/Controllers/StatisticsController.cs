@@ -151,6 +151,7 @@ public class StatisticsController : MonoBehaviour {
     private float CalculatePlayerShotsPerSecond() {
         var shootingTime = CalculatePlayerShootingTime();
         var shots = CalculatePlayerShots();
+
         if (shots == 0) {
             playerShotsPerSecond = 0;
             return playerShotsPerSecond;
@@ -209,8 +210,15 @@ public class StatisticsController : MonoBehaviour {
         var doubleDamageHit = oldStats.playerDoubleDamageHit + newStats.playerDoubleDamageHit;
         var bulletTimeHit = oldStats.playerBulletTimeHit + newStats.playerBulletTimeHit;
         var shots = oldStats.playerShots + newStats.playerShots;
-        var timeBetweenShots = (oldStats.playerTimeBetweenShots + newStats.playerTimeBetweenShots) / 2;
-        var shotsPerSecond = (oldStats.playerShotsPerSecond + newStats.playerShotsPerSecond) / 2;
+        var timeBetweenShots = oldStats.playerTimeBetweenShots;
+        if (newStats.playerTimeBetweenShots > 0) {
+            timeBetweenShots = (timeBetweenShots + newStats.playerTimeBetweenShots) / 2;
+        }
+        var shotsPerSecond = oldStats.playerShotsPerSecond;
+        if (newStats.playerShotsPerSecond > 0) {
+            shotsPerSecond = (shotsPerSecond + newStats.playerShotsPerSecond) / 2;
+        }
+
         return new Statistics(targetsHit, doubleDamageHit, bulletTimeHit, shots, timeBetweenShots, shotsPerSecond);
     }
 

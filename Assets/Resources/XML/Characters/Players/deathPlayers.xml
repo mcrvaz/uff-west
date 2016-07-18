@@ -8,7 +8,7 @@
       <prefab>Papaco</prefab>
       <Dialogs>
         <Dialog>
-            <text>Player 1</text>
+            <text>RIP</text>
             <source>Player</source>
             <phase>Beginning</phase>
             <sequential>true</sequential>
@@ -22,27 +22,27 @@
       <prefab>Papaco</prefab>
       <Dialogs>
         <Dialog>
-            <text>Player 2</text>
+            <text>RIP2</text>
             <source>Player</source>
             <phase>Beginning</phase>
             <sequential>true</sequential>
         </Dialog>
       </Dialogs>
     </Player>
-	
+
     <Player characterName="Third Player">
       <health>100</health>
       <damage>100</damage>
       <prefab>Papaco</prefab>
       <Dialogs>
         <Dialog>
-            <text>Player 3</text>
+            <text>RIP3</text>
             <source>Player</source>
             <phase>Beginning</phase>
             <sequential>true</sequential>
         </Dialog>
       </Dialogs>
-    </Player>    
-  
+    </Player>
+    
   </Players>
 </PlayerCollection>
