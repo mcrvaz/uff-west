@@ -33,28 +33,6 @@
       <powerupMinTime>1</powerupMinTime>
       <powerupMaxTime>5</powerupMaxTime>
     </Duel>
-    
-    <Duel>
-      <timeLimit>30</timeLimit>
-      <background>map-5</background>
-      <targetMinTime>0.2</targetMinTime>
-      <targetMaxTime>0.5</targetMaxTime>
-      <evadeMinTime>1</evadeMinTime>
-      <evadeMaxTime>5</evadeMaxTime>
-      <powerupMinTime>1</powerupMinTime>
-      <powerupMaxTime>5</powerupMaxTime>
-    </Duel>
-    
-    <Duel>
-      <timeLimit>30</timeLimit>
-      <background>map-0</background>
-      <targetMinTime>0.2</targetMinTime>
-      <targetMaxTime>0.5</targetMaxTime>
-      <evadeMinTime>1</evadeMinTime>
-      <evadeMaxTime>5</evadeMaxTime>
-      <powerupMinTime>1</powerupMinTime>
-      <powerupMaxTime>5</powerupMaxTime>
-    </Duel>
 	
   </Duels>
 </DuelCollection>

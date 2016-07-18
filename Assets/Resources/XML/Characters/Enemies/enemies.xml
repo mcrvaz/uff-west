@@ -4,7 +4,7 @@
 
     <Enemy characterName="First Enemy">
       <health>100</health>
-      <damage>100</damage>
+      <damage>5</damage>
       <prefab>Enemy</prefab>
       <minTimeToClick>0.3</minTimeToClick>
       <maxTimeToClick>0.5</maxTimeToClick>
@@ -69,6 +69,28 @@
         </Dialog>
       </Dialogs>
     </Enemy>
-
+	
+    <Enemy characterName="Third Enemy">
+      <health>100</health>
+      <damage>5</damage>
+      <prefab>Hellboy</prefab>
+      <minTimeToClick>0.2</minTimeToClick>
+      <maxTimeToClick>0.5</maxTimeToClick>
+      <Dialogs>
+        <Dialog>
+            <text>Hello</text>
+            <source>Enemy</source>
+            <phase>Beginning</phase>
+            <sequential>true</sequential>
+        </Dialog>
+        <Dialog>
+            <text>How you doin'?</text>
+            <source>Enemy</source>
+            <phase>Beginning</phase>
+            <sequential>false</sequential>
+        </Dialog>
+      </Dialogs>
+    </Enemy>
+	
   </Enemies>
 </EnemyCollection>

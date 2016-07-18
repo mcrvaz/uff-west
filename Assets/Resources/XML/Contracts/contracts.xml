@@ -3,16 +3,22 @@
   <Contracts>
 
 	<Contract>
-      <name>Jon Snow</name>
+      <name>1º</name>
       <crime>Knows Nothing</crime>
       <reward>$200.00</reward>
     </Contract>
 
     <Contract>
-      <name>Jãohammed</name>
+      <name>2º</name>
       <crime>Terrorism</crime>
       <reward>$500.00</reward>
 	</Contract>
-
+	
+	<Contract>
+      <name>3º</name>
+      <crime>Terrorism</crime>
+      <reward>$500.00</reward>
+	</Contract>
+	
   </Contracts>
 </ContractCollection>

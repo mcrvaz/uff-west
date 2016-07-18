@@ -22,7 +22,7 @@ public class DuelStatisticsController : MonoBehaviour {
 
     public void Continue() {
         if (gameController.victory) {
-            if (gameController.lastDuel) {      
+            if (gameController.lastDuel) {
                 EndGame(); //player won and it's the last duel, should finish the game.
             } else {
                 NextContract(); //player won and there is still another duel ahead.
@@ -37,6 +37,7 @@ public class DuelStatisticsController : MonoBehaviour {
     }
 
     private void EndGame() {
+        gameController.NewGame();
         menu.EndGame();
     }
 
@@ -45,10 +46,12 @@ public class DuelStatisticsController : MonoBehaviour {
     }
 
     private void DeathDuel() {
+        gameController.isDeathDuel = true;
         menu.Duel(); //skips the contract
     }
 
     private void GameOver() {
+        gameController.isDeathDuel = false;
         menu.GameOver();
     }
 

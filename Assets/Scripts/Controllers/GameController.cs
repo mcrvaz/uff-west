@@ -9,10 +9,9 @@ public class GameController : Singleton<GameController> {
     public StatisticsController stats;
     public bool lastDuel { get; private set; }
     public bool victory { get; private set; } //true if player won last duel
-    public bool victoryDeathDuel { get; private set; } //true if player won and it was a death duel
     //everytime the player loses a regular duel, start a death duel
     //if the player wins death duel, restart previous duel, else, game over.
-    public bool isDeathDuel { get; private set; }
+    public bool isDeathDuel { get; set; }
 
     private List<Enemy> enemies = new List<Enemy>();
     private IEnumerator<Enemy> enemyEnumerator;
@@ -27,7 +26,7 @@ public class GameController : Singleton<GameController> {
     private IEnumerator<Duel> duelEnumerator;
 
     private List<Duel> deathDuels = new List<Duel>();
-    private IEnumerator<Duel> deathDuelsEnumerator;
+    private IEnumerator<Duel> deathDuelEnumerator;
 
     private List<Contract> contracts = new List<Contract>();
     private IEnumerator<Contract> contractEnumerator;
@@ -66,8 +65,8 @@ public class GameController : Singleton<GameController> {
         var container = new DuelXMLContainer("deathDuels");
         container.Load();
         this.deathDuels = container.duels;
-        deathDuelsEnumerator = deathDuels.GetEnumerator();
-        deathDuelsEnumerator.MoveNext();
+        deathDuelEnumerator = deathDuels.GetEnumerator();
+        deathDuelEnumerator.MoveNext();
     }
 
     private void LoadDuels() {
@@ -118,7 +117,7 @@ public class GameController : Singleton<GameController> {
         if (!isDeathDuel) {
             return duelEnumerator.Current;
         } else {
-            return deathDuelsEnumerator.Current;
+            return deathDuelEnumerator.Current;
         }
     }
 
@@ -150,58 +149,57 @@ public class GameController : Singleton<GameController> {
         if (!isDeathDuel) {
             lastDuel = !duelEnumerator.MoveNext();
         } else {
-            deathDuelsEnumerator.MoveNext(); //repeats last one until player is dead.
+            deathDuelEnumerator.MoveNext(); //repeats last one until player is dead.
         }
     }
 
     private void SetNextContract() {
-        contractEnumerator.MoveNext();
+        if (!isDeathDuel) {
+            contractEnumerator.MoveNext();
+        }
     }
 
     public void EndDuel(DuelCharacterController winnerCharacter) {
-        SetNextDuel();
         SetNextPlayer();
-        SetNextEnemy();
-        SetNextContract();
 
         if (winnerCharacter is EnemyCharacterController) {
             victory = false;
             if (isDeathDuel) {
                 NewGame();
-                victoryDeathDuel = false;
                 print("Player died. Forever.");
             } else {
-                isDeathDuel = true;
                 print("Player lost!");
             }
         } else {
             print("Player won!");
+            SetNextDuel();
+            SetNextEnemy();
+            SetNextContract();
             victory = true;
-            victoryDeathDuel = true;
             isDeathDuel = false;
         }
 
         SceneManager.LoadScene(SceneNames.DUEL_STATISTICS);
     }
 
-    private void NewGame() {
-        contractEnumerator = contracts.GetEnumerator();
+    public void NewGame() {
+        contractEnumerator.Reset();
         contractEnumerator.MoveNext();
 
-        playerEnumerator = players.GetEnumerator();
+        playerEnumerator.Reset();
         playerEnumerator.MoveNext();
 
-        enemyEnumerator = enemies.GetEnumerator();
+        enemyEnumerator.Reset();
         enemyEnumerator.MoveNext();
 
-        deathEnumerator = deathEnemies.GetEnumerator();
+        deathEnumerator.Reset();
         deathEnumerator.MoveNext();
 
-        duelEnumerator = duels.GetEnumerator();
+        duelEnumerator.Reset();
         duelEnumerator.MoveNext();
 
-        deathDuelsEnumerator = deathDuels.GetEnumerator();
-        deathDuelsEnumerator.MoveNext();
+        deathDuelEnumerator.Reset();
+        deathDuelEnumerator.MoveNext();
     }
 
 }
