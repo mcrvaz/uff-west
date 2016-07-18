@@ -65,6 +65,7 @@ public class GameController : Singleton<GameController> {
                 return;
             }
         }
+        throw new System.Exception("Invalid enum name.");
     }
 
     public void OpenQuitModal() {
@@ -264,8 +265,6 @@ public class GameController : Singleton<GameController> {
     }
 
     public void EndDuel(DuelCharacterController winnerCharacter) {
-
-
         if (winnerCharacter is EnemyCharacterController) {
             victory = false;
             if (isDeathDuel) {

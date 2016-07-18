@@ -75,8 +75,8 @@ public class StatisticsController : MonoBehaviour {
     private List<DateTime> enemyShotTimes;
     public int playerShots { get; private set; }
     public int enemyShots { get; private set; }
-    private int playerShootingTime;
-    private int enemyShootingTime;
+    private float playerShootingTime;
+    private float enemyShootingTime;
 
     void Awake() {
         playerShotTimes = new List<DateTime>();
@@ -110,22 +110,25 @@ public class StatisticsController : MonoBehaviour {
         return enemyShots;
     }
 
-    private int CalculateShootingTime(List<DateTime> shotTimes) {
+    private float CalculateShootingTime(List<DateTime> shotTimes) {
         if (shotTimes.Count == 0) {
             return 0;
         }
-        var endIndex = shotTimes.Count - 1;
-        var firstShot = shotTimes[0].Millisecond + shotTimes[0].Second * 1000 + shotTimes[0].Minute * 60000;
-        var lastShot = shotTimes[endIndex].Millisecond + shotTimes[endIndex].Second * 1000 + shotTimes[endIndex].Minute * 60000;
-        return lastShot - firstShot;
+        //these lines count only effective shooting time
+        //var endIndex = shotTimes.Count - 1;
+        //var firstShot = shotTimes[0].Millisecond + shotTimes[0].Second * 1000 + shotTimes[0].Minute * 60000;
+        //var lastShot = shotTimes[endIndex].Millisecond + shotTimes[endIndex].Second * 1000 + shotTimes[endIndex].Minute * 60000;
+        //timeElapsed + timeRemaining = totalTime
+        //return lastShot - firstShot;
+        return timeElapsed;
     }
 
-    private int CalculatePlayerShootingTime() {
+    private float CalculatePlayerShootingTime() {
         playerShootingTime = CalculateShootingTime(playerShotTimes);
         return playerShootingTime;
     }
 
-    private int CalculateEnemyShootingTime() {
+    private float CalculateEnemyShootingTime() {
         enemyShootingTime = CalculateShootingTime(enemyShotTimes);
         return enemyShootingTime;
     }
