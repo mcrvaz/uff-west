@@ -1,0 +1,144 @@
+fileFormatVersion: 2
+guid: b1b0662b7c452614c8aba94bb8f9927c
+timeCreated: 1468714878
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: baddead_0
+    21300002: baddead_1
+    21300004: baddead_2
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: baddead_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 265
+        height: 293
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 110.5, y: -98.5}
+        - {x: 112.5, y: -100.5}
+        - {x: 110.5, y: -104.5}
+        - {x: 110.5, y: -111.5}
+        - {x: 112.5, y: -113.5}
+        - {x: 110.5, y: -116.5}
+        - {x: 110.5, y: -122.5}
+        - {x: 112.5, y: -124.5}
+        - {x: 131.5, y: -137.5}
+        - {x: 132.5, y: -129.5}
+        - {x: 132.5, y: 35.5}
+        - {x: 114.5, y: 108.5}
+        - {x: 106.5, y: 112.5}
+        - {x: 71.5, y: 112.5}
+        - {x: -132.5, y: 106.5}
+        - {x: -132.5, y: 16.5}
+        - {x: -118.5, y: -20.5}
+        - {x: -93.5, y: -40.5}
+        - {x: 73.5, y: -146.5}
+        - {x: 110.5, y: -146.5}
+      - - {x: -132.5, y: 102.5}
+        - {x: -132.5, y: 90.5}
+        - {x: -125.5, y: 90.5}
+        - {x: -123.5, y: 92.5}
+        - {x: -123.5, y: 100.5}
+        - {x: -125.5, y: 102.5}
+    - name: baddead_1
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 0
+        width: 265
+        height: 293
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 104.5, y: 116.5}
+        - {x: 73.5, y: 111.5}
+        - {x: 75.5, y: 65.5}
+        - {x: 73.5, y: 79.5}
+        - {x: 61.5, y: 121.5}
+        - {x: 114.5, y: 125.5}
+        - {x: 116.5, y: 127.5}
+        - {x: 116.5, y: 140.5}
+        - {x: 94.5, y: 146.5}
+        - {x: 1.5, y: 146.5}
+        - {x: 1.5, y: 59.5}
+        - {x: 4.5, y: 48.5}
+        - {x: 70.5, y: -146.5}
+        - {x: 111.5, y: -146.5}
+        - {x: 132.5, y: -122.5}
+        - {x: 132.5, y: -29.5}
+        - {x: 115.5, y: 106.5}
+    - name: baddead_2
+      rect:
+        serializedVersion: 2
+        x: 530
+        y: 0
+        width: 265
+        height: 293
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -34.5, y: -40.5}
+        - {x: 74.5, y: -146.5}
+        - {x: 132.5, y: -146.5}
+        - {x: 132.5, y: 64.5}
+        - {x: 122.5, y: 111.5}
+        - {x: 118.5, y: 112.5}
+        - {x: 41.5, y: 112.5}
+        - {x: -34.5, y: 12.5}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

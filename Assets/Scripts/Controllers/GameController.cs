@@ -9,6 +9,7 @@ public class GameController : Singleton<GameController> {
     public StatisticsController stats;
     public bool lastDuel { get; private set; }
     public bool victory { get; private set; } //true if player won last duel
+    public bool victoryDeathDuel { get; private set; } //true if player won and it was a death duel
     //everytime the player loses a regular duel, start a death duel
     //if the player wins death duel, restart previous duel, else, game over.
     public bool isDeathDuel { get; private set; }
@@ -24,6 +25,9 @@ public class GameController : Singleton<GameController> {
 
     private List<Duel> duels = new List<Duel>();
     private IEnumerator<Duel> duelEnumerator;
+
+    private List<Duel> deathDuels = new List<Duel>();
+    private IEnumerator<Duel> deathDuelsEnumerator;
 
     private List<Contract> contracts = new List<Contract>();
     private IEnumerator<Contract> contractEnumerator;
@@ -55,6 +59,15 @@ public class GameController : Singleton<GameController> {
         LoadPlayers();
         LoadEnemies();
         LoadDeathEnemies();
+        LoadDeathDuels();
+    }
+
+    private void LoadDeathDuels() {
+        var container = new DuelXMLContainer("deathDuels");
+        container.Load();
+        this.deathDuels = container.duels;
+        deathDuelsEnumerator = deathDuels.GetEnumerator();
+        deathDuelsEnumerator.MoveNext();
     }
 
     private void LoadDuels() {
@@ -97,19 +110,23 @@ public class GameController : Singleton<GameController> {
         deathEnumerator.MoveNext();
     }
 
-    public Duel GetDuel() {
-        return duelEnumerator.Current;
-    }
-
     public Contract GetContract() {
         return contractEnumerator.Current;
     }
 
-    public Enemy GetEnemy() {
+    public Duel GetDuel() {
         if (!isDeathDuel) {
-            return enemyEnumerator.Current;
+            return duelEnumerator.Current;
         } else {
+            return deathDuelsEnumerator.Current;
+        }
+    }
+
+    public Enemy GetEnemy() {
+        if (isDeathDuel) {
             return deathEnumerator.Current;
+        } else {
+            return enemyEnumerator.Current;
         }
     }
 
@@ -130,8 +147,11 @@ public class GameController : Singleton<GameController> {
     }
 
     private void SetNextDuel() {
-        lastDuel = !duelEnumerator.MoveNext();
-        print(duelEnumerator.Current.background);
+        if (!isDeathDuel) {
+            lastDuel = !duelEnumerator.MoveNext();
+        } else {
+            deathDuelsEnumerator.MoveNext(); //repeats last one until player is dead.
+        }
     }
 
     private void SetNextContract() {
@@ -148,6 +168,7 @@ public class GameController : Singleton<GameController> {
             victory = false;
             if (isDeathDuel) {
                 NewGame();
+                victoryDeathDuel = false;
                 print("Player died. Forever.");
             } else {
                 isDeathDuel = true;
@@ -156,8 +177,10 @@ public class GameController : Singleton<GameController> {
         } else {
             print("Player won!");
             victory = true;
+            victoryDeathDuel = true;
             isDeathDuel = false;
         }
+
         SceneManager.LoadScene(SceneNames.DUEL_STATISTICS);
     }
 
@@ -176,6 +199,9 @@ public class GameController : Singleton<GameController> {
 
         duelEnumerator = duels.GetEnumerator();
         duelEnumerator.MoveNext();
+
+        deathDuelsEnumerator = deathDuels.GetEnumerator();
+        deathDuelsEnumerator.MoveNext();
     }
 
 }

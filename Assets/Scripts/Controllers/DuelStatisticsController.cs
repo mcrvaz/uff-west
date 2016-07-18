@@ -22,16 +22,16 @@ public class DuelStatisticsController : MonoBehaviour {
 
     public void Continue() {
         if (gameController.victory) {
-            if (gameController.lastDuel) {
-                EndGame();
+            if (gameController.lastDuel) {      
+                EndGame(); //player won and it's the last duel, should finish the game.
             } else {
-                NextContract();
+                NextContract(); //player won and there is still another duel ahead.
             }
         } else {
             if (gameController.isDeathDuel) {
-                GameOver();
+                GameOver(); //player lost, and lost a death duel, should be game over.
             } else {
-                DeathDuel();
+                DeathDuel(); //player lost a common duel, should start a death duel.
             }
         }
     }
