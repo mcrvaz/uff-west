@@ -6,11 +6,18 @@ public class RevolverCylinderController : MonoBehaviour {
     [HideInInspector]
     public bool isReloading;
 
-    private int index = 1; //index 0 should be the empty cylinder
+    private int index = 0; //index 0 should be the empty cylinder
     private SpriteRenderer[] bullets;
+    private Animator animator;
 
     void Awake() {
-        bullets = GetComponentsInChildren<SpriteRenderer>();
+        var goBullets = GameObject.FindGameObjectsWithTag("Bullet");
+        bullets = new SpriteRenderer[goBullets.Length];
+        for (int i = 0; i < goBullets.Length; i++) {
+            bullets[i] = goBullets[i].GetComponent<SpriteRenderer>();
+        }
+        print(bullets.Length);
+        animator = GetComponent<Animator>();
     }
 
     void OnMouseDown() {
@@ -18,6 +25,7 @@ public class RevolverCylinderController : MonoBehaviour {
         if (index == bullets.Length) {
             index--;
             isReloading = true;
+            animator.SetBool("blinking", isReloading);
         }
         //GAMBIARRA
 
@@ -35,6 +43,7 @@ public class RevolverCylinderController : MonoBehaviour {
         } else {
             index--;
             isReloading = true;
+            animator.SetBool("blinking", isReloading);
         }
     }
 
@@ -46,6 +55,7 @@ public class RevolverCylinderController : MonoBehaviour {
         if (index == 0) {
             index++;
             isReloading = false;
+            animator.SetBool("blinking", isReloading);
         }
     }
 

@@ -4,7 +4,7 @@
   
     <Player characterName="First Player">
       <health>100</health>
-      <damage>100</damage>
+      <damage>5</damage>
       <prefab>Papaco</prefab>
       <Dialogs>
         <Dialog>
@@ -18,7 +18,7 @@
     
     <Player characterName="Second Player">
       <health>100</health>
-      <damage>100</damage>
+      <damage>5</damage>
       <prefab>Papaco</prefab>
       <Dialogs>
         <Dialog>
@@ -32,7 +32,7 @@
 	
     <Player characterName="Third Player">
       <health>100</health>
-      <damage>100</damage>
+      <damage>5</damage>
       <prefab>Papaco</prefab>
       <Dialogs>
         <Dialog>

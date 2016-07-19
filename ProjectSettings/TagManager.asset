@@ -12,6 +12,7 @@ TagManager:
   - PlayerHealthBar
   - EnemyHealthBar
   - RevolverCylinder
+  - Bullet
   layers:
   - Default
   - TransparentFX
