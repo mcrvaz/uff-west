@@ -166,7 +166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9262467b2b4fbf84390ed52519217d61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterName: 
+  characterName: BadDead
   health: 100
   damage: 1
   invulnerable: 0

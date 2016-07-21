@@ -6,8 +6,8 @@
       <health>100</health>
       <damage>5</damage>
       <prefab>Enemy</prefab>
-      <minTimeToClick>20</minTimeToClick>
-      <maxTimeToClick>20</maxTimeToClick>
+      <minTimeToClick>0.5</minTimeToClick>
+      <maxTimeToClick>1</maxTimeToClick>
       <Dialogs>
         <Dialog>
             <text>Hello</text>

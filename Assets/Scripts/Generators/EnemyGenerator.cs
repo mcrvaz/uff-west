@@ -27,7 +27,7 @@ public class EnemyGenerator : Generator<Enemy> {
         float newHealth = lastEnemy.health + healthAdd;
         string newPrefab = prefabs[Random.Range(0, prefabs.Count)];
 
-        return new Enemy(
+        lastEnemy = new Enemy(
             characterName: "Dummy",
             damage: newDamage,
             minTimeToClick: newMinTimeToClick,
@@ -35,5 +35,6 @@ public class EnemyGenerator : Generator<Enemy> {
             prefab: newPrefab,
             health: newHealth
         );
+        return lastEnemy;
     }
 }

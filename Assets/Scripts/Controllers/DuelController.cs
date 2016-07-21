@@ -71,7 +71,9 @@ public class DuelController : MonoBehaviour {
     }
 
     private void SetEnemy(Enemy e) {
-        enemy.characterName = e.characterName;
+        if (e.characterName != null) {
+            enemy.characterName = e.characterName;
+        }
         enemy.damage = e.damage;
         enemy.health = e.health;
         enemy.minTimeToClick = e.minTimeToClick;

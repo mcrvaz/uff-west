@@ -1,12 +1,13 @@
 fileFormatVersion: 2
-guid: 0bb2b3012f77f43489a495ff221fba00
-timeCreated: 1465749872
+guid: ce83c7035c473f24780853faf0bf1aec
+timeCreated: 1469067467
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: character_sheet_0
-    21300002: character_sheet_1
-    21300004: character_sheet_2
+    21300000: enemy_0
+    21300002: enemy_1
+    21300004: enemy_2
+    21300006: enemy_3
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -53,66 +54,77 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: character_sheet_0
+    - name: enemy_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 184
-        height: 244
+        width: 201
+        height: 293
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -73, y: 122}
-        - {x: -92, y: 87}
-        - {x: -92, y: -122}
-        - {x: -11, y: -122}
-        - {x: 54, y: 29}
-        - {x: 54, y: 60}
-        - {x: -7, y: 122}
-    - name: character_sheet_1
+      - - {x: -78.5, y: 146.5}
+        - {x: -100.5, y: 136.5}
+        - {x: -100.5, y: -36.5}
+        - {x: -53.5, y: -146.5}
+        - {x: 96.5, y: -146.5}
+        - {x: 100.5, y: -109.5}
+        - {x: 100.5, y: 146.5}
+    - name: enemy_1
       rect:
         serializedVersion: 2
-        x: 184
+        x: 201
         y: 0
-        width: 184
-        height: 244
+        width: 201
+        height: 293
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -73, y: 122}
-        - {x: -92, y: 87}
-        - {x: -92, y: -122}
-        - {x: -11, y: -122}
-        - {x: 54, y: 29}
-        - {x: 54, y: 60}
-        - {x: -7, y: 122}
-      - - {x: 57, y: 56}
-        - {x: 54, y: 48}
-        - {x: 54, y: 28}
-        - {x: 62, y: 24}
-        - {x: 78, y: 24}
-        - {x: 78, y: 56}
-    - name: character_sheet_2
+      - - {x: 100.5, y: -38.5}
+        - {x: 100.5, y: 102.5}
+        - {x: 86.5, y: 146.5}
+        - {x: -17.5, y: 146.5}
+        - {x: -71.5, y: 128.5}
+        - {x: -71.5, y: 88.5}
+        - {x: 23.5, y: -146.5}
+        - {x: 91.5, y: -146.5}
+    - name: enemy_2
       rect:
         serializedVersion: 2
-        x: 368
+        x: 402
         y: 0
-        width: 184
-        height: 244
+        width: 201
+        height: 293
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -74, y: 122}
-        - {x: -92, y: 93}
-        - {x: -92, y: -122}
-        - {x: -21, y: -122}
-        - {x: 50, y: -8}
-        - {x: 50, y: 120}
-        - {x: 47, y: 122}
+      - - {x: -75.5, y: -122.5}
+        - {x: -55.5, y: -146.5}
+        - {x: 100.5, y: -146.5}
+        - {x: 100.5, y: 146.5}
+        - {x: -20.5, y: 146.5}
+        - {x: -75.5, y: 125.5}
+    - name: enemy_3
+      rect:
+        serializedVersion: 2
+        x: 603
+        y: 0
+        width: 201
+        height: 293
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 99.5, y: 146.5}
+        - {x: -75.5, y: 146.5}
+        - {x: -75.5, y: -146.5}
+        - {x: 87.5, y: -146.5}
+        - {x: 100.5, y: -89.5}
+        - {x: 100.5, y: 135.5}
     outline: []
   spritePackingTag: 
   userData: 

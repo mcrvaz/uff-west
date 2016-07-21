@@ -29,7 +29,6 @@ public class RevolverCylinderController : MonoBehaviour {
         bullets[index].enabled = false;
         if (index < bullets.Length - 1) {
             index++;
-            print(index);
         } else {
             isReloading = true;
             animator.SetBool("blinking", isReloading);
@@ -39,8 +38,6 @@ public class RevolverCylinderController : MonoBehaviour {
     public void Reload() {
         bullets[index].enabled = true;
         index--;
-        print(index);
-        //index 0 is the empty cylinder
         if (index < 0) {
             index++;
             isReloading = false;
