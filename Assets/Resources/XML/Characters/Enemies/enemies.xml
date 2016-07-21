@@ -44,13 +44,7 @@
       <maxTimeToClick>0.55</maxTimeToClick>
       <Dialogs>
         <Dialog>
-            <text>Hello</text>
-            <source>Enemy</source>
-            <phase>Beginning</phase>
-            <sequential>true</sequential>
-        </Dialog>
-        <Dialog>
-            <text>How you doin'?</text>
+            <text>GRRBLLRGGLLL</text>
             <source>Enemy</source>
             <phase>Beginning</phase>
             <sequential>false</sequential>
@@ -66,16 +60,10 @@
       <maxTimeToClick>0.5</maxTimeToClick>
       <Dialogs>
         <Dialog>
-            <text>Hello</text>
+            <text>GET OFF MY DAMN LAWN!</text>
             <source>Enemy</source>
             <phase>Beginning</phase>
             <sequential>true</sequential>
-        </Dialog>
-        <Dialog>
-            <text>How you doin'?</text>
-            <source>Enemy</source>
-            <phase>Beginning</phase>
-            <sequential>false</sequential>
         </Dialog>
       </Dialogs>
     </Enemy>

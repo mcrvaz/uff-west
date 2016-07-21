@@ -4,11 +4,11 @@
   
     <Player characterName="First Player">
       <health>100</health>
-      <damage>5</damage>
+      <damage>500</damage>
       <prefab>Papaco</prefab>
       <Dialogs>
         <Dialog>
-            <text>Howdy partner!</text>
+            <text>U WOT M8</text>
             <source>Player</source>
             <phase>Beginning</phase>
             <sequential>false</sequential>
@@ -18,13 +18,61 @@
     
     <Player characterName="Second Player">
       <health>100</health>
-      <damage>5</damage>
+      <damage>500</damage>
       <prefab>Papaco</prefab>
       <Dialogs>
         <Dialog>
-            <text>Hola!</text>
+            <text>Wow</text>
             <source>Player</source>
             <phase>Beginning</phase>
+            <sequential>false</sequential>
+        </Dialog>
+        <Dialog>
+            <text>This guy is nuts</text>
+            <source>Player</source>
+            <phase>Beginning</phase>
+            <sequential>false</sequential>
+        </Dialog>
+        <Dialog>
+            <text></text>
+            <source>Player</source>
+            <phase>Victory</phase>
+            <sequential>true</sequential>
+        </Dialog>    
+        <Dialog>
+            <text>I know what you're thinking.</text>
+            <source>Player</source>
+            <phase>Victory</phase>
+            <sequential>true</sequential>
+        </Dialog>    
+        <Dialog>        
+            <text>Did he fire six shots</text>
+            <source>Player</source>
+            <phase>Victory</phase>
+            <sequential>true</sequential>
+        </Dialog>
+        <Dialog>        
+            <text>Or only five?</text>
+            <source>Player</source>
+            <phase>Victory</phase>
+            <sequential>true</sequential>
+        </Dialog>
+        <Dialog>
+            <text>Well,</text>
+            <source>Player</source>
+            <phase>Victory</phase>
+            <sequential>false</sequential>
+        </Dialog>
+        <Dialog>
+            <text>Do you feel lucky,</text>
+            <source>Player</source>
+            <phase>Victory</phase>
+            <sequential>false</sequential>
+        </Dialog>
+        <Dialog>
+            <text>Punk?</text>
+            <source>Player</source>
+            <phase>Victory</phase>
             <sequential>false</sequential>
         </Dialog>
       </Dialogs>
@@ -36,7 +84,13 @@
       <prefab>Papaco</prefab>
       <Dialogs>
         <Dialog>
-            <text>Why is everybody shooting me?</text>
+            <text>Holy fuck!</text>
+            <source>Player</source>
+            <phase>Beginning</phase>
+            <sequential>false</sequential>
+        </Dialog>
+        <Dialog>
+            <text>Why does everybody wants to shoot me?</text>
             <source>Player</source>
             <phase>Beginning</phase>
             <sequential>false</sequential>
