@@ -8,10 +8,10 @@
       <prefab>Papaco</prefab>
       <Dialogs>
         <Dialog>
-            <text>Player 1</text>
+            <text>Howdy partner!</text>
             <source>Player</source>
             <phase>Beginning</phase>
-            <sequential>true</sequential>
+            <sequential>false</sequential>
         </Dialog>
       </Dialogs>
     </Player>
@@ -22,10 +22,10 @@
       <prefab>Papaco</prefab>
       <Dialogs>
         <Dialog>
-            <text>Player 2</text>
+            <text>Hola!</text>
             <source>Player</source>
             <phase>Beginning</phase>
-            <sequential>true</sequential>
+            <sequential>false</sequential>
         </Dialog>
       </Dialogs>
     </Player>
@@ -36,10 +36,10 @@
       <prefab>Papaco</prefab>
       <Dialogs>
         <Dialog>
-            <text>Player 3</text>
+            <text>Why is everybody shooting me?</text>
             <source>Player</source>
             <phase>Beginning</phase>
-            <sequential>true</sequential>
+            <sequential>false</sequential>
         </Dialog>
       </Dialogs>
     </Player>    

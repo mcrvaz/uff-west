@@ -4,42 +4,68 @@
   
     <Player characterName="First Player">
       <health>100</health>
-      <damage>100</damage>
+      <damage>5</damage>
       <prefab>Papaco</prefab>
       <Dialogs>
         <Dialog>
-            <text>RIP</text>
+            <text>What</text>
             <source>Player</source>
             <phase>Beginning</phase>
             <sequential>true</sequential>
+        </Dialog>
+        <Dialog>
+            <text>the</text>
+            <source>Player</source>
+            <phase>Beginning</phase>
+            <sequential>true</sequential>
+        </Dialog>
+        <Dialog>
+            <text>hell</text>
+            <source>Player</source>
+            <phase>Beginning</phase>
+            <sequential>false</sequential>
         </Dialog>
       </Dialogs>
     </Player>
     
     <Player characterName="Second Player">
       <health>100</health>
-      <damage>100</damage>
+      <damage>5</damage>
       <prefab>Papaco</prefab>
       <Dialogs>
         <Dialog>
-            <text>RIP2</text>
+            <text>This again?</text>
             <source>Player</source>
             <phase>Beginning</phase>
-            <sequential>true</sequential>
+            <sequential>false</sequential>
         </Dialog>
       </Dialogs>
     </Player>
 
     <Player characterName="Third Player">
       <health>100</health>
-      <damage>100</damage>
+      <damage>5</damage>
       <prefab>Papaco</prefab>
       <Dialogs>
         <Dialog>
-            <text>RIP3</text>
+            <text>Just kill me already, dude</text>
             <source>Player</source>
             <phase>Beginning</phase>
-            <sequential>true</sequential>
+            <sequential>false</sequential>
+        </Dialog>
+      </Dialogs>
+    </Player>
+    
+    <Player characterName="Fourth Player">
+      <health>100</health>
+      <damage>5</damage>
+      <prefab>Papaco</prefab>
+      <Dialogs>
+        <Dialog>
+            <text>I give up</text>
+            <source>Player</source>
+            <phase>Beginning</phase>
+            <sequential>false</sequential>
         </Dialog>
       </Dialogs>
     </Player>

@@ -7,22 +7,10 @@
       <damage>5</damage>
       <prefab>Enemy</prefab>
       <minTimeToClick>0.3</minTimeToClick>
-      <maxTimeToClick>0.5</maxTimeToClick>
+      <maxTimeToClick>0.6</maxTimeToClick>
       <Dialogs>
         <Dialog>
-            <text>Hello</text>
-            <source>Enemy</source>
-            <phase>Beginning</phase>
-            <sequential>true</sequential>
-        </Dialog>
-        <Dialog>
-            <text>How you doin'?</text>
-            <source>Enemy</source>
-            <phase>Beginning</phase>
-            <sequential>false</sequential>
-        </Dialog>
-        <Dialog>
-            <text>fiudfuiqrijoq</text>
+            <text>UN FORASTERO!</text>
             <source>Enemy</source>
             <phase>Beginning</phase>
             <sequential>false</sequential>
@@ -52,8 +40,8 @@
       <health>100</health>
       <damage>5</damage>
       <prefab>BadDead</prefab>
-      <minTimeToClick>0.2</minTimeToClick>
-      <maxTimeToClick>0.5</maxTimeToClick>
+      <minTimeToClick>0.25</minTimeToClick>
+      <maxTimeToClick>0.55</maxTimeToClick>
       <Dialogs>
         <Dialog>
             <text>Hello</text>

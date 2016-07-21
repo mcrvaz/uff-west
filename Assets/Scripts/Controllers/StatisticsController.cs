@@ -214,13 +214,13 @@ public class StatisticsController : MonoBehaviour {
         var bulletTimeHit = oldStats.playerBulletTimeHit + newStats.playerBulletTimeHit;
         var shots = oldStats.playerShots + newStats.playerShots;
         var timeBetweenShots = oldStats.playerTimeBetweenShots;
-        if (newStats.playerTimeBetweenShots > 0) {
-            timeBetweenShots = (timeBetweenShots + newStats.playerTimeBetweenShots) / 2;
-        }
+        //if (newStats.playerTimeBetweenShots > 0) {
+        timeBetweenShots = (timeBetweenShots + newStats.playerTimeBetweenShots) / 2;
+        //}
         var shotsPerSecond = oldStats.playerShotsPerSecond;
-        if (newStats.playerShotsPerSecond > 0) {
-            shotsPerSecond = (shotsPerSecond + newStats.playerShotsPerSecond) / 2;
-        }
+        //if (newStats.playerShotsPerSecond > 0) {
+        shotsPerSecond = (shotsPerSecond + newStats.playerShotsPerSecond) / 2;
+        //}
 
         return new Statistics(targetsHit, doubleDamageHit, bulletTimeHit, shots, timeBetweenShots, shotsPerSecond);
     }
