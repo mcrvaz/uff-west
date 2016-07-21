@@ -78,6 +78,10 @@ public class TargetController : MonoBehaviour {
         Invoke("DestroySelf", time);
     }
 
+    public void SetAimingAnimation() {
+        animator.SetBool("aiming", true);
+    }
+
     private bool CheckCollision() {
         var hitCollider = Physics2D.OverlapCircle(
             transform.position,

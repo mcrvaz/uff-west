@@ -42,6 +42,7 @@ public class EnemyCharacterController : DuelCharacterController {
         var targets = GetTargets();
         if (targets.Length > 0) {
             selectedTarget = targets[Random.Range(0, targets.Length)];
+            selectedTarget.SetAimingAnimation();
         }
         return selectedTarget;
     }
