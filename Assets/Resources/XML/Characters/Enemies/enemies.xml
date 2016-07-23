@@ -5,7 +5,7 @@
     <Enemy characterName="First Enemy">
       <health>100</health>
       <damage>5</damage>
-      <prefab>Padre</prefab>
+      <prefab>Enemy</prefab>
       <minTimeToClick>0.3</minTimeToClick>
       <maxTimeToClick>0.6</maxTimeToClick>
       <Dialogs>
@@ -61,6 +61,21 @@
         </Dialog>
       </Dialogs>
     </Enemy>
-	
+    
+	<Enemy characterName="Fourth Enemy">
+      <health>100</health>
+      <damage>5</damage>
+      <prefab>Padre</prefab>
+      <minTimeToClick>0.2</minTimeToClick>
+      <maxTimeToClick>0.5</maxTimeToClick>
+      <Dialogs>
+        <Dialog>
+            <text>Repent, sinner!</text>
+            <source>Enemy</source>
+            <phase>Beginning</phase>
+            <sequential>true</sequential>
+        </Dialog>
+      </Dialogs>
+    </Enemy>
   </Enemies>
 </EnemyCollection>
