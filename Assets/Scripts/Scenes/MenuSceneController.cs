@@ -12,8 +12,8 @@ public class MenuSceneController : MonoBehaviour {
 
     private IEnumerator PlayTransition() {
         animator.Play("SlideUp");
-        var animation = animator.GetCurrentAnimatorClipInfo(0)[0].clip;
-        yield return new WaitForSeconds(animation.length);
+        var animation = animator.GetCurrentAnimatorClipInfo(0)[0];
+        yield return new WaitForSeconds(animation.clip.length);
     }
 
     private IEnumerator ChangeScene(string sceneName) {

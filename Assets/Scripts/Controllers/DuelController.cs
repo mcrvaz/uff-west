@@ -1,11 +1,13 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 using System.Collections.Generic;
 
 public class DuelController : MonoBehaviour {
 
     public float timeLimit;
     public Image background;
+    public Animator countdownAnimator;
     private bool duelFinished; //sorry
     private StatisticsController stats;
     private DuelCharacterController player;
@@ -152,18 +154,33 @@ public class DuelController : MonoBehaviour {
         }
     }
 
-    public void StartDuelPhase() {
+    private IEnumerator _StartDuelPhase() {
+        countdownAnimator.SetTrigger("startCountdown");
+        //var animation = countdownAnimator.GetCurrentAnimatorStateInfo(0);
+        //yield return new WaitForSeconds(animation.length);
+        yield return new WaitForSeconds(3); //workaround, for some reason its not working
+
         timer.StartTimer();
         foreach (var s in spawners) {
             s.enabled = true;
         }
     }
 
-    public void EndDuelPhase() {
+    public void StartDuelPhase() {
+        StartCoroutine(_StartDuelPhase());
+    }
+
+    private IEnumerator _EndDuelPhase() {
+        yield return null;
+
         timer.PauseTimer();
         foreach (var s in spawners) {
             Destroy(s);
         }
+    }
+
+    public void EndDuelPhase() {
+        StartCoroutine(_EndDuelPhase());
     }
 
     public void TargetExpired(TargetController target) {
