@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: MaskedBanditAnim
+  m_Controller: {fileID: 9100000, guid: b966439ee9f552c438ab92101ca891bc, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: ec5e209bade94b946bf5d46d2e49dbae, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: f6bc56d16acbb3d4c9823a31fe15150d, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 188ebf733cacc9d439c2cfefaf71132a, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 4b9190b9c6de22345a4333a6243386a6, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: ec447c599d1f67443be55728e091848a, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 4f5c4877bc75bac429f5860b7df43098, type: 2}

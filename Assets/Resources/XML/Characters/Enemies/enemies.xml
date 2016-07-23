@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="Windows-1252"?>
 <EnemyCollection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Enemies>
-
+  
     <Enemy characterName="First Enemy">
       <health>100</health>
       <damage>5</damage>
@@ -33,6 +33,34 @@
     <Enemy characterName="Second Enemy">
       <health>100</health>
       <damage>5</damage>
+      <prefab>MaskedBandit</prefab>
+      <minTimeToClick>0.3</minTimeToClick>
+      <maxTimeToClick>0.6</maxTimeToClick>
+      <Dialogs>
+        <Dialog>
+            <text>UN FORASTERO!</text>
+            <source>Enemy</source>
+            <phase>Beginning</phase>
+            <sequential>false</sequential>
+        </Dialog>
+        <Dialog>
+            <text>EZ GAME</text>
+            <source>Enemy</source>
+            <phase>Victory</phase>
+            <sequential>false</sequential>
+        </Dialog>
+        <Dialog>
+            <text>:(</text>
+            <source>Enemy</source>
+            <phase>Defeat</phase>
+            <sequential>false</sequential>
+        </Dialog>
+      </Dialogs>
+    </Enemy>
+
+    <Enemy characterName="Third Enemy">
+      <health>100</health>
+      <damage>5</damage>
       <prefab>BadDead</prefab>
       <minTimeToClick>0.25</minTimeToClick>
       <maxTimeToClick>0.55</maxTimeToClick>
@@ -46,7 +74,7 @@
       </Dialogs>
     </Enemy>
 	
-    <Enemy characterName="Third Enemy">
+    <Enemy characterName="Fourth Enemy">
       <health>100</health>
       <damage>5</damage>
       <prefab>OldGuy</prefab>
@@ -62,7 +90,7 @@
       </Dialogs>
     </Enemy>
     
-	<Enemy characterName="Fourth Enemy">
+	<Enemy characterName="Fifth Enemy">
       <health>100</health>
       <damage>5</damage>
       <prefab>Padre</prefab>
@@ -78,4 +106,5 @@
       </Dialogs>
     </Enemy>
   </Enemies>
+  
 </EnemyCollection>

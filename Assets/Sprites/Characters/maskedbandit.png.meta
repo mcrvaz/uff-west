@@ -1,0 +1,198 @@
+fileFormatVersion: 2
+guid: 634bbe031657fe745a5b71fe1a099d18
+timeCreated: 1469294384
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: maskedbandit_0
+    21300002: maskedbandit_1
+    21300004: maskedbandit_2
+    21300006: maskedbandit_3
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: maskedbandit_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 224
+        height: 292
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 74, y: 144}
+        - {x: 48, y: 144}
+        - {x: 45, y: 139}
+        - {x: 46, y: 98}
+        - {x: 48, y: 96}
+        - {x: 52, y: 96}
+        - {x: 54, y: 98}
+        - {x: 54, y: 100}
+        - {x: 58, y: 100}
+        - {x: 54, y: 99}
+        - {x: 54, y: 92}
+        - {x: 42, y: 95}
+        - {x: -112, y: 69}
+        - {x: -112, y: 28}
+        - {x: -2, y: -123}
+        - {x: 33, y: -146}
+        - {x: 112, y: -146}
+        - {x: 112, y: 89}
+        - {x: 91, y: 137}
+      - - {x: -101, y: 28}
+        - {x: -102, y: 26}
+        - {x: -102, y: 18}
+        - {x: -100, y: 16}
+        - {x: -91, y: 16}
+        - {x: -90, y: 18}
+        - {x: -90, y: 25}
+        - {x: -93, y: 28}
+      - - {x: -88, y: 36}
+        - {x: -90, y: 34}
+        - {x: -90, y: 30}
+        - {x: -88, y: 28}
+        - {x: -80, y: 28}
+        - {x: -78, y: 30}
+        - {x: -78, y: 34}
+        - {x: -80, y: 36}
+      - - {x: -76, y: 72}
+        - {x: -78, y: 70}
+        - {x: -78, y: 66}
+        - {x: -76, y: 64}
+        - {x: -68, y: 64}
+        - {x: -66, y: 66}
+        - {x: -66, y: 70}
+        - {x: -68, y: 72}
+    - name: maskedbandit_1
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 0
+        width: 224
+        height: 292
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 91, y: 137}
+        - {x: 73, y: 144}
+        - {x: 48, y: 144}
+        - {x: 45, y: 139}
+        - {x: 46, y: 98}
+        - {x: 48, y: 96}
+        - {x: 52, y: 96}
+        - {x: 54, y: 98}
+        - {x: 54, y: 100}
+        - {x: 58, y: 100}
+        - {x: 54, y: 99}
+        - {x: 54, y: 92}
+        - {x: 44, y: 92}
+        - {x: 42, y: 90}
+        - {x: -33, y: 124}
+        - {x: -58, y: 120}
+        - {x: -58, y: 91}
+        - {x: -17, y: 44}
+        - {x: 45, y: -146}
+        - {x: 107, y: -146}
+        - {x: 112, y: -42}
+        - {x: 112, y: 88}
+    - name: maskedbandit_2
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 0
+        width: 224
+        height: 292
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 41, y: 144}
+        - {x: 38, y: 142}
+        - {x: 46, y: 98}
+        - {x: 48, y: 96}
+        - {x: 52, y: 96}
+        - {x: 54, y: 98}
+        - {x: 54, y: 100}
+        - {x: 58, y: 100}
+        - {x: 54, y: 99}
+        - {x: 54, y: 92}
+        - {x: 46, y: 95}
+        - {x: -62, y: 58}
+        - {x: -62, y: 41}
+        - {x: -60, y: 40}
+        - {x: -19, y: -146}
+        - {x: 102, y: -146}
+        - {x: 112, y: -86}
+        - {x: 112, y: 118}
+        - {x: 93, y: 144}
+    - name: maskedbandit_3
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 0
+        width: 224
+        height: 292
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 98, y: 144}
+        - {x: -15, y: 144}
+        - {x: -62, y: 127}
+        - {x: -62, y: -73}
+        - {x: -31, y: -146}
+        - {x: 106, y: -146}
+        - {x: 112, y: -61}
+        - {x: 112, y: 107}
+        - {x: 103, y: 141}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

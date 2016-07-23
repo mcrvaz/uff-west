@@ -8,7 +8,8 @@ public class EnemyGenerator : Generator<Enemy> {
     private float healthAdd, damageAdd, minTimeToClickAdd, maxTimeToClickAdd;
     private List<string> prefabs = new List<string>(new string[] {
         CharacterConstants.ENEMY, CharacterConstants.BADDEAD,
-        CharacterConstants.OLD_GUY, CharacterConstants.PADRE
+        CharacterConstants.OLD_GUY, CharacterConstants.PADRE,
+        CharacterConstants.MASKED_BANDIT
     });
 
     public EnemyGenerator(

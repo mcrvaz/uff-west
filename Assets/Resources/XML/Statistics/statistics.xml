@@ -5,7 +5,7 @@
     <playerDoubleDamageHit>7</playerDoubleDamageHit>
     <playerBulletTimeHit>10</playerBulletTimeHit>
     <playerShots>347</playerShots>
-    <playerTimeBetweenShots>15.7501059</playerTimeBetweenShots>
-    <playerShotsPerSecond>60.24269</playerShotsPerSecond>
+    <playerTimeBetweenShots>7.875053</playerTimeBetweenShots>
+    <playerShotsPerSecond>30.1213455</playerShotsPerSecond>
   </stats>
 </Statistics>

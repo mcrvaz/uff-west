@@ -6,4 +6,5 @@
     public const string PAPACO = "Papaco";
     public const string OLD_GUY = "OldGuy";
     public const string PADRE = "Padre";
+    public const string MASKED_BANDIT = "MaskedBandit";
 }
