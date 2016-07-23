@@ -46,7 +46,7 @@ public class GameController : Singleton<GameController> {
 
     #region Endless
     private PlayerGenerator playerGenerator = new PlayerGenerator(
-        damage: 5f, health: 100f
+        damage: 500f, health: 100f
     );
     private Player endlessPlayer;
 

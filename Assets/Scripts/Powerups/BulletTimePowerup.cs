@@ -19,7 +19,7 @@ public class BulletTimePowerup : TimedTargetController {
         Time.timeScale = currentSlowFactor;
     }
 
-    void ResetTimeScale() {
+    public void ResetTimeScale() {
         Time.timeScale = 1;
     }
 

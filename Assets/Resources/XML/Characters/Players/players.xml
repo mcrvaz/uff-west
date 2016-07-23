@@ -4,7 +4,7 @@
   
     <Player characterName="First Player">
       <health>100</health>
-      <damage>5</damage>
+      <damage>500</damage>
       <prefab>Papaco</prefab>
       <Dialogs>
         <Dialog>
@@ -32,13 +32,7 @@
             <source>Player</source>
             <phase>Beginning</phase>
             <sequential>false</sequential>
-        </Dialog>
-        <Dialog>
-            <text></text>
-            <source>Player</source>
-            <phase>Victory</phase>
-            <sequential>true</sequential>
-        </Dialog>    
+        </Dialog> 
         <Dialog>
             <text>I know what you're thinking.</text>
             <source>Player</source>
@@ -90,7 +84,7 @@
             <sequential>false</sequential>
         </Dialog>
         <Dialog>
-            <text>Why does everybody wants to shoot me?</text>
+            <text>Why does everybody want to shoot me?</text>
             <source>Player</source>
             <phase>Beginning</phase>
             <sequential>false</sequential>

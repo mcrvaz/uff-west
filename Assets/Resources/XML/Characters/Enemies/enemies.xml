@@ -16,12 +16,6 @@
             <sequential>false</sequential>
         </Dialog>
         <Dialog>
-            <text>empty</text> <!-- Must be empty and sequential if phase is victory -->
-            <source>Enemy</source>
-            <phase>Victory</phase>
-            <sequential>true</sequential>
-        </Dialog>
-        <Dialog>
             <text>EZ GAME</text>
             <source>Enemy</source>
             <phase>Victory</phase>

@@ -7,8 +7,9 @@ public class DuelController : MonoBehaviour {
 
     public float timeLimit;
     public Image background;
-    public Animator countdownAnimator;
-    private bool duelFinished; //sorry
+    public Animator countdownAnimator, endingAnimator;
+
+    private bool duelFinished;
     private StatisticsController stats;
     private DuelCharacterController player;
     private Player loadedPlayer;
@@ -170,17 +171,14 @@ public class DuelController : MonoBehaviour {
         StartCoroutine(_StartDuelPhase());
     }
 
-    private IEnumerator _EndDuelPhase() {
-        yield return null;
+    public void EndDuelPhase() {
+        Time.timeScale = 1; //if duel end with bulletime activated
+        player.revolver.gameObject.SetActive(false);
 
         timer.PauseTimer();
         foreach (var s in spawners) {
             Destroy(s);
         }
-    }
-
-    public void EndDuelPhase() {
-        StartCoroutine(_EndDuelPhase());
     }
 
     public void TargetExpired(TargetController target) {
@@ -192,11 +190,15 @@ public class DuelController : MonoBehaviour {
         }
     }
 
-    public void EndDuel() {
+    public IEnumerator EndDuel() {
         EndDuelPhase();
+
         stats.timeElapsed = timer.currentTime; //statistics
         stats.timeRemaining = timeLimit - timer.currentTime; //statistics
         winner = player.health > enemy.health ? player : enemy;
+
+        endingAnimator.SetTrigger("ending");
+        yield return new WaitForSeconds(2);
 
         if (winner == player) {
             victoryDialog.enabled = true;
@@ -218,7 +220,7 @@ public class DuelController : MonoBehaviour {
     private void RegisterShot(DuelCharacterController source, DuelCharacterController destiny) {
         var damage = ApplyDoubleDamage(source);
         if (destiny.TakeDamage(damage) <= 0) {
-            EndDuel();
+            StartCoroutine(EndDuel());
         }
     }
 
@@ -268,12 +270,14 @@ public class DuelController : MonoBehaviour {
     }
 
     public void RegisterEnemyBulletTime(BulletTimePowerup bt) {
+        bt.ResetTimeScale();
         stats.enemyBulletTimeHit++; //statistics
         enemy.Fire();
         bt.SetBulletTime(bt.enemySlowFactor);
     }
 
     public bool RegisterPlayerBulletTime(BulletTimePowerup bt) {
+        bt.ResetTimeScale();
         stats.playerBulletTimeHit++;
         player.Fire();
         bt.SetBulletTime(bt.playerSlowFactor);

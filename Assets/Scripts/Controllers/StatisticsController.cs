@@ -138,7 +138,7 @@ public class StatisticsController : MonoBehaviour {
             playerTimeBetweenShots = 0;
             return playerTimeBetweenShots;
         }
-        playerTimeBetweenShots = 1000 / playerShotsPerSecond;
+        playerTimeBetweenShots = 1 / playerShotsPerSecond;
         return playerTimeBetweenShots;
     }
 
@@ -147,7 +147,7 @@ public class StatisticsController : MonoBehaviour {
             enemyTimeBetweenShots = 0;
             return enemyTimeBetweenShots;
         }
-        enemyTimeBetweenShots = 1000 / enemyShotsPerSecond;
+        enemyTimeBetweenShots = 1 / enemyShotsPerSecond;
         return enemyTimeBetweenShots;
     }
 
@@ -160,7 +160,7 @@ public class StatisticsController : MonoBehaviour {
             return playerShotsPerSecond;
         }
 
-        playerShotsPerSecond = shots / (shootingTime / 1000f);
+        playerShotsPerSecond = shots / shootingTime;
         return playerShotsPerSecond;
     }
 
@@ -172,7 +172,7 @@ public class StatisticsController : MonoBehaviour {
             return enemyShotsPerSecond;
         }
 
-        enemyShotsPerSecond = shots / (shootingTime / 1000f);
+        enemyShotsPerSecond = shots / shootingTime;
         return enemyShotsPerSecond;
     }
 
