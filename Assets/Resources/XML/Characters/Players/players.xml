@@ -4,7 +4,7 @@
   
     <Player characterName="First Player">
       <health>100</health>
-      <damage>500</damage>
+      <damage>5</damage>
       <prefab>Papaco</prefab>
       <Dialogs>
         <Dialog>

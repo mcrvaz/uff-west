@@ -5,7 +5,7 @@
     <Enemy characterName="First Enemy">
       <health>100</health>
       <damage>5</damage>
-      <prefab>Enemy</prefab>
+      <prefab>Padre</prefab>
       <minTimeToClick>0.3</minTimeToClick>
       <maxTimeToClick>0.6</maxTimeToClick>
       <Dialogs>

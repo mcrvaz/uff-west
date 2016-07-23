@@ -1,0 +1,191 @@
+fileFormatVersion: 2
+guid: 5a30a3937329ca640bc5a6b65ddf1fdd
+timeCreated: 1469290230
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: padre_0
+    21300002: padre_1
+    21300004: padre_2
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: padre_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 240
+        height: 292
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 95, y: 146}
+        - {x: 56, y: 146}
+        - {x: 42, y: 133}
+        - {x: 41, y: 125}
+        - {x: 55, y: 111}
+        - {x: 60, y: 112}
+        - {x: 62, y: 114}
+        - {x: 62, y: 112}
+        - {x: 60, y: 112}
+        - {x: 58, y: 111}
+        - {x: -50, y: 60}
+        - {x: -50, y: 35}
+        - {x: 4, y: 6}
+        - {x: 11, y: -114}
+        - {x: 36, y: -146}
+        - {x: 120, y: -146}
+        - {x: 120, y: 119}
+        - {x: 118, y: 143}
+    - name: padre_1
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 0
+        width: 240
+        height: 292
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 95, y: 146}
+        - {x: 56, y: 146}
+        - {x: 42, y: 133}
+        - {x: 41, y: 125}
+        - {x: 55, y: 111}
+        - {x: 60, y: 112}
+        - {x: 62, y: 114}
+        - {x: 62, y: 112}
+        - {x: 60, y: 112}
+        - {x: 58, y: 111}
+        - {x: -102, y: 61}
+        - {x: -114, y: 56}
+        - {x: -114, y: 27}
+        - {x: 11, y: -146}
+        - {x: 120, y: -146}
+        - {x: 120, y: 119}
+        - {x: 118, y: 143}
+      - - {x: -32, y: 16}
+        - {x: -34, y: 14}
+        - {x: -34, y: 6}
+        - {x: -32, y: 4}
+        - {x: -24, y: 4}
+        - {x: -22, y: 6}
+        - {x: -22, y: 14}
+        - {x: -24, y: 16}
+      - - {x: -8, y: 20}
+        - {x: -10, y: 18}
+        - {x: -10, y: 14}
+        - {x: -8, y: 12}
+        - {x: 0, y: 12}
+        - {x: 2, y: 14}
+        - {x: 2, y: 18}
+        - {x: 0, y: 20}
+      - - {x: -84, y: 28}
+        - {x: -86, y: 26}
+        - {x: -86, y: 18}
+        - {x: -84, y: 16}
+        - {x: -76, y: 16}
+        - {x: -74, y: 18}
+        - {x: -74, y: 26}
+        - {x: -76, y: 28}
+      - - {x: -72, y: 36}
+        - {x: -74, y: 34}
+        - {x: -74, y: 30}
+        - {x: -72, y: 28}
+        - {x: -64, y: 28}
+        - {x: -62, y: 30}
+        - {x: -62, y: 34}
+        - {x: -64, y: 36}
+      - - {x: -88, y: 68}
+        - {x: -90, y: 67}
+        - {x: -90, y: 56}
+        - {x: -83, y: 56}
+        - {x: -82, y: 58}
+        - {x: -82, y: 66}
+        - {x: -83, y: 68}
+      - - {x: -60, y: 72}
+        - {x: -62, y: 70}
+        - {x: -62, y: 66}
+        - {x: -60, y: 64}
+        - {x: -52, y: 64}
+        - {x: -50, y: 66}
+        - {x: -50, y: 70}
+        - {x: -52, y: 72}
+    - name: padre_2
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 240
+        height: 292
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 80, y: 146}
+        - {x: 36, y: 146}
+        - {x: 26, y: 133}
+        - {x: 25, y: 125}
+        - {x: 39, y: 111}
+        - {x: 44, y: 112}
+        - {x: 46, y: 114}
+        - {x: 46, y: 112}
+        - {x: 44, y: 112}
+        - {x: 42, y: 110}
+        - {x: -58, y: 65}
+        - {x: -58, y: -33}
+        - {x: 0, y: -146}
+        - {x: 120, y: -146}
+        - {x: 120, y: 113}
+        - {x: 99, y: 141}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
