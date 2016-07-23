@@ -9,7 +9,7 @@ public class DuelCharacterController : MonoBehaviour {
     public float damage;
     public bool invulnerable;
     [HideInInspector]
-    public int hasPowerup; //tells how many empowered shots are left
+    public int hasPowerup; //how many empowered shots are left
     [HideInInspector]
     public RevolverCylinderController revolver;
 

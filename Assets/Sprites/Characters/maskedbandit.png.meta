@@ -30,7 +30,7 @@ TextureImporter:
   cubemapConvolutionSteps: 7
   cubemapConvolutionExponent: 1.5
   seamlessCubemap: 0
-  textureFormat: -3
+  textureFormat: -1
   maxTextureSize: 2048
   textureSettings:
     filterMode: -1
@@ -78,9 +78,9 @@ TextureImporter:
         - {x: 54, y: 92}
         - {x: 42, y: 95}
         - {x: -112, y: 69}
-        - {x: -112, y: 28}
-        - {x: -2, y: -123}
-        - {x: 33, y: -146}
+        - {x: -112, y: 34}
+        - {x: -66, y: 21}
+        - {x: -22, y: -146}
         - {x: 112, y: -146}
         - {x: 112, y: 89}
         - {x: 91, y: 137}
