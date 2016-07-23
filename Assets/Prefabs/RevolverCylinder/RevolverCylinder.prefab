@@ -9,7 +9,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 476052}
   - 212: {fileID: 21295914}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: 5_cylinder
   m_TagString: Bullet
   m_Icon: {fileID: 0}
@@ -25,7 +25,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 457480}
   - 212: {fileID: 21288734}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: empty_cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 476414}
   - 212: {fileID: 21276406}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: 2_cylinder
   m_TagString: Bullet
   m_Icon: {fileID: 0}
@@ -59,7 +59,7 @@ GameObject:
   - 58: {fileID: 5882798}
   - 114: {fileID: 11457148}
   - 95: {fileID: 9523174}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: RevolverCylinder
   m_TagString: RevolverCylinder
   m_Icon: {fileID: 0}
@@ -75,7 +75,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 421368}
   - 212: {fileID: 21220018}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: 1_cylinder
   m_TagString: Bullet
   m_Icon: {fileID: 0}
@@ -91,7 +91,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 431732}
   - 212: {fileID: 21297852}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: 6_cylinder
   m_TagString: Bullet
   m_Icon: {fileID: 0}
@@ -107,7 +107,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 495312}
   - 212: {fileID: 21234762}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: blink_anim
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -123,7 +123,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 458476}
   - 212: {fileID: 21263124}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: 4_cylinder
   m_TagString: Bullet
   m_Icon: {fileID: 0}
@@ -139,7 +139,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 440170}
   - 212: {fileID: 21261440}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: 3_cylinder
   m_TagString: Bullet
   m_Icon: {fileID: 0}

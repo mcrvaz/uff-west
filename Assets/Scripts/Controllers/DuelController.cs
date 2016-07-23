@@ -244,15 +244,10 @@ public class DuelController : MonoBehaviour {
     }
 
     public bool RegisterPlayerDoubleDamage(DoubleDamagePowerup dd) {
-        var canShoot = CanShoot();
-        if (canShoot) {
-            stats.playerDoubleDamageHit++; //statistics
-            player.Fire();
-            player.hasPowerup = dd.numberOfShots;
-        } else {
-            //play empty sound
-        }
-        return canShoot;
+        stats.playerDoubleDamageHit++; //statistics
+        player.Fire();
+        player.hasPowerup = dd.numberOfShots;
+        return true; //can always hit powerups, doesnt consume ammo
     }
 
     public void RegisterEnemyBulletTime(BulletTimePowerup bt) {
@@ -262,13 +257,10 @@ public class DuelController : MonoBehaviour {
     }
 
     public bool RegisterPlayerBulletTime(BulletTimePowerup bt) {
-        var canShoot = CanShoot();
-        if (canShoot) {
-            stats.playerBulletTimeHit++;
-            player.Fire();
-            bt.SetBulletTime(bt.playerSlowFactor);
-        }
-        return canShoot;
+        stats.playerBulletTimeHit++;
+        player.Fire();
+        bt.SetBulletTime(bt.playerSlowFactor);
+        return true; //can always hit powerups, doesnt consume ammo
     }
 
     public void RegisterEnemyEvasion(EvasionTargetController ev) {
