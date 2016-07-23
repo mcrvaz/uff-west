@@ -1,0 +1,132 @@
+fileFormatVersion: 2
+guid: 1b2e0301233d46c47b8de1d2f09a43bb
+timeCreated: 1469246765
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: oldguy_0
+    21300002: oldguy_1
+    21300004: oldguy_2
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: oldguy_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 241
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 72.5, y: 124}
+        - {x: 70.5, y: 123}
+        - {x: 62.5, y: 124}
+        - {x: -120.5, y: 124}
+        - {x: -120.5, y: 87}
+        - {x: -111.5, y: 64}
+        - {x: -109.5, y: 62}
+        - {x: -97.5, y: 31}
+        - {x: -84.5, y: 17}
+        - {x: 41.5, y: 21}
+        - {x: 55.5, y: -128}
+        - {x: 119.5, y: -128}
+        - {x: 120.5, y: -116}
+        - {x: 120.5, y: 97}
+        - {x: 105.5, y: 124}
+      - - {x: -120.5, y: 128}
+        - {x: -120.5, y: 121}
+        - {x: -114.5, y: 121}
+        - {x: -112.5, y: 123}
+        - {x: -112.5, y: 128}
+    - name: oldguy_1
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 0
+        width: 241
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 120.5, y: 83}
+        - {x: 106.5, y: 118}
+        - {x: 99.5, y: 128}
+        - {x: 61.5, y: 128}
+        - {x: -36.5, y: 56}
+        - {x: -36.5, y: -9}
+        - {x: 56.5, y: -128}
+        - {x: 120.5, y: -128}
+    - name: oldguy_2
+      rect:
+        serializedVersion: 2
+        x: 482
+        y: 0
+        width: 241
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 72.5, y: 124}
+        - {x: 70.5, y: 123}
+        - {x: 68.5, y: 81}
+        - {x: -34.5, y: 48}
+        - {x: -35.5, y: 45}
+        - {x: -35.5, y: 36}
+        - {x: -31.5, y: 32}
+        - {x: -4.5, y: -128}
+        - {x: 120.5, y: -128}
+        - {x: 120.5, y: 96}
+        - {x: 105.5, y: 124}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

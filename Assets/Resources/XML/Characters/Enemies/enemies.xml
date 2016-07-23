@@ -55,7 +55,7 @@
     <Enemy characterName="Third Enemy">
       <health>100</health>
       <damage>5</damage>
-      <prefab>Hellboy</prefab>
+      <prefab>OldGuy</prefab>
       <minTimeToClick>0.2</minTimeToClick>
       <maxTimeToClick>0.5</maxTimeToClick>
       <Dialogs>
