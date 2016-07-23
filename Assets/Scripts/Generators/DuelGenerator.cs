@@ -5,6 +5,8 @@ public class DuelGenerator : Generator<Duel> {
 
     public Duel lastDuel { get; private set; }
 
+    private float newTimeLimit, newTargetMinTime, newTargetMaxTime, newEvadeMinTime, newEvadeMaxTime, newPowerupMinTime, newPowerupMaxTime;
+
     private List<string> backgrounds = new List<string>(new string[] {
         BackgroundConstants.MAP_0,BackgroundConstants.MAP_1,
         BackgroundConstants.MAP_2,BackgroundConstants.MAP_3,
@@ -15,16 +17,30 @@ public class DuelGenerator : Generator<Duel> {
 
     public DuelGenerator() { }
 
+    public DuelGenerator(
+        float newTimeLimit,
+        float newTargetMinTime, float newTargetMaxTime,
+        float newEvadeMinTime, float newEvadeMaxTime,
+        float newPowerupMinTime, float newPowerupMaxTime) {
+        this.newTimeLimit = newTimeLimit;
+        this.newTargetMinTime = newTargetMinTime;
+        this.newTargetMaxTime = newTargetMaxTime;
+        this.newEvadeMinTime = newEvadeMinTime;
+        this.newEvadeMaxTime = newEvadeMaxTime;
+        this.newPowerupMinTime = newPowerupMinTime;
+        this.newPowerupMaxTime = newPowerupMaxTime;
+    }
+
     public Duel Generate() {
         lastDuel = new Duel(
-            timeLimit: 30f,
+            timeLimit: this.newTimeLimit,
             background: backgrounds[Random.Range(0, backgrounds.Count)],
-            targetMinTime: 2f,
-            targetMaxTime: 2f,
-            evadeMinTime: 2f,
-            evadeMaxTime: 2f,
-            powerupMinTime: 2f,
-            powerupMaxTime: 2f
+            targetMinTime: this.newTargetMinTime,
+            targetMaxTime: this.newTargetMaxTime,
+            evadeMinTime: this.newEvadeMinTime,
+            evadeMaxTime: this.newEvadeMaxTime,
+            powerupMinTime: this.newPowerupMinTime,
+            powerupMaxTime: this.newPowerupMaxTime
         );
         return lastDuel;
     }
