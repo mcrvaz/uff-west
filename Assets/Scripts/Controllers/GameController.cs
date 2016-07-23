@@ -9,14 +9,19 @@ public class GameController : Singleton<GameController> {
     // guarantee this will be always a singleton only - can't use the constructor!
     protected GameController() { }
 
+    #region Control
     public StatisticsController stats;
     public bool lastDuel { get; private set; }
     public bool victory { get; private set; } //true if player won last duel
     //everytime the player loses a regular duel, start a death duel
     //if the player wins death duel, restart previous duel, else, game over.
     public bool isDeathDuel { get; set; }
-    public GameMode gameMode;
+    public GameMode gameMode = GameMode.Story;
+    public bool modalActive;
+    private GameObject quitModal;
+    #endregion
 
+    #region Story
     private List<Enemy> enemies = new List<Enemy>();
     private IEnumerator<Enemy> enemyEnumerator;
 
@@ -37,9 +42,31 @@ public class GameController : Singleton<GameController> {
 
     private List<Contract> contracts = new List<Contract>();
     private IEnumerator<Contract> contractEnumerator;
+    #endregion
 
-    private GameObject quitModal;
-    public bool modalActive;
+    #region Endless
+    private PlayerGenerator playerGenerator = new PlayerGenerator(
+        damage: 5f, health: 100f
+    );
+    private Player endlessPlayer;
+
+    private DuelGenerator duelGenerator = new DuelGenerator(
+        newTimeLimit: 30,
+        newTargetMinTime: 0.2f, newTargetMaxTime: 0.5f,
+        newEvadeMinTime: 1f, newEvadeMaxTime: 3f,
+        newPowerupMinTime: 2f, newPowerupMaxTime: 5f
+    );
+    private Duel endlessDuel;
+
+    private EnemyGenerator enemyGenerator = new EnemyGenerator(
+        healthAdd: 0, damageAdd: 0,
+        minTimeToClickAdd: 0.1f, maxTimeToClickAdd: 0.1f
+    );
+    private Enemy endlessEnemy;
+
+    private ContractGenerator contractGenerator = new ContractGenerator();
+    private Contract endlessContract;
+    #endregion
 
     void Awake() {
         quitModal = Resources.Load("Prefabs/ModalCanvas") as GameObject;
@@ -65,7 +92,7 @@ public class GameController : Singleton<GameController> {
                 return;
             }
         }
-        throw new System.Exception("Invalid enum name.");
+        throw new System.Exception("Invalid enumerator name.");
     }
 
     public void OpenQuitModal() {
@@ -94,6 +121,8 @@ public class GameController : Singleton<GameController> {
         this.duels = container.duels;
         duelEnumerator = duels.GetEnumerator();
         duelEnumerator.MoveNext();
+
+        endlessDuel = duelGenerator.Generate();
     }
 
     private void LoadContracts() {
@@ -102,6 +131,8 @@ public class GameController : Singleton<GameController> {
         this.contracts = container.contracts;
         contractEnumerator = contracts.GetEnumerator();
         contractEnumerator.MoveNext();
+
+        endlessContract = contractGenerator.Generate();
     }
 
     private void LoadPlayers() {
@@ -110,6 +141,8 @@ public class GameController : Singleton<GameController> {
         this.players = container.players;
         playerEnumerator = players.GetEnumerator();
         playerEnumerator.MoveNext();
+
+        endlessPlayer = playerGenerator.Generate();
     }
 
     private void LoadDeathPlayers() {
@@ -126,6 +159,8 @@ public class GameController : Singleton<GameController> {
         this.enemies = container.enemies;
         enemyEnumerator = enemies.GetEnumerator();
         enemyEnumerator.MoveNext();
+
+        endlessEnemy = enemyGenerator.Generate();
     }
 
     private void LoadDeathEnemies() {
@@ -137,10 +172,44 @@ public class GameController : Singleton<GameController> {
     }
 
     public Contract GetContract() {
+        switch (gameMode) {
+            case GameMode.Endless:
+                return GetEndlessContract();
+            case GameMode.Story:
+                return GetStoryContract();
+            default:
+                return null;
+        }
+    }
+
+    private Contract GetEndlessContract() {
+        return endlessContract;
+    }
+
+    private Contract GetStoryContract() {
         return contractEnumerator.Current;
     }
 
     public Duel GetDuel() {
+        switch (gameMode) {
+            case GameMode.Endless:
+                return GetEndlessDuel();
+            case GameMode.Story:
+                return GetStoryDuel();
+            default:
+                return null;
+        }
+    }
+
+    private Duel GetEndlessDuel() {
+        if (!isDeathDuel) {
+            return endlessDuel;
+        } else {
+            return deathDuelEnumerator.Current;
+        }
+    }
+
+    private Duel GetStoryDuel() {
         if (!isDeathDuel) {
             return duelEnumerator.Current;
         } else {
@@ -149,6 +218,25 @@ public class GameController : Singleton<GameController> {
     }
 
     public Enemy GetEnemy() {
+        switch (gameMode) {
+            case GameMode.Endless:
+                return GetEndlessEnemy();
+            case GameMode.Story:
+                return GetStoryEnemy();
+            default:
+                return null;
+        }
+    }
+
+    private Enemy GetEndlessEnemy() {
+        if (isDeathDuel) {
+            return deathEnemyEnumerator.Current;
+        } else {
+            return endlessEnemy;
+        }
+    }
+
+    private Enemy GetStoryEnemy() {
         if (isDeathDuel) {
             return deathEnemyEnumerator.Current;
         } else {
@@ -157,6 +245,25 @@ public class GameController : Singleton<GameController> {
     }
 
     public Player GetPlayer() {
+        switch (gameMode) {
+            case GameMode.Endless:
+                return GetEndlessPlayer();
+            case GameMode.Story:
+                return GetStoryPlayer();
+            default:
+                return null;
+        }
+    }
+
+    private Player GetEndlessPlayer() {
+        if (isDeathDuel) {
+            return deathPlayerEnumerator.Current;
+        } else {
+            return endlessPlayer;
+        }
+    }
+
+    private Player GetStoryPlayer() {
         if (isDeathDuel) {
             return deathPlayerEnumerator.Current;
         } else {
@@ -176,7 +283,11 @@ public class GameController : Singleton<GameController> {
     }
 
     private void SetNextPlayerEndless() {
-        playerEnumerator.MoveNext();
+        if (!isDeathDuel) {
+            endlessPlayer = playerGenerator.Generate();
+        } else {
+            deathPlayerEnumerator.MoveNext();
+        }
     }
 
     private void SetNextPlayerStory() {
@@ -200,7 +311,7 @@ public class GameController : Singleton<GameController> {
 
     private void SetNextEnemyEndless() {
         if (!isDeathDuel) {
-            enemyEnumerator.MoveNext();
+            endlessEnemy = enemyGenerator.Generate();
         } else {
             deathEnemyEnumerator.MoveNext();
         }
@@ -227,9 +338,9 @@ public class GameController : Singleton<GameController> {
 
     private void SetNextDuelEndless() {
         if (!isDeathDuel) {
-            lastDuel = !duelEnumerator.MoveNext();
+            endlessDuel = duelGenerator.Generate();
         } else {
-            deathDuelEnumerator.MoveNext(); //repeats last one until player is dead.
+            deathDuelEnumerator.MoveNext(); //repeat last one until player is dead.
         }
     }
 
@@ -237,7 +348,7 @@ public class GameController : Singleton<GameController> {
         if (!isDeathDuel) {
             lastDuel = !duelEnumerator.MoveNext();
         } else {
-            deathDuelEnumerator.MoveNext(); //repeats last one until player is dead.
+            deathDuelEnumerator.MoveNext(); //repeat last one until player is dead.
         }
     }
 
@@ -254,7 +365,7 @@ public class GameController : Singleton<GameController> {
 
     private void SetNextContractEndless() {
         if (!isDeathDuel) {
-            contractEnumerator.MoveNext();
+            endlessContract = contractGenerator.Generate();
         }
     }
 
@@ -287,6 +398,8 @@ public class GameController : Singleton<GameController> {
     }
 
     public void NewGame() {
+        enemyGenerator.Reset();
+
         contractEnumerator.Reset();
         contractEnumerator.MoveNext();
 

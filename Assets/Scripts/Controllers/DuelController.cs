@@ -89,8 +89,13 @@ public class DuelController : MonoBehaviour {
     }
 
     private void SetDialogs(List<SpeechText> playerDialogs, List<SpeechText> enemyDialogs) {
+        if (playerDialogs == null || enemyDialogs == null) {
+            return;
+        }
+
         bool playerHasNext = true, enemyHasNext = true;
         SpeechText currentDialog;
+
         var playerEnumerator = playerDialogs.GetEnumerator();
         var enemyEnumerator = enemyDialogs.GetEnumerator();
         playerEnumerator.MoveNext();

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="Windows-1252"?>
 <Statistics xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <stats>
-    <playerTargetsHit>29</playerTargetsHit>
+    <playerTargetsHit>91</playerTargetsHit>
     <playerDoubleDamageHit>0</playerDoubleDamageHit>
     <playerBulletTimeHit>0</playerBulletTimeHit>
-    <playerShots>29</playerShots>
-    <playerTimeBetweenShots>28.5836716</playerTimeBetweenShots>
-    <playerShotsPerSecond>36.0862961</playerShotsPerSecond>
+    <playerShots>91</playerShots>
+    <playerTimeBetweenShots>5.90508747</playerTimeBetweenShots>
+    <playerShotsPerSecond>437.883484</playerShotsPerSecond>
   </stats>
 </Statistics>

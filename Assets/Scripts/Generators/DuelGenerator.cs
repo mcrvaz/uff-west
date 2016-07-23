@@ -3,10 +3,7 @@ using System.Collections.Generic;
 
 public class DuelGenerator : Generator<Duel> {
 
-    public Duel lastDuel { get; private set; }
-
     private float newTimeLimit, newTargetMinTime, newTargetMaxTime, newEvadeMinTime, newEvadeMaxTime, newPowerupMinTime, newPowerupMaxTime;
-
     private List<string> backgrounds = new List<string>(new string[] {
         BackgroundConstants.MAP_0,BackgroundConstants.MAP_1,
         BackgroundConstants.MAP_2,BackgroundConstants.MAP_3,
@@ -14,8 +11,6 @@ public class DuelGenerator : Generator<Duel> {
         BackgroundConstants.MAP_7, BackgroundConstants.MAP_8,
         BackgroundConstants.MAP_9, BackgroundConstants.MAP_10
     });
-
-    public DuelGenerator() { }
 
     public DuelGenerator(
         float newTimeLimit,
@@ -32,7 +27,7 @@ public class DuelGenerator : Generator<Duel> {
     }
 
     public Duel Generate() {
-        lastDuel = new Duel(
+        return new Duel(
             timeLimit: this.newTimeLimit,
             background: backgrounds[Random.Range(0, backgrounds.Count)],
             targetMinTime: this.newTargetMinTime,
@@ -42,6 +37,5 @@ public class DuelGenerator : Generator<Duel> {
             powerupMinTime: this.newPowerupMinTime,
             powerupMaxTime: this.newPowerupMaxTime
         );
-        return lastDuel;
     }
 }

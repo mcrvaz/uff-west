@@ -6,18 +6,21 @@
       <name>1º</name>
       <crime>Knows Nothing</crime>
       <reward>$200.00</reward>
+      <facePrefab>EnemyFace</facePrefab>
     </Contract>
 
     <Contract>
       <name>2º</name>
       <crime>Terrorism</crime>
       <reward>$500.00</reward>
+      <facePrefab>EnemyFace</facePrefab>
 	</Contract>
 	
 	<Contract>
       <name>3º</name>
       <crime>Terrorism</crime>
       <reward>$500.00</reward>
+      <facePrefab>EnemyFace</facePrefab>
 	</Contract>
 	
   </Contracts>
