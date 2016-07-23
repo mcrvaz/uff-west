@@ -76,4 +76,8 @@ public class MenuSceneController : MonoBehaviour {
         StartCoroutine(ChangeScene(SceneNames.END_GAME));
     }
 
+    public void PreDeathDuel() {
+        StartCoroutine(ChangeScene(SceneNames.PRE_DEATH_DUEL));
+    }
+
 }

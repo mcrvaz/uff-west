@@ -47,7 +47,8 @@ public class DuelStatisticsController : MonoBehaviour {
 
     private void DeathDuel() {
         gameController.isDeathDuel = true;
-        menu.Duel(); //skips the contract
+        menu.PreDeathDuel();
+        //menu.Duel(); //skips the contract
     }
 
     private void GameOver() {

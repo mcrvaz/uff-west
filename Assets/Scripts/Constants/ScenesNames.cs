@@ -1,7 +1,4 @@
-﻿using UnityEngine;
-using System.Collections;
-
-public class SceneNames : MonoBehaviour {
+﻿public class SceneNames {
 
     public const string MAIN_MENU = "MainMenu";
     public const string INSTRUCTIONS = "Instructions";
@@ -14,6 +11,6 @@ public class SceneNames : MonoBehaviour {
     public const string GAME_OVER = "GameOver";
     public const string CREDITS = "Credits";
     public const string END_GAME = "EndGame";
-
+    public const string PRE_DEATH_DUEL = "PreDeath";
 
 }

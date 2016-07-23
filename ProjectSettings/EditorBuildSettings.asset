@@ -27,3 +27,5 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu/Credits.unity
   - enabled: 1
     path: Assets/Scenes/Menu/EndGame.unity
+  - enabled: 1
+    path: Assets/Scenes/Duel/PreDeath.unity
