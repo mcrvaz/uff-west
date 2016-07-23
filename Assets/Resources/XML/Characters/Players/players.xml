@@ -91,6 +91,48 @@
         </Dialog>
       </Dialogs>
     </Player>
-  
+    
+    <Player characterName="Fourth Player">
+      <health>100</health>
+      <damage>5</damage>
+      <prefab>Papaco</prefab>
+      <Dialogs>
+        <Dialog>
+            <text>Holy fuck!</text>
+            <source>Player</source>
+            <phase>Beginning</phase>
+            <sequential>false</sequential>
+        </Dialog>
+      </Dialogs>
+    </Player>
+    
+    <Player characterName="Fifth Player">
+      <health>100</health>
+      <damage>5</damage>
+      <prefab>Papaco</prefab>
+      <Dialogs>
+        <Dialog>
+            <text>Holy fuck!</text>
+            <source>Player</source>
+            <phase>Beginning</phase>
+            <sequential>false</sequential>
+        </Dialog>
+      </Dialogs>
+    </Player>
+    
+    <Player characterName="Sixth Player">
+      <health>100</health>
+      <damage>5</damage>
+      <prefab>Papaco</prefab>
+      <Dialogs>
+        <Dialog>
+            <text>Holy fuck!</text>
+            <source>Player</source>
+            <phase>Beginning</phase>
+            <sequential>false</sequential>
+        </Dialog>
+      </Dialogs>
+    </Player>
+    
   </Players>
 </PlayerCollection>

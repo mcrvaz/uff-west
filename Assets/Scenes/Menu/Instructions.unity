@@ -205,6 +205,10 @@ Prefab:
       propertyPath: m_Text
       value: Reload until it's full
       objectReference: {fileID: 0}
+    - target: {fileID: 22474846, guid: b1f9f8bf0f4aed5408c4011bdbfa43b7, type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 70
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b1f9f8bf0f4aed5408c4011bdbfa43b7, type: 2}
   m_IsPrefabParent: 0
@@ -499,6 +503,10 @@ Prefab:
     - target: {fileID: 11452534, guid: b1f9f8bf0f4aed5408c4011bdbfa43b7, type: 2}
       propertyPath: m_Text
       value: Hide from incoming bullets
+      objectReference: {fileID: 0}
+    - target: {fileID: 22474846, guid: b1f9f8bf0f4aed5408c4011bdbfa43b7, type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 70
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b1f9f8bf0f4aed5408c4011bdbfa43b7, type: 2}
@@ -799,6 +807,10 @@ Prefab:
       propertyPath: m_Text
       value: Next 2 shots deals double damage
       objectReference: {fileID: 0}
+    - target: {fileID: 22474846, guid: b1f9f8bf0f4aed5408c4011bdbfa43b7, type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 70
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b1f9f8bf0f4aed5408c4011bdbfa43b7, type: 2}
   m_IsPrefabParent: 0
@@ -914,6 +926,10 @@ Prefab:
     - target: {fileID: 11452534, guid: b1f9f8bf0f4aed5408c4011bdbfa43b7, type: 2}
       propertyPath: m_Text
       value: Slow motion for 2 seconds
+      objectReference: {fileID: 0}
+    - target: {fileID: 22474846, guid: b1f9f8bf0f4aed5408c4011bdbfa43b7, type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 70
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b1f9f8bf0f4aed5408c4011bdbfa43b7, type: 2}
@@ -1084,11 +1100,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11452534, guid: b1f9f8bf0f4aed5408c4011bdbfa43b7, type: 2}
       propertyPath: m_Text
-      value: Shoot the oponent
+      value: Shoot the opponent
       objectReference: {fileID: 0}
     - target: {fileID: 158018, guid: b1f9f8bf0f4aed5408c4011bdbfa43b7, type: 2}
       propertyPath: m_Name
       value: InstructionElement - Target
+      objectReference: {fileID: 0}
+    - target: {fileID: 22474846, guid: b1f9f8bf0f4aed5408c4011bdbfa43b7, type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 70
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b1f9f8bf0f4aed5408c4011bdbfa43b7, type: 2}
