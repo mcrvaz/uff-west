@@ -1,6 +1,14 @@
 ﻿using UnityEngine;
+using System;
+using System.Collections.Generic;
 
 public class RevolverCylinderController : MonoBehaviour {
+
+    public class SpriteNameComparer : IComparer<SpriteRenderer> {
+        public int Compare(SpriteRenderer x, SpriteRenderer y) {
+            return x.name.CompareTo(y.name);
+        }
+    }
 
     [HideInInspector]
     public bool isReloading;
@@ -15,6 +23,7 @@ public class RevolverCylinderController : MonoBehaviour {
         for (int i = 0; i < goBullets.Length; i++) {
             bullets[i] = goBullets[i].GetComponent<SpriteRenderer>();
         }
+        SortBullets(); //or they might not be in order
         animator = GetComponent<Animator>();
     }
 
@@ -24,6 +33,11 @@ public class RevolverCylinderController : MonoBehaviour {
         }
     }
 
+    private void SortBullets() {
+        SpriteNameComparer comparer = new SpriteNameComparer();
+        Array.Sort(bullets, comparer);
+    }
+
     public void Fire() {
         //return; //skips revolver
         bullets[index].enabled = false;
@@ -31,7 +45,7 @@ public class RevolverCylinderController : MonoBehaviour {
             index++;
         } else {
             isReloading = true;
-            animator.SetBool("blinking", isReloading);
+            animator.SetBool("reloading", isReloading);
         }
     }
 
@@ -41,7 +55,7 @@ public class RevolverCylinderController : MonoBehaviour {
         if (index < 0) {
             index++;
             isReloading = false;
-            animator.SetBool("blinking", isReloading);
+            animator.SetBool("reloading", isReloading);
         }
     }
 

@@ -86,7 +86,7 @@ public class TargetController : MonoBehaviour {
         var hitCollider = Physics2D.OverlapCircle(
             transform.position,
             targetCollider.radius,
-            1 << LayerMask.NameToLayer("Targets")
+            (1 << LayerMask.NameToLayer("Targets") | 1 << LayerMask.NameToLayer("RevolverCylinder"))
         );
         return hitCollider != null;
     }
