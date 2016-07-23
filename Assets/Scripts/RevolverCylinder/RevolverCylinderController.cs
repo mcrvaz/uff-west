@@ -31,7 +31,7 @@ public class RevolverCylinderController : MonoBehaviour {
             index++;
         } else {
             isReloading = true;
-            animator.SetBool("blinking", isReloading);
+            animator.SetBool("reloading", isReloading);
         }
     }
 
@@ -41,7 +41,7 @@ public class RevolverCylinderController : MonoBehaviour {
         if (index < 0) {
             index++;
             isReloading = false;
-            animator.SetBool("blinking", isReloading);
+            animator.SetBool("reloading", isReloading);
         }
     }
 
