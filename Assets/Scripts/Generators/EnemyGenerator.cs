@@ -52,4 +52,40 @@ public class EnemyGenerator : Generator<Enemy> {
         );
         return lastEnemy;
     }
+
+    public Enemy Generate(string facePrefab) {
+        float newDamage = lastEnemy.damage + damageAdd;
+        float newMinTimeToClick = lastEnemy.minTimeToClick - minTimeToClickAdd;
+        float newMaxTimeToClick = lastEnemy.maxTimeToClick - maxTimeToClickAdd;
+        float newHealth = lastEnemy.health + healthAdd;
+
+        lastEnemy = new Enemy(
+            characterName: "Dummy",
+            damage: newDamage,
+            minTimeToClick: newMinTimeToClick,
+            maxTimeToClick: newMaxTimeToClick,
+            prefab: GetEnemyPrefab(facePrefab),
+            health: newHealth
+        );
+        return lastEnemy;
+    }
+
+    private string GetEnemyPrefab(string facePrefab) {
+        switch (facePrefab) {
+            case ContractConstants.BOSS_FACE:
+                return CharacterConstants.BOSS;
+            case ContractConstants.BAD_DEAD_FACE:
+                return CharacterConstants.BADDEAD;
+            case ContractConstants.ENEMY_FACE:
+                return CharacterConstants.ENEMY;
+            case ContractConstants.MASKED_BANDIT_FACE:
+                return CharacterConstants.MASKED_BANDIT;
+            case ContractConstants.OLD_GUY_FACE:
+                return CharacterConstants.OLD_GUY;
+            case ContractConstants.PADRE_FACE:
+                return CharacterConstants.PADRE;
+            default:
+                return null;
+        }
+    }
 }

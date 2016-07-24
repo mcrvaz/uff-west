@@ -16,6 +16,8 @@ public class ContractController : MonoBehaviour {
         enemyName.text = contract.name;
         reward.text = contract.reward;
         crime.text = contract.crime;
+        print(contract.facePrefab);
+        enemyFace.sprite = Resources.Load<Sprite>("Faces/" + contract.facePrefab);
     }
 
 }

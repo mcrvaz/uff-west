@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="Windows-1252"?>
 <GameStates xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <state>
-    <level>2</level>
-    <deathLevel>1</deathLevel>
+    <level>0</level>
+    <deathLevel>0</deathLevel>
     <lastDuel>false</lastDuel>
     <isDeathDuel>false</isDeathDuel>
     <endlessDuel>
       <timeLimit>30</timeLimit>
-      <background>map-8</background>
+      <background>map-2</background>
       <targetMinTime>0.2</targetMinTime>
       <targetMaxTime>0.5</targetMaxTime>
       <evadeMinTime>1</evadeMinTime>
@@ -28,10 +28,10 @@
       <damage>500</damage>
     </endlessPlayer>
     <endlessContract>
-      <name>Dude</name>
-      <facePrefab>face</facePrefab>
-      <crime>Murder</crime>
-      <reward>$300</reward>
+      <name>Paul Atreides</name>
+      <facePrefab>boss-face</facePrefab>
+      <crime>Army Deserter</crime>
+      <reward>$500</reward>
     </endlessContract>
   </state>
 </GameStates>

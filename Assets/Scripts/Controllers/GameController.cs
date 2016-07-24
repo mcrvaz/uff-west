@@ -16,7 +16,7 @@ public class GameController : Singleton<GameController> {
     //everytime the player loses a regular duel, start a death duel
     //if the player wins death duel, restart previous duel, else, game over.
     public bool isDeathDuel { get; set; }
-    public GameMode gameMode = GameMode.Story;
+    public GameMode gameMode = GameMode.Endless;
     public bool modalActive;
     private GameObject quitModal, menuModal;
     private int currentLevel;
@@ -79,9 +79,9 @@ public class GameController : Singleton<GameController> {
     void Awake() {
         quitModal = Resources.Load("Prefabs/ModalCanvas") as GameObject;
         menuModal = Resources.Load("Prefabs/MenuModalCanvas") as GameObject;
-        LoadCharacters();
-        LoadDuels();
         LoadContracts();
+        LoadDuels();
+        LoadCharacters();
     }
 
     void Update() {
@@ -211,7 +211,7 @@ public class GameController : Singleton<GameController> {
         enemyEnumerator = enemies.GetEnumerator();
         enemyEnumerator.MoveNext();
 
-        endlessEnemy = enemyGenerator.Generate();
+        endlessEnemy = enemyGenerator.Generate(endlessContract.facePrefab);
     }
 
     private void LoadDeathEnemies() {
@@ -362,7 +362,7 @@ public class GameController : Singleton<GameController> {
 
     private void SetNextEnemyEndless() {
         if (!isDeathDuel) {
-            endlessEnemy = enemyGenerator.Generate();
+            endlessEnemy = enemyGenerator.Generate(endlessContract.facePrefab);
         } else {
             deathEnemyEnumerator.MoveNext();
         }
