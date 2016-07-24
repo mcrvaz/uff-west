@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="Windows-1252"?>
 <GameStates xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <state>
-    <level>5</level>
+    <level>2</level>
     <deathLevel>0</deathLevel>
     <lastDuel>false</lastDuel>
     <isDeathDuel>false</isDeathDuel>
     <endlessDuel>
       <timeLimit>30</timeLimit>
-      <background>map-5</background>
+      <background>map-3</background>
       <targetMinTime>0.2</targetMinTime>
       <targetMaxTime>0.5</targetMaxTime>
       <evadeMinTime>1</evadeMinTime>
@@ -16,7 +16,7 @@
       <powerupMaxTime>5</powerupMaxTime>
     </endlessDuel>
     <endlessEnemy characterName="Default Enemy">
-      <prefab>Enemy</prefab>
+      <prefab>OldGuy</prefab>
       <health>100</health>
       <damage>5</damage>
       <minTimeToClick>1</minTimeToClick>
@@ -28,9 +28,9 @@
       <damage>500</damage>
     </endlessPlayer>
     <endlessContract>
-      <name>"Commander" Shepard</name>
-      <facePrefab>maskedbandit-face</facePrefab>
-      <crime>Army Deserter</crime>
+      <name>Gordon Freeman</name>
+      <facePrefab>padre-face</facePrefab>
+      <crime>Kidnapping</crime>
       <reward>$100</reward>
     </endlessContract>
   </state>
