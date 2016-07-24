@@ -10,6 +10,10 @@ public class PlayerGenerator : Generator<Player> {
         this.newHealth = health;
     }
 
+    public Player Reset() {
+        return Generate();
+    }
+
     public Player Generate() {
         return new Player(
             characterName: "Dummy",

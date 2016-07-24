@@ -196,7 +196,7 @@ public class StatisticsController : MonoBehaviour {
     }
 
     public void SaveXML() {
-        var container = new StatisticsXMLContainer("statistics.xml");
+        var container = new StatisticsXMLContainer("statistics");
         var duelStatsController = GameController.Instance.stats;
         var duelStats = new Statistics(
             duelStatsController.playerTargetsHit, duelStatsController.playerDoubleDamageHit,

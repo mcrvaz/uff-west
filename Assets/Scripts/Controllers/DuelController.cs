@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -91,8 +92,12 @@ public class DuelController : MonoBehaviour {
         playerDialogs = p.dialogs;
     }
 
+    private bool IsNullOrEmpty(List<SpeechText> list) {
+        return list == null || list.Count == 0;
+    }
+
     private void SetDialogs(List<SpeechText> playerDialogs, List<SpeechText> enemyDialogs) {
-        if (playerDialogs == null || enemyDialogs == null) {
+        if (IsNullOrEmpty(playerDialogs) || IsNullOrEmpty(enemyDialogs)) {
             return;
         }
 

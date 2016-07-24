@@ -18,7 +18,15 @@ public class GameController : Singleton<GameController> {
     public bool isDeathDuel { get; set; }
     public GameMode gameMode = GameMode.Story;
     public bool modalActive;
-    private GameObject quitModal;
+    private GameObject quitModal, menuModal;
+    private int currentLevel;
+    private int currentDeathLevel;
+    #endregion
+
+    #region SaveGame
+    private SaveGameController saveGameController = new SaveGameController(
+        new GameStateXMLContainer("saveGame")
+    );
     #endregion
 
     #region Story
@@ -70,15 +78,17 @@ public class GameController : Singleton<GameController> {
 
     void Awake() {
         quitModal = Resources.Load("Prefabs/ModalCanvas") as GameObject;
+        menuModal = Resources.Load("Prefabs/MenuModalCanvas") as GameObject;
         LoadCharacters();
         LoadDuels();
         LoadContracts();
     }
 
     void Update() {
+        //listens to back button
         if (Input.GetKeyUp(KeyCode.Escape)) {
             if (!modalActive) {
-                OpenQuitModal();
+                OpenReturnToMenuModal();
                 modalActive = true;
             }
         }
@@ -97,6 +107,47 @@ public class GameController : Singleton<GameController> {
 
     public void OpenQuitModal() {
         Instantiate(quitModal);
+    }
+
+    public void OpenReturnToMenuModal() {
+        Instantiate(menuModal);
+    }
+
+    public void LoadGame() {
+        var state = saveGameController.currentState;
+
+        this.currentLevel = state.level;
+        for (int i = 0; i < currentLevel; i++) {
+            duelEnumerator.MoveNext();
+            contractEnumerator.MoveNext();
+            playerEnumerator.MoveNext();
+            enemyEnumerator.MoveNext();
+        }
+
+        this.currentDeathLevel = state.deathLevel;
+        for (int i = 0; i < currentDeathLevel; i++) {
+            deathDuelEnumerator.MoveNext();
+            deathEnemyEnumerator.MoveNext();
+            deathPlayerEnumerator.MoveNext();
+        }
+        this.isDeathDuel = state.isDeathDuel;
+        this.lastDuel = state.lastDuel;
+        this.endlessEnemy = state.endlessEnemy;
+        print(endlessEnemy.minTimeToClick);
+        this.endlessPlayer = state.endlessPlayer;
+        this.endlessDuel = state.endlessDuel;
+        this.endlessContract = state.endlessContract;
+    }
+
+    private void SaveGame() {
+        var state = new GameState(
+            level: this.currentLevel, deathLevel: this.currentDeathLevel,
+            lastDuel: this.lastDuel, isDeathDuel: this.isDeathDuel,
+            endlessDuel: this.endlessDuel, endlessEnemy: this.endlessEnemy,
+            endlessPlayer: this.endlessPlayer, endlessContract: this.endlessContract
+        );
+        saveGameController.currentState = state;
+        saveGameController.SaveGame();
     }
 
     private void LoadCharacters() {
@@ -331,6 +382,7 @@ public class GameController : Singleton<GameController> {
                 SetNextDuelEndless();
                 break;
             case GameMode.Story:
+
                 SetNextDuelStory();
                 break;
         }
@@ -346,8 +398,10 @@ public class GameController : Singleton<GameController> {
 
     private void SetNextDuelStory() {
         if (!isDeathDuel) {
+            currentLevel++;
             lastDuel = !duelEnumerator.MoveNext();
         } else {
+            currentDeathLevel++;
             deathDuelEnumerator.MoveNext(); //repeat last one until player is dead.
         }
     }
@@ -380,12 +434,12 @@ public class GameController : Singleton<GameController> {
             victory = false;
             if (isDeathDuel) {
                 NewGame();
-                print("Player died. Forever.");
+                //player just lost a death duel
             } else {
-                print("Player lost!");
+                //player just lost a regular duel
             }
         } else {
-            print("Player won!");
+            //player won
             SetNextDuel();
             SetNextPlayer();
             SetNextEnemy();
@@ -394,6 +448,7 @@ public class GameController : Singleton<GameController> {
             isDeathDuel = false;
         }
 
+        SaveGame();
         SceneManager.LoadScene(SceneNames.DUEL_STATISTICS);
     }
 
@@ -417,6 +472,11 @@ public class GameController : Singleton<GameController> {
 
         deathDuelEnumerator.Reset();
         deathDuelEnumerator.MoveNext();
+
+        endlessContract = contractGenerator.Reset();
+        endlessDuel = duelGenerator.Reset();
+        endlessPlayer = playerGenerator.Reset();
+        endlessEnemy = enemyGenerator.Reset();
     }
 
 }

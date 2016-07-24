@@ -18,7 +18,7 @@ public class StatisticsXMLContainer : XMLContainer<StatisticsXMLContainer, Stati
     }
 
     public void Save() {
-        base.Save(this.path);
+        base.Save(this.path + ".xml");
     }
 
     public void Load() {

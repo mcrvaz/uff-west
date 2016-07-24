@@ -23,6 +23,10 @@ public class ContractGenerator : Generator<Contract> {
         return list[Random.Range(0, list.Count)];
     }
 
+    public Contract Reset() {
+        return Generate();
+    }
+
     public Contract Generate() {
         return new Contract(
             name: GetRandomValue(names),

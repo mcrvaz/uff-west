@@ -29,7 +29,12 @@ public class MenuSceneController : MonoBehaviour {
 
     public void StartGame(string mode) {
         GameController.Instance.SetGameMode(mode);
-        StartCoroutine(ChangeScene(SceneNames.CONTRACT));
+        Contract();
+    }
+
+    public void ContinueGame() {
+        GameController.Instance.LoadGame();
+        GameMode();
     }
 
     public void Instructions() {

@@ -31,8 +31,8 @@ public class EnemyGenerator : Generator<Enemy> {
         lastEnemy = defaultEnemy;
     }
 
-    public void Reset() {
-        lastEnemy = defaultEnemy;
+    public Enemy Reset() {
+        return lastEnemy = defaultEnemy;
     }
 
     public Enemy Generate() {

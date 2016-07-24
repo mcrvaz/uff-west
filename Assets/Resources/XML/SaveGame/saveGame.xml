@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<GameStates xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <state>
+    <level>1</level>
+    <deathLevel>0</deathLevel>
+    <lastDuel>false</lastDuel>
+    <isDeathDuel>false</isDeathDuel>
+    <endlessDuel>
+      <timeLimit>30</timeLimit>
+      <background>map-0</background>
+      <targetMinTime>0.2</targetMinTime>
+      <targetMaxTime>0.5</targetMaxTime>
+      <evadeMinTime>1</evadeMinTime>
+      <evadeMaxTime>3</evadeMaxTime>
+      <powerupMinTime>2</powerupMinTime>
+      <powerupMaxTime>5</powerupMaxTime>
+    </endlessDuel>
+    <endlessEnemy characterName="Dummy">
+      <prefab>MaskedBandit</prefab>
+      <health>100</health>
+      <damage>5</damage>
+      <Dialogs />
+      <minTimeToClick>0.799999952</minTimeToClick>
+      <maxTimeToClick>0.9</maxTimeToClick>
+    </endlessEnemy>
+    <endlessPlayer characterName="Dummy">
+      <prefab>Papaco</prefab>
+      <health>100</health>
+      <damage>500</damage>
+      <Dialogs />
+    </endlessPlayer>
+    <endlessContract>
+      <name>John</name>
+      <facePrefab>face</facePrefab>
+      <crime>Robbery</crime>
+      <reward>$100</reward>
+    </endlessContract>
+  </state>
+</GameStates>

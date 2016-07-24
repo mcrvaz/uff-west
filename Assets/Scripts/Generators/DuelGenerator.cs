@@ -17,6 +17,7 @@ public class DuelGenerator : Generator<Duel> {
         float newTargetMinTime, float newTargetMaxTime,
         float newEvadeMinTime, float newEvadeMaxTime,
         float newPowerupMinTime, float newPowerupMaxTime) {
+
         this.newTimeLimit = newTimeLimit;
         this.newTargetMinTime = newTargetMinTime;
         this.newTargetMaxTime = newTargetMaxTime;
@@ -24,6 +25,10 @@ public class DuelGenerator : Generator<Duel> {
         this.newEvadeMaxTime = newEvadeMaxTime;
         this.newPowerupMinTime = newPowerupMinTime;
         this.newPowerupMaxTime = newPowerupMaxTime;
+    }
+
+    public Duel Reset() {
+        return Generate();
     }
 
     public Duel Generate() {
