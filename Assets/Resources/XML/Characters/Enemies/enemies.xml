@@ -33,7 +33,7 @@
     <Enemy characterName="Second Enemy">
       <health>100</health>
       <damage>5</damage>
-      <prefab>MaskedBandit</prefab>
+      <prefab>OldGuy</prefab>
       <minTimeToClick>0.3</minTimeToClick>
       <maxTimeToClick>0.6</maxTimeToClick>
       <Dialogs>
@@ -61,7 +61,7 @@
     <Enemy characterName="Third Enemy">
       <health>100</health>
       <damage>5</damage>
-      <prefab>BadDead</prefab>
+      <prefab>MaskedBandit</prefab>
       <minTimeToClick>0.25</minTimeToClick>
       <maxTimeToClick>0.55</maxTimeToClick>
       <Dialogs>
@@ -77,7 +77,7 @@
     <Enemy characterName="Fourth Enemy">
       <health>100</health>
       <damage>5</damage>
-      <prefab>OldGuy</prefab>
+      <prefab>BadDead</prefab>
       <minTimeToClick>0.2</minTimeToClick>
       <maxTimeToClick>0.5</maxTimeToClick>
       <Dialogs>

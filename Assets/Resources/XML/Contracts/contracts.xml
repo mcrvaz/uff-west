@@ -6,22 +6,43 @@
       <name>1º</name>
       <crime>Knows Nothing</crime>
       <reward>$200.00</reward>
-      <facePrefab>EnemyFace</facePrefab>
+      <facePrefab>enemy-face</facePrefab>
     </Contract>
 
     <Contract>
       <name>2º</name>
       <crime>Terrorism</crime>
       <reward>$500.00</reward>
-      <facePrefab>EnemyFace</facePrefab>
+      <facePrefab>oldguy-face</facePrefab>
 	</Contract>
 	
 	<Contract>
       <name>3º</name>
       <crime>Terrorism</crime>
       <reward>$500.00</reward>
-      <facePrefab>EnemyFace</facePrefab>
+      <facePrefab>maskedbandit-face</facePrefab>
 	</Contract>
-	
+    
+    <Contract>
+      <name>4º</name>
+      <crime>Terrorism</crime>
+      <reward>$500.00</reward>
+      <facePrefab>baddead-face</facePrefab>
+	</Contract>
+   
+    <Contract>
+      <name>5º</name>
+      <crime>Terrorism</crime>
+      <reward>$500.00</reward>
+      <facePrefab>padre-face</facePrefab>
+	</Contract>
+    
+    <Contract>
+      <name>6º</name>
+      <crime>Gang Leader</crime>
+      <reward>$500.00</reward>
+      <facePrefab>boss-face</facePrefab>
+	</Contract>
+    
   </Contracts>
 </ContractCollection>

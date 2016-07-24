@@ -12,5 +12,7 @@
     public const string MAP_9 = "map-9";
     public const string MAP_10 = "map-10";
     public const string MAP_DEATH = "map-11";
+    public const string MAP_11 = "map11";
+    public const string MAP_12 = "map-12";
 
 }

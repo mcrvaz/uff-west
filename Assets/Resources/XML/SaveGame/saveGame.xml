@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="Windows-1252"?>
 <GameStates xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <state>
-    <level>0</level>
+    <level>5</level>
     <deathLevel>0</deathLevel>
     <lastDuel>false</lastDuel>
     <isDeathDuel>false</isDeathDuel>
     <endlessDuel>
       <timeLimit>30</timeLimit>
-      <background>map-2</background>
+      <background>map-5</background>
       <targetMinTime>0.2</targetMinTime>
       <targetMaxTime>0.5</targetMaxTime>
       <evadeMinTime>1</evadeMinTime>
@@ -15,12 +15,12 @@
       <powerupMinTime>2</powerupMinTime>
       <powerupMaxTime>5</powerupMaxTime>
     </endlessDuel>
-    <endlessEnemy characterName="Dummy">
-      <prefab>Boss</prefab>
+    <endlessEnemy characterName="Default Enemy">
+      <prefab>Enemy</prefab>
       <health>100</health>
       <damage>5</damage>
-      <minTimeToClick>0.9</minTimeToClick>
-      <maxTimeToClick>1</maxTimeToClick>
+      <minTimeToClick>1</minTimeToClick>
+      <maxTimeToClick>1.1</maxTimeToClick>
     </endlessEnemy>
     <endlessPlayer characterName="Dummy">
       <prefab>Papaco</prefab>
@@ -28,10 +28,10 @@
       <damage>500</damage>
     </endlessPlayer>
     <endlessContract>
-      <name>Paul Atreides</name>
-      <facePrefab>boss-face</facePrefab>
+      <name>"Commander" Shepard</name>
+      <facePrefab>maskedbandit-face</facePrefab>
       <crime>Army Deserter</crime>
-      <reward>$500</reward>
+      <reward>$100</reward>
     </endlessContract>
   </state>
 </GameStates>

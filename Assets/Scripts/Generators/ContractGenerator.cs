@@ -24,7 +24,7 @@ public class ContractGenerator : Generator<Contract> {
     });
     private List<string> crimes = new List<string>(new string[] {
         "Murder", "Robbery", "Vandalism",
-        "Rape", "Genocide", "War Crimes",
+        "Rape", "Slavery", "War Crimes",
         "Army Deserter", "Aggression", "Arson",
         "Burglary", "Treason", "Kidnapping"
     });

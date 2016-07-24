@@ -4,7 +4,7 @@
   
     <Player characterName="First Player">
       <health>100</health>
-      <damage>5</damage>
+      <damage>500</damage>
       <prefab>Papaco</prefab>
       <Dialogs>
         <Dialog>
@@ -18,7 +18,7 @@
     
     <Player characterName="Second Player">
       <health>100</health>
-      <damage>5</damage>
+      <damage>500</damage>
       <prefab>Papaco</prefab>
       <Dialogs>
         <Dialog>
@@ -74,7 +74,7 @@
 	
     <Player characterName="Third Player">
       <health>100</health>
-      <damage>5</damage>
+      <damage>500</damage>
       <prefab>Papaco</prefab>
       <Dialogs>
         <Dialog>
@@ -94,7 +94,7 @@
     
     <Player characterName="Fourth Player">
       <health>100</health>
-      <damage>5</damage>
+      <damage>500</damage>
       <prefab>Papaco</prefab>
       <Dialogs>
         <Dialog>
@@ -108,7 +108,7 @@
     
     <Player characterName="Fifth Player">
       <health>100</health>
-      <damage>5</damage>
+      <damage>500</damage>
       <prefab>Papaco</prefab>
       <Dialogs>
         <Dialog>
@@ -122,7 +122,7 @@
     
     <Player characterName="Sixth Player">
       <health>100</health>
-      <damage>5</damage>
+      <damage>500</damage>
       <prefab>Papaco</prefab>
       <Dialogs>
         <Dialog>
