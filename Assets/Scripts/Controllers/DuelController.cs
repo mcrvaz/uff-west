@@ -23,6 +23,8 @@ public class DuelController : MonoBehaviour {
     private ObjectSpawner[] spawners;
 
     void Awake() {
+        GameController.Instance.SaveGame();
+
         LoadPlayer();
         LoadEnemy();
 

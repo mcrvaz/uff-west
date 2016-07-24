@@ -115,6 +115,7 @@ public class GameController : Singleton<GameController> {
 
     public void LoadGame() {
         var state = saveGameController.currentState;
+        ResetEnumerators();
 
         this.currentLevel = state.level;
         for (int i = 0; i < currentLevel; i++) {
@@ -133,13 +134,12 @@ public class GameController : Singleton<GameController> {
         this.isDeathDuel = state.isDeathDuel;
         this.lastDuel = state.lastDuel;
         this.endlessEnemy = state.endlessEnemy;
-        print(endlessEnemy.minTimeToClick);
         this.endlessPlayer = state.endlessPlayer;
         this.endlessDuel = state.endlessDuel;
         this.endlessContract = state.endlessContract;
     }
 
-    private void SaveGame() {
+    public void SaveGame() {
         var state = new GameState(
             level: this.currentLevel, deathLevel: this.currentDeathLevel,
             lastDuel: this.lastDuel, isDeathDuel: this.isDeathDuel,
@@ -452,31 +452,33 @@ public class GameController : Singleton<GameController> {
         SceneManager.LoadScene(SceneNames.DUEL_STATISTICS);
     }
 
-    public void NewGame() {
-        enemyGenerator.Reset();
-
+    private void ResetEnumerators() {
         contractEnumerator.Reset();
-        contractEnumerator.MoveNext();
-
         playerEnumerator.Reset();
-        playerEnumerator.MoveNext();
-
         enemyEnumerator.Reset();
-        enemyEnumerator.MoveNext();
-
         deathEnemyEnumerator.Reset();
-        deathEnemyEnumerator.MoveNext();
-
         duelEnumerator.Reset();
-        duelEnumerator.MoveNext();
-
         deathDuelEnumerator.Reset();
+        contractEnumerator.MoveNext();
+        playerEnumerator.MoveNext();
+        enemyEnumerator.MoveNext();
+        deathEnemyEnumerator.MoveNext();
+        duelEnumerator.MoveNext();
         deathDuelEnumerator.MoveNext();
+    }
+
+    public void NewGame() {
+        ResetEnumerators();
 
         endlessContract = contractGenerator.Reset();
         endlessDuel = duelGenerator.Reset();
         endlessPlayer = playerGenerator.Reset();
         endlessEnemy = enemyGenerator.Reset();
+
+        currentLevel = 0;
+        currentDeathLevel = 0;
+
+        SaveGame();
     }
 
 }

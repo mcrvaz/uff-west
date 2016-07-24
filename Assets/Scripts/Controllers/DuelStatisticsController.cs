@@ -18,6 +18,7 @@ public class DuelStatisticsController : MonoBehaviour {
         victoryText.gameObject.SetActive(gameController.victory);
         defeatText.gameObject.SetActive(!gameController.victory);
         SetStats();
+        gameController.SaveGame();
     }
 
     public void Continue() {

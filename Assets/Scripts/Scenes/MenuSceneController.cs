@@ -28,13 +28,23 @@ public class MenuSceneController : MonoBehaviour {
     }
 
     public void StartGame(string mode) {
-        GameController.Instance.SetGameMode(mode);
-        Contract();
+        var gc = GameController.Instance;
+        gc.SetGameMode(mode);
+        if (gc.isDeathDuel) {
+            this.Duel();
+        } else {
+            this.Contract();
+        }
+    }
+
+    public void NewGame() {
+        GameController.Instance.NewGame();
+        this.GameMode();
     }
 
     public void ContinueGame() {
         GameController.Instance.LoadGame();
-        GameMode();
+        this.GameMode();
     }
 
     public void Instructions() {
