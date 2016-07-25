@@ -19,7 +19,7 @@ public class GameStateXMLContainer : XMLContainer<GameStateXMLContainer, GameSta
     }
 
     public void Save() {
-        base.Save(this.path + ".xml");
+        base.Save(this.path);
     }
 
     public void Load() {

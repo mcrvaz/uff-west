@@ -1,4 +1,6 @@
 ﻿using System.Xml.Serialization;
+
+
 using System.IO;
 using UnityEngine;
 
@@ -12,22 +14,28 @@ public abstract class XMLContainer<T, P> where T : class
 
     protected string basePath = "XML";
 
-    protected void Save(string path) {
+    protected void Save(string fileName) {
         return;
-
         var serializer = new XmlSerializer(typeof(T));
 #if UNITY_EDITOR
-        var combinedPath = Path.Combine(Application.persistentDataPath, "Resources");
+        var combinedPath = Path.Combine(Application.dataPath, "Resources");
 #elif UNITY_ANDROID
         var combinedPath = Path.Combine(Application.persistentDataPath, "Resources");
 #endif
-        combinedPath = Path.Combine(combinedPath, path);
+
+        combinedPath = Path.Combine(combinedPath, fileName);
         if (!Directory.Exists(combinedPath)) {
+            Debug.Log(combinedPath);
             Directory.CreateDirectory(combinedPath);
         }
-        Stream stream = new FileStream(combinedPath, FileMode.Create, FileAccess.Write);
-        serializer.Serialize(stream, this);
-        stream.Close();
+        if (!File.Exists(combinedPath)) {
+            TextAsset xmlAsset = Resources.Load<TextAsset>(fileName);
+            File.WriteAllText(combinedPath + ".xml", xmlAsset.text);
+        }
+
+        //Stream stream = new FileStream(combinedPath, FileMode.Create, FileAccess.Write);
+        //serializer.Serialize(stream, this);
+        //stream.Close();
     }
 
     protected T Load(string path) {
@@ -37,6 +45,16 @@ public abstract class XMLContainer<T, P> where T : class
         T result = serializer.Deserialize(textReader) as T;
         reader.Dispose();
         return result;
+    }
+
+    protected T LoadFromPersistentData(string path) {
+        var serializer = new XmlSerializer(typeof(T));
+        var combinedPath = Path.Combine(Application.persistentDataPath, "Resources");
+        combinedPath = Path.Combine(combinedPath, path + ".xml");
+        Debug.Log("MY PATH: " + combinedPath);
+        using (var stream = new FileStream(combinedPath, FileMode.Open)) {
+            return serializer.Deserialize(stream) as T;
+        }
     }
 
 }
