@@ -26,7 +26,8 @@ public class ContractGenerator : Generator<Contract> {
         "Murder", "Robbery", "Vandalism",
         "Rape", "Slavery", "War Crimes",
         "Army Deserter", "Aggression", "Arson",
-        "Burglary", "Treason", "Kidnapping"
+        "Burglary", "Treason", "Kidnapping",
+        "Mass Murder"
     });
     private List<string> rewards = new List<string>(new string[] {
         "$100", "$200", "$300", "$400", "$500", "$1000"

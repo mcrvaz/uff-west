@@ -14,7 +14,11 @@ public abstract class XMLContainer<T, P> where T : class
 
     protected void Save(string path) {
         var serializer = new XmlSerializer(typeof(T));
+#if UNITY_EDITOR
         var combinedPath = Path.Combine(Application.dataPath, "Resources");
+#elif UNITY_ANDROID || UNITY_IOS
+        var combinedPath = Path.Combine(Application.persistentDataPath, "Resources");
+#endif
         combinedPath = Path.Combine(combinedPath, path);
         Stream stream = new FileStream(combinedPath, FileMode.Create, FileAccess.Write);
         serializer.Serialize(stream, this);

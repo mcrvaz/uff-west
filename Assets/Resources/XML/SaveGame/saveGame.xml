@@ -3,11 +3,11 @@
   <state>
     <level>0</level>
     <deathLevel>0</deathLevel>
-    <lastDuel>true</lastDuel>
+    <lastDuel>false</lastDuel>
     <isDeathDuel>false</isDeathDuel>
     <endlessDuel>
       <timeLimit>30</timeLimit>
-      <background>map-2</background>
+      <background>map-4</background>
       <targetMinTime>0.2</targetMinTime>
       <targetMaxTime>0.5</targetMaxTime>
       <evadeMinTime>1</evadeMinTime>
@@ -16,7 +16,7 @@
       <powerupMaxTime>5</powerupMaxTime>
     </endlessDuel>
     <endlessEnemy characterName="Default Enemy">
-      <prefab>Padre</prefab>
+      <prefab>OldGuy</prefab>
       <health>100</health>
       <damage>5</damage>
       <minTimeToClick>1</minTimeToClick>
@@ -25,13 +25,13 @@
     <endlessPlayer characterName="Dummy">
       <prefab>Papaco</prefab>
       <health>100</health>
-      <damage>500</damage>
+      <damage>5</damage>
     </endlessPlayer>
     <endlessContract>
-      <name>Hari Seldon</name>
-      <facePrefab>maskedbandit-face</facePrefab>
+      <name>Django</name>
+      <facePrefab>enemy-face</facePrefab>
       <crime>Arson</crime>
-      <reward>$1000</reward>
+      <reward>$300</reward>
     </endlessContract>
   </state>
 </GameStates>

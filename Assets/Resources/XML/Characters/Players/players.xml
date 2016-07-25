@@ -4,7 +4,7 @@
   
     <Player characterName="Blue Enemy">
       <health>100</health>
-      <damage>500</damage>
+      <damage>5</damage>
       <prefab>Papaco</prefab>
       <Dialogs>
         <Dialog>
@@ -26,7 +26,7 @@
     
     <Player characterName="Old Guy">
       <health>100</health>
-      <damage>500</damage>
+      <damage>5</damage>
       <prefab>Papaco</prefab>
       <Dialogs>
         <Dialog>
@@ -48,7 +48,7 @@
 	
     <Player characterName="MaskedBandit">
       <health>100</health>
-      <damage>500</damage>
+      <damage>5</damage>
       <prefab>Papaco</prefab>
       <Dialogs>
         <Dialog>
@@ -88,7 +88,7 @@
     
     <Player characterName="BadDead">
       <health>100</health>
-      <damage>500</damage>
+      <damage>5</damage>
       <prefab>Papaco</prefab>
       <Dialogs>
         <Dialog>
@@ -116,7 +116,7 @@
     
     <Player characterName="Padre">
       <health>100</health>
-      <damage>500</damage>
+      <damage>5</damage>
       <prefab>Papaco</prefab>
       <Dialogs>
         <Dialog>
@@ -142,7 +142,7 @@
     
     <Player characterName="Boss">
       <health>100</health>
-      <damage>500</damage>
+      <damage>5</damage>
       <prefab>Papaco</prefab>
       <Dialogs>
         <Dialog>

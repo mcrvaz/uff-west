@@ -18,7 +18,11 @@ public class GameStateXMLContainer : XMLContainer<GameStateXMLContainer, GameSta
     }
 
     public void Save() {
-        base.Save(this.path + ".xml");
+        try {
+            base.Save(this.path + ".xml");
+        } catch (System.Exception e) {
+            UnityEngine.Debug.LogError(e);
+        }
     }
 
     public void Load() {

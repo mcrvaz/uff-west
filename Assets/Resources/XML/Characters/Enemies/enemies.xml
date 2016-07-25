@@ -6,7 +6,7 @@
       <health>100</health>
       <damage>5</damage>
       <prefab>Enemy</prefab>
-      <minTimeToClick>0.3</minTimeToClick>
+      <minTimeToClick>0.35</minTimeToClick>
       <maxTimeToClick>0.6</maxTimeToClick>
       <Dialogs>
       
@@ -69,7 +69,7 @@
       <damage>5</damage>
       <prefab>OldGuy</prefab>
       <minTimeToClick>0.3</minTimeToClick>
-      <maxTimeToClick>0.6</maxTimeToClick>
+      <maxTimeToClick>0.55</maxTimeToClick>
       <Dialogs>
       
         <Dialog>
@@ -106,7 +106,7 @@
       <damage>5</damage>
       <prefab>MaskedBandit</prefab>
       <minTimeToClick>0.25</minTimeToClick>
-      <maxTimeToClick>0.55</maxTimeToClick>
+      <maxTimeToClick>0.5</maxTimeToClick>
       <Dialogs>
         <Dialog>
             <text>Hand over your money</text>
@@ -147,7 +147,7 @@
       <damage>5</damage>
       <prefab>BadDead</prefab>
       <minTimeToClick>0.2</minTimeToClick>
-      <maxTimeToClick>0.5</maxTimeToClick>
+      <maxTimeToClick>0.45</maxTimeToClick>
       <Dialogs>
         <Dialog>
             <text>I heard you've been collecting a lot of bounties</text>
@@ -177,7 +177,7 @@
       <damage>5</damage>
       <prefab>Padre</prefab>
       <minTimeToClick>0.2</minTimeToClick>
-      <maxTimeToClick>0.5</maxTimeToClick>
+      <maxTimeToClick>0.4</maxTimeToClick>
       <Dialogs>
         <Dialog>
             <text>I'm glad to be the one who'll put you down</text>
@@ -217,8 +217,8 @@
       <health>100</health>
       <damage>5</damage>
       <prefab>Boss</prefab>
-      <minTimeToClick>0.2</minTimeToClick>
-      <maxTimeToClick>0.5</maxTimeToClick>
+      <minTimeToClick>0.18</minTimeToClick>
+      <maxTimeToClick>0.38</maxTimeToClick>
       <Dialogs>
         <Dialog>
             <text>I salute you</text>
@@ -251,6 +251,21 @@
             <phase>Victory</phase>
             <sequential>false</sequential>
         </Dialog>
+
+        <Dialog>
+            <text>What a shameful duel</text>
+            <source>Enemy</source>
+            <phase>Defeat</phase>
+            <sequential>true</sequential>
+        </Dialog>
+
+        <Dialog>
+            <text>For someone with such a reputation</text>
+            <source>Enemy</source>
+            <phase>Defeat</phase>
+            <sequential>true</sequential>
+        </Dialog>
+
       </Dialogs>
     </Enemy>
   </Enemies>

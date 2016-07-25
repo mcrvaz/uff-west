@@ -3,43 +3,43 @@
   <Contracts>
 
 	<Contract>
-      <name>1º</name>
-      <crime>Knows Nothing</crime>
+      <name>Freddie</name>
+      <crime>Murder</crime>
       <reward>$200.00</reward>
       <facePrefab>enemy-face</facePrefab>
     </Contract>
 
     <Contract>
-      <name>2º</name>
-      <crime>Terrorism</crime>
+      <name>Walt Kowalski</name>
+      <crime>Murder and War Crimes</crime>
       <reward>$300.00</reward>
       <facePrefab>oldguy-face</facePrefab>
 	</Contract>
 	
 	<Contract>
-      <name>3º</name>
-      <crime>Terrorism</crime>
-      <reward>$400.00</reward>
+      <name>Hatchet Harry</name>
+      <crime>Robbery and Murder</crime>
+      <reward>$500.00</reward>
       <facePrefab>maskedbandit-face</facePrefab>
 	</Contract>
     
     <Contract>
-      <name>4º</name>
-      <crime>Terrorism</crime>
-      <reward>$600.00</reward>
+      <name>Ash J. Williams</name>
+      <crime>Mass murder</crime>
+      <reward>$800.00</reward>
       <facePrefab>baddead-face</facePrefab>
 	</Contract>
    
     <Contract>
-      <name>5º</name>
-      <crime>Terrorism</crime>
-      <reward>$1000.00</reward>
+      <name>Lilith</name>
+      <crime>Mass murder and Treason</crime>
+      <reward>$1100.00</reward>
       <facePrefab>padre-face</facePrefab>
 	</Contract>
     
     <Contract>
-      <name>6º</name>
-      <crime>Gang Leader</crime>
+      <name>Mr. Bones</name>
+      <crime>Murder and Slavery</crime>
       <reward>$2500.00</reward>
       <facePrefab>boss-face</facePrefab>
 	</Contract>

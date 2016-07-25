@@ -54,7 +54,7 @@ public class GameController : Singleton<GameController> {
 
     #region Endless
     private PlayerGenerator playerGenerator = new PlayerGenerator(
-        damage: 500f, health: 100f
+        damage: 5f, health: 100f
     );
     private Player endlessPlayer;
 
@@ -147,7 +147,7 @@ public class GameController : Singleton<GameController> {
             endlessPlayer: this.endlessPlayer, endlessContract: this.endlessContract
         );
         saveGameController.currentState = state;
-        saveGameController.SaveGame();
+        //saveGameController.SaveGame();
     }
 
     private void LoadCharacters() {
@@ -210,7 +210,7 @@ public class GameController : Singleton<GameController> {
         this.enemies = container.enemies;
         enemyEnumerator = enemies.GetEnumerator();
         enemyEnumerator.MoveNext();
-
+        print(endlessContract.facePrefab);
         endlessEnemy = enemyGenerator.Generate(endlessContract.facePrefab);
     }
 
