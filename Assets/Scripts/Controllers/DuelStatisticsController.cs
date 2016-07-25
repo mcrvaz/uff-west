@@ -40,6 +40,7 @@ public class DuelStatisticsController : MonoBehaviour {
     private void EndGame() {
         gameController.NewGame();
         menu.EndGame();
+		gameController.lastDuel = false;
     }
 
     private void NextContract() {

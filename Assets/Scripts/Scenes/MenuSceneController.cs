@@ -38,8 +38,9 @@ public class MenuSceneController : MonoBehaviour {
     }
 
     public void NewGame() {
-        GameController.Instance.NewGame();
-        this.GameMode();
+		GameController.Instance.isDeathDuel = false;
+		GameController.Instance.NewGame();
+		this.GameMode();
     }
 
     public void ContinueGame() {

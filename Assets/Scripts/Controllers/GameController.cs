@@ -11,7 +11,7 @@ public class GameController : Singleton<GameController> {
 
     #region Control
     public StatisticsController stats;
-    public bool lastDuel { get; private set; }
+    public bool lastDuel { get; set; }
     public bool victory { get; private set; } //true if player won last duel
     //everytime the player loses a regular duel, start a death duel
     //if the player wins death duel, restart previous duel, else, game over.
@@ -478,7 +478,7 @@ public class GameController : Singleton<GameController> {
         currentLevel = 0;
         currentDeathLevel = 0;
 
-        isDeathDuel = false;
+        //isDeathDuel = false;
 
         SaveGame();
     }
