@@ -16,7 +16,7 @@ public class GameController : Singleton<GameController> {
     //everytime the player loses a regular duel, start a death duel
     //if the player wins death duel, restart previous duel, else, game over.
     public bool isDeathDuel { get; set; }
-    public GameMode gameMode = GameMode.Endless;
+    public GameMode gameMode = GameMode.Story;
     public bool modalActive;
     private GameObject quitModal, menuModal;
     private int currentLevel;
@@ -440,10 +440,10 @@ public class GameController : Singleton<GameController> {
             }
         } else {
             //player won
-            SetNextDuel();
-            SetNextPlayer();
-            SetNextEnemy();
             SetNextContract();
+            SetNextDuel();
+            SetNextEnemy();
+            SetNextPlayer();
             victory = true;
             isDeathDuel = false;
         }

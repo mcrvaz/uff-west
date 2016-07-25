@@ -12,35 +12,35 @@
     <Contract>
       <name>2º</name>
       <crime>Terrorism</crime>
-      <reward>$500.00</reward>
+      <reward>$300.00</reward>
       <facePrefab>oldguy-face</facePrefab>
 	</Contract>
 	
 	<Contract>
       <name>3º</name>
       <crime>Terrorism</crime>
-      <reward>$500.00</reward>
+      <reward>$400.00</reward>
       <facePrefab>maskedbandit-face</facePrefab>
 	</Contract>
     
     <Contract>
       <name>4º</name>
       <crime>Terrorism</crime>
-      <reward>$500.00</reward>
+      <reward>$600.00</reward>
       <facePrefab>baddead-face</facePrefab>
 	</Contract>
    
     <Contract>
       <name>5º</name>
       <crime>Terrorism</crime>
-      <reward>$500.00</reward>
+      <reward>$1000.00</reward>
       <facePrefab>padre-face</facePrefab>
 	</Contract>
     
     <Contract>
       <name>6º</name>
       <crime>Gang Leader</crime>
-      <reward>$500.00</reward>
+      <reward>$2500.00</reward>
       <facePrefab>boss-face</facePrefab>
 	</Contract>
     

@@ -2,63 +2,106 @@
 <EnemyCollection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Enemies>
   
-    <Enemy characterName="First Enemy">
+    <Enemy characterName="Blue Enemy">
       <health>100</health>
       <damage>5</damage>
       <prefab>Enemy</prefab>
       <minTimeToClick>0.3</minTimeToClick>
       <maxTimeToClick>0.6</maxTimeToClick>
       <Dialogs>
+      
         <Dialog>
-            <text>UN FORASTERO!</text>
+            <text>Mama, I just killed a man</text>
+            <source>Enemy</source>
+            <phase>Beginning</phase>
+            <sequential>true</sequential>
+        </Dialog>
+        <Dialog>
+            <text>Put a gun against his head</text>
+            <source>Enemy</source>
+            <phase>Beginning</phase>
+            <sequential>true</sequential>
+        </Dialog>
+        <Dialog>
+            <text>Pulled my trigger, now he's dead</text>
             <source>Enemy</source>
             <phase>Beginning</phase>
             <sequential>false</sequential>
         </Dialog>
+        
         <Dialog>
-            <text>EZ GAME</text>
+            <text>Oh, mama!</text>
+            <source>Enemy</source>
+            <phase>Victory</phase>
+            <sequential>true</sequential>
+        </Dialog>
+        <Dialog>
+            <text>I don't wanna die</text>
+            <source>Enemy</source>
+            <phase>Victory</phase>
+            <sequential>true</sequential>
+        </Dialog>
+        <Dialog>
+            <text>I wish I'd never been born at all</text>
             <source>Enemy</source>
             <phase>Victory</phase>
             <sequential>false</sequential>
         </Dialog>
+        
         <Dialog>
-            <text>:(</text>
+            <text>Easy come</text>
+            <source>Enemy</source>
+            <phase>Defeat</phase>
+            <sequential>true</sequential>
+        </Dialog>
+        <Dialog>
+            <text>Easy go</text>
             <source>Enemy</source>
             <phase>Defeat</phase>
             <sequential>false</sequential>
         </Dialog>
+        
       </Dialogs>
     </Enemy>
 
-    <Enemy characterName="Second Enemy">
+    <Enemy characterName="OldGuy">
       <health>100</health>
       <damage>5</damage>
       <prefab>OldGuy</prefab>
       <minTimeToClick>0.3</minTimeToClick>
       <maxTimeToClick>0.6</maxTimeToClick>
       <Dialogs>
+      
         <Dialog>
-            <text>UN FORASTERO!</text>
+            <text>Have you ever heard any stories</text>
+            <source>Enemy</source>
+            <phase>Beginning</phase>
+            <sequential>true</sequential>
+        </Dialog>
+        <Dialog>
+            <text>From people who duelled me before?</text>
             <source>Enemy</source>
             <phase>Beginning</phase>
             <sequential>false</sequential>
         </Dialog>
         <Dialog>
-            <text>EZ GAME</text>
+            <text>That's because dead men tell no tales</text>
             <source>Enemy</source>
-            <phase>Victory</phase>
+            <phase>Beginning</phase>
             <sequential>false</sequential>
         </Dialog>
+        
         <Dialog>
-            <text>:(</text>
+            <text>No more tales for you, young punk</text>
             <source>Enemy</source>
             <phase>Defeat</phase>
             <sequential>false</sequential>
         </Dialog>
+        
       </Dialogs>
     </Enemy>
 
-    <Enemy characterName="Third Enemy">
+    <Enemy characterName="MaskedBandit">
       <health>100</health>
       <damage>5</damage>
       <prefab>MaskedBandit</prefab>
@@ -66,15 +109,40 @@
       <maxTimeToClick>0.55</maxTimeToClick>
       <Dialogs>
         <Dialog>
-            <text>GRRBLLRGGLLL</text>
+            <text>Hand over your money</text>
             <source>Enemy</source>
             <phase>Beginning</phase>
+            <sequential>true</sequential>
+        </Dialog>
+        <Dialog>
+            <text>Or your life!</text>
+            <source>Enemy</source>
+            <phase>Beginning</phase>
+            <sequential>false</sequential>
+        </Dialog>
+
+        <Dialog>
+            <text>Nothing like the smell</text>
+            <source>Enemy</source>
+            <phase>Defeat</phase>
+            <sequential>true</sequential>
+        </Dialog>
+        <Dialog>
+            <text>Of blood and powder</text>
+            <source>Enemy</source>
+            <phase>Defeat</phase>
+            <sequential>true</sequential>
+        </Dialog>
+        <Dialog>
+            <text>In the morning</text>
+            <source>Enemy</source>
+            <phase>Defeat</phase>
             <sequential>false</sequential>
         </Dialog>
       </Dialogs>
     </Enemy>
 	
-    <Enemy characterName="Fourth Enemy">
+    <Enemy characterName="BadDead">
       <health>100</health>
       <damage>5</damage>
       <prefab>BadDead</prefab>
@@ -82,15 +150,29 @@
       <maxTimeToClick>0.5</maxTimeToClick>
       <Dialogs>
         <Dialog>
-            <text>GET OFF MY DAMN LAWN!</text>
+            <text>I heard you've been collecting a lot of bounties</text>
             <source>Enemy</source>
             <phase>Beginning</phase>
             <sequential>true</sequential>
         </Dialog>
+        <Dialog>
+            <text>I can't wait to collect your head</text>
+            <source>Enemy</source>
+            <phase>Beginning</phase>
+            <sequential>false</sequential>
+        </Dialog>
+        
+        <Dialog>
+            <text>Time for a choppin block party!</text>
+            <source>Enemy</source>
+            <phase>Defeat</phase>
+            <sequential>false</sequential>
+        </Dialog>
+
       </Dialogs>
     </Enemy>
     
-	<Enemy characterName="Fifth Enemy">
+	<Enemy characterName="Padre">
       <health>100</health>
       <damage>5</damage>
       <prefab>Padre</prefab>
@@ -98,15 +180,40 @@
       <maxTimeToClick>0.5</maxTimeToClick>
       <Dialogs>
         <Dialog>
-            <text>Repent, sinner!</text>
+            <text>I'm glad to be the one who'll put you down</text>
+            <source>Enemy</source>
+            <phase>Beginning</phase>
+            <sequential>false</sequential>
+        </Dialog>
+        <Dialog>
+            <text>How's that?</text>
+            <source>Enemy</source>
+            <phase>Beginning</phase>
+            <sequential>false</sequential>
+        </Dialog>
+        <Dialog>
+            <text>Ha!</text>
             <source>Enemy</source>
             <phase>Beginning</phase>
             <sequential>true</sequential>
         </Dialog>
+        <Dialog>
+            <text>Really funny</text>
+            <source>Enemy</source>
+            <phase>Beginning</phase>
+            <sequential>false</sequential>
+        </Dialog>
+
+        <Dialog>
+            <text>You should've come with red clothes</text>
+            <source>Enemy</source>
+            <phase>Defeat</phase>
+            <sequential>false</sequential>
+        </Dialog>
       </Dialogs>
     </Enemy>
     
-    <Enemy characterName="Sixth Enemy">
+    <Enemy characterName="Boss">
       <health>100</health>
       <damage>5</damage>
       <prefab>Boss</prefab>
@@ -114,10 +221,35 @@
       <maxTimeToClick>0.5</maxTimeToClick>
       <Dialogs>
         <Dialog>
-            <text>Bury me with my money!</text>
+            <text>I salute you</text>
             <source>Enemy</source>
             <phase>Beginning</phase>
             <sequential>true</sequential>
+        </Dialog>
+        <Dialog>
+            <text>For coming this far</text>
+            <source>Enemy</source>
+            <phase>Beginning</phase>
+            <sequential>false</sequential>
+        </Dialog>
+        <Dialog>
+            <text>Let's see how manly you'll be</text>
+            <source>Enemy</source>
+            <phase>Beginning</phase>
+            <sequential>true</sequential>
+        </Dialog>
+        <Dialog>
+            <text>Dying on the ground</text>
+            <source>Enemy</source>
+            <phase>Beginning</phase>
+            <sequential>false</sequential>
+        </Dialog>
+        
+        <Dialog>
+            <text>Bury me with my money!</text>
+            <source>Enemy</source>
+            <phase>Victory</phase>
+            <sequential>false</sequential>
         </Dialog>
       </Dialogs>
     </Enemy>

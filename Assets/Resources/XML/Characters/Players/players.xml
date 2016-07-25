@@ -2,135 +2,193 @@
 <PlayerCollection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Players>
   
-    <Player characterName="First Player">
+    <Player characterName="Blue Enemy">
       <health>100</health>
       <damage>500</damage>
       <prefab>Papaco</prefab>
       <Dialogs>
         <Dialog>
-            <text>U WOT M8</text>
+            <text>We've got a Dancing Queen here</text>
             <source>Player</source>
             <phase>Beginning</phase>
             <sequential>false</sequential>
         </Dialog>
+        
+        <Dialog>
+            <text>Just shut up and die already!</text>
+            <source>Player</source>
+            <phase>Victory</phase>
+            <sequential>false</sequential>
+        </Dialog>
+
       </Dialogs>
     </Player>
     
-    <Player characterName="Second Player">
+    <Player characterName="Old Guy">
       <health>100</health>
       <damage>500</damage>
       <prefab>Papaco</prefab>
       <Dialogs>
         <Dialog>
-            <text>Wow</text>
+            <text>No</text>
             <source>Player</source>
             <phase>Beginning</phase>
             <sequential>false</sequential>
         </Dialog>
+        
         <Dialog>
-            <text>This guy is nuts</text>
-            <source>Player</source>
-            <phase>Beginning</phase>
-            <sequential>false</sequential>
-        </Dialog> 
-        <Dialog>
-            <text>I know what you're thinking.</text>
-            <source>Player</source>
-            <phase>Victory</phase>
-            <sequential>true</sequential>
-        </Dialog>    
-        <Dialog>        
-            <text>Did he fire six shots</text>
-            <source>Player</source>
-            <phase>Victory</phase>
-            <sequential>true</sequential>
-        </Dialog>
-        <Dialog>        
-            <text>Or only five?</text>
-            <source>Player</source>
-            <phase>Victory</phase>
-            <sequential>true</sequential>
-        </Dialog>
-        <Dialog>
-            <text>Well,</text>
+            <text>No more tales for you, old man</text>
             <source>Player</source>
             <phase>Victory</phase>
             <sequential>false</sequential>
         </Dialog>
-        <Dialog>
-            <text>Do you feel lucky,</text>
-            <source>Player</source>
-            <phase>Victory</phase>
-            <sequential>false</sequential>
-        </Dialog>
-        <Dialog>
-            <text>Punk?</text>
-            <source>Player</source>
-            <phase>Victory</phase>
-            <sequential>false</sequential>
-        </Dialog>
+
       </Dialogs>
     </Player>
 	
-    <Player characterName="Third Player">
+    <Player characterName="MaskedBandit">
       <health>100</health>
       <damage>500</damage>
       <prefab>Papaco</prefab>
       <Dialogs>
         <Dialog>
-            <text>Holy fuck!</text>
+            <text>Really?</text>
             <source>Player</source>
             <phase>Beginning</phase>
             <sequential>false</sequential>
         </Dialog>
         <Dialog>
-            <text>Why does everybody want to shoot me?</text>
+            <text>I've come to kill you</text>
             <source>Player</source>
             <phase>Beginning</phase>
+            <sequential>true</sequential>
+        </Dialog>
+        <Dialog>
+            <text>And this is how you treat me?</text>
+            <source>Player</source>
+            <phase>Beginning</phase>
+            <sequential>false</sequential>
+        </Dialog>
+
+        <Dialog>
+            <text>I'll just get the money</text>
+            <source>Player</source>
+            <phase>Victory</phase>
+            <sequential>true</sequential>
+        </Dialog>
+        <Dialog>
+            <text>Your life doesn't really interest me</text>
+            <source>Player</source>
+            <phase>Victory</phase>
+            <sequential>false</sequential>
+        </Dialog>
+
+      </Dialogs>
+    </Player>
+    
+    <Player characterName="BadDead">
+      <health>100</health>
+      <damage>500</damage>
+      <prefab>Papaco</prefab>
+      <Dialogs>
+        <Dialog>
+            <text>Damn</text>
+            <source>Player</source>
+            <phase>Beginning</phase>
+            <sequential>true</sequential>
+        </Dialog>
+        <Dialog>
+            <text>You're ugly</text>
+            <source>Player</source>
+            <phase>Beginning</phase>
+            <sequential>true</sequential>
+        </Dialog>
+        
+        <Dialog>
+            <text>Get your head out of your ass</text>
+            <source>Player</source>
+            <phase>Victory</phase>
+            <sequential>false</sequential>
+        </Dialog>
+        
+      </Dialogs>
+    </Player>
+    
+    <Player characterName="Padre">
+      <health>100</health>
+      <damage>500</damage>
+      <prefab>Papaco</prefab>
+      <Dialogs>
+        <Dialog>
+            <text>I'm glad you came prepared</text>
+            <source>Player</source>
+            <phase>Beginning</phase>
+            <sequential>false</sequential>
+        </Dialog>
+        <Dialog>
+            <text>I noticed you're wearing brown pants</text>
+            <source>Player</source>
+            <phase>Beginning</phase>
+            <sequential>false</sequential>
+        </Dialog>
+        <Dialog>
+            <text>I told you those pants would come in handy</text>
+            <source>Player</source>
+            <phase>Victory</phase>
             <sequential>false</sequential>
         </Dialog>
       </Dialogs>
     </Player>
     
-    <Player characterName="Fourth Player">
+    <Player characterName="Boss">
       <health>100</health>
       <damage>500</damage>
       <prefab>Papaco</prefab>
       <Dialogs>
         <Dialog>
-            <text>Holy fuck!</text>
+            <text>Frankly my dear</text>
             <source>Player</source>
             <phase>Beginning</phase>
-            <sequential>false</sequential>
+            <sequential>true</sequential>
         </Dialog>
-      </Dialogs>
-    </Player>
-    
-    <Player characterName="Fifth Player">
-      <health>100</health>
-      <damage>500</damage>
-      <prefab>Papaco</prefab>
-      <Dialogs>
         <Dialog>
-            <text>Holy fuck!</text>
+            <text>I don't give a damn</text>
             <source>Player</source>
             <phase>Beginning</phase>
             <sequential>false</sequential>
         </Dialog>
-      </Dialogs>
-    </Player>
-    
-    <Player characterName="Sixth Player">
-      <health>100</health>
-      <damage>500</damage>
-      <prefab>Papaco</prefab>
-      <Dialogs>
         <Dialog>
-            <text>Holy fuck!</text>
+            <text>Bold words</text>
+            <source>Player</source>
+            <phase>Beginning</phase>
+            <sequential>true</sequential>
+        </Dialog>
+        <Dialog>
+            <text>For a dead man</text>
             <source>Player</source>
             <phase>Beginning</phase>
             <sequential>false</sequential>
         </Dialog>
+
+        <Dialog>
+            <text>Yeah, right</text>
+            <source>Player</source>
+            <phase>Victory</phase>
+            <sequential>true</sequential>
+        </Dialog>
+        <Dialog>
+            <text>Finally, it's over</text>
+            <source>Player</source>
+            <phase>Victory</phase>
+            <sequential>true</sequential>
+        </Dialog>
+        <Dialog>
+            <text>Where did I park my horse?</text>
+            <source>Player</source>
+            <phase>Victory</phase>
+            <sequential>false</sequential>
+        </Dialog>
+
       </Dialogs>
     </Player>
     

@@ -9,18 +9,45 @@
       <minTimeToClick>0.4</minTimeToClick>
       <maxTimeToClick>0.6</maxTimeToClick>
       <Dialogs>
+
         <Dialog>
-            <text>Hello</text>
+            <text>Welcome to my realm, mortal</text>
+            <source>Enemy</source>
+            <phase>Beginning</phase>
+            <sequential>false</sequential>
+        </Dialog>
+        <Dialog>
+            <text>Let us duel</text>
             <source>Enemy</source>
             <phase>Beginning</phase>
             <sequential>true</sequential>
         </Dialog>
         <Dialog>
-            <text>How you doin'?</text>
+            <text>If you win</text>
+            <source>Enemy</source>
+            <phase>Beginning</phase>
+            <sequential>true</sequential>
+        </Dialog>
+        <Dialog>
+            <text>I'll let you live</text>
             <source>Enemy</source>
             <phase>Beginning</phase>
             <sequential>false</sequential>
         </Dialog>
+
+        <Dialog>
+            <text>Up you go!</text>
+            <source>Enemy</source>
+            <phase>Victory</phase>
+            <sequential>false</sequential>
+        </Dialog>
+        <Dialog>
+            <text>Down you go!</text>
+            <source>Enemy</source>
+            <phase>Defeat</phase>
+            <sequential>false</sequential>
+        </Dialog>
+
       </Dialogs>
     </Enemy>
     
@@ -32,15 +59,28 @@
       <maxTimeToClick>0.4</maxTimeToClick>
       <Dialogs>
         <Dialog>
-            <text>Hello</text>
+            <text>Oh, it's you again!</text>
             <source>Enemy</source>
             <phase>Beginning</phase>
             <sequential>true</sequential>
         </Dialog>
         <Dialog>
-            <text>How you doin'?</text>
+            <text>You know the drill</text>
             <source>Enemy</source>
             <phase>Beginning</phase>
+            <sequential>false</sequential>
+        </Dialog>
+
+        <Dialog>
+            <text>Up you go!</text>
+            <source>Enemy</source>
+            <phase>Victory</phase>
+            <sequential>false</sequential>
+        </Dialog>
+        <Dialog>
+            <text>Down you go!</text>
+            <source>Enemy</source>
+            <phase>Defeat</phase>
             <sequential>false</sequential>
         </Dialog>
       </Dialogs>
@@ -54,17 +94,25 @@
       <maxTimeToClick>0.2</maxTimeToClick>
       <Dialogs>
         <Dialog>
-            <text>Hello</text>
-            <source>Enemy</source>
-            <phase>Beginning</phase>
-            <sequential>true</sequential>
-        </Dialog>
-        <Dialog>
-            <text>How you doin'?</text>
+            <text>I'm getting tired of seeing your face here</text>
             <source>Enemy</source>
             <phase>Beginning</phase>
             <sequential>false</sequential>
         </Dialog>
+
+        <Dialog>
+            <text>Up you go!</text>
+            <source>Enemy</source>
+            <phase>Victory</phase>
+            <sequential>false</sequential>
+        </Dialog>
+        <Dialog>
+            <text>Down you go!</text>
+            <source>Enemy</source>
+            <phase>Defeat</phase>
+            <sequential>false</sequential>
+        </Dialog>
+
       </Dialogs>
     </Enemy>
     
@@ -76,17 +124,31 @@
       <maxTimeToClick>0.01</maxTimeToClick>
       <Dialogs>
         <Dialog>
-            <text>Hello</text>
-            <source>Enemy</source>
-            <phase>Beginning</phase>
-            <sequential>true</sequential>
-        </Dialog>
-        <Dialog>
-            <text>How you doin'?</text>
+            <text>How do you even die so much?</text>
             <source>Enemy</source>
             <phase>Beginning</phase>
             <sequential>false</sequential>
         </Dialog>
+        <Dialog>
+            <text>As you wish</text>
+            <source>Enemy</source>
+            <phase>Beginning</phase>
+            <sequential>true</sequential>
+        </Dialog>
+
+        <Dialog>
+            <text>Up you go!</text>
+            <source>Enemy</source>
+            <phase>Victory</phase>
+            <sequential>false</sequential>
+        </Dialog>
+        <Dialog>
+            <text>Down you go!</text>
+            <source>Enemy</source>
+            <phase>Defeat</phase>
+            <sequential>false</sequential>
+        </Dialog>
+
       </Dialogs>
     </Enemy>
   

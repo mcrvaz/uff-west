@@ -3,7 +3,7 @@
   <Duels>
     <Duel>
       <timeLimit>30</timeLimit>
-      <background>map-4</background>
+      <background>map-0</background>
       <targetMinTime>0.2</targetMinTime>
       <targetMaxTime>0.5</targetMaxTime>
       <evadeMinTime>1</evadeMinTime>
@@ -14,7 +14,7 @@
 
     <Duel>
       <timeLimit>30</timeLimit>
-      <background>map-1</background>
+      <background>map-3</background>
       <targetMinTime>0.2</targetMinTime>
       <targetMaxTime>0.5</targetMaxTime>
       <evadeMinTime>1</evadeMinTime>
@@ -25,7 +25,7 @@
     
     <Duel>
       <timeLimit>30</timeLimit>
-      <background>map-12</background>
+      <background>map-8</background>
       <targetMinTime>0.2</targetMinTime>
       <targetMaxTime>0.5</targetMaxTime>
       <evadeMinTime>1</evadeMinTime>

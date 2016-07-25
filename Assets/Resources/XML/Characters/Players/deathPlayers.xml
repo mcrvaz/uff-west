@@ -25,6 +25,18 @@
             <phase>Beginning</phase>
             <sequential>false</sequential>
         </Dialog>
+        <Dialog>
+            <text>Sounds good</text>
+            <source>Player</source>
+            <phase>Beginning</phase>
+            <sequential>false</sequential>
+        </Dialog>
+        <Dialog>
+            <text>Almost too good</text>
+            <source>Player</source>
+            <phase>Beginning</phase>
+            <sequential>false</sequential>
+        </Dialog>
       </Dialogs>
     </Player>
     
@@ -34,7 +46,7 @@
       <prefab>Papaco</prefab>
       <Dialogs>
         <Dialog>
-            <text>This again?</text>
+            <text>Let's do it, redneck</text>
             <source>Player</source>
             <phase>Beginning</phase>
             <sequential>false</sequential>
@@ -48,7 +60,7 @@
       <prefab>Papaco</prefab>
       <Dialogs>
         <Dialog>
-            <text>Just kill me already, dude</text>
+            <text>Are you even trying?</text>
             <source>Player</source>
             <phase>Beginning</phase>
             <sequential>false</sequential>
@@ -62,7 +74,7 @@
       <prefab>Papaco</prefab>
       <Dialogs>
         <Dialog>
-            <text>I give up</text>
+            <text>Just kill me already</text>
             <source>Player</source>
             <phase>Beginning</phase>
             <sequential>false</sequential>

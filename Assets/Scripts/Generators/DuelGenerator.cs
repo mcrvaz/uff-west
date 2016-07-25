@@ -7,9 +7,10 @@ public class DuelGenerator : Generator<Duel> {
     private List<string> backgrounds = new List<string>(new string[] {
         BackgroundConstants.MAP_0,BackgroundConstants.MAP_1,
         BackgroundConstants.MAP_2,BackgroundConstants.MAP_3,
-        BackgroundConstants.MAP_5,BackgroundConstants.MAP_6,
-        BackgroundConstants.MAP_7, BackgroundConstants.MAP_8,
-        BackgroundConstants.MAP_9, BackgroundConstants.MAP_10
+        BackgroundConstants.MAP_4, BackgroundConstants.MAP_5,
+        BackgroundConstants.MAP_6, BackgroundConstants.MAP_7,
+        BackgroundConstants.MAP_8, BackgroundConstants.MAP_9,
+        BackgroundConstants.MAP_10
     });
 
     public DuelGenerator(

@@ -6,6 +6,9 @@ public class EnemyGenerator : Generator<Enemy> {
     private Enemy lastEnemy;
     private Enemy defaultEnemy;
     private float healthAdd, damageAdd, minTimeToClickAdd, maxTimeToClickAdd;
+    private float minTimeBound = 0.25f;
+    private float beyondBoundTime = 0.02f;
+    private float maxTimeBound = 0.4f;
     private List<string> prefabs = new List<string>(new string[] {
         CharacterConstants.ENEMY, CharacterConstants.BADDEAD,
         CharacterConstants.OLD_GUY, CharacterConstants.PADRE,
@@ -37,8 +40,14 @@ public class EnemyGenerator : Generator<Enemy> {
 
     public Enemy Generate() {
         float newDamage = lastEnemy.damage + damageAdd;
-        float newMinTimeToClick = lastEnemy.minTimeToClick - minTimeToClickAdd;
-        float newMaxTimeToClick = lastEnemy.maxTimeToClick - maxTimeToClickAdd;
+        float newMinTimeToClick = lastEnemy.minTimeToClick;
+        if (newMinTimeToClick <= minTimeBound) {
+            newMinTimeToClick -= beyondBoundTime;
+        }
+        float newMaxTimeToClick = lastEnemy.maxTimeToClick;
+        if (newMaxTimeToClick <= maxTimeBound) {
+            newMaxTimeToClick -= beyondBoundTime;
+        }
         float newHealth = lastEnemy.health + healthAdd;
         string newPrefab = prefabs[Random.Range(0, prefabs.Count)];
 
@@ -58,7 +67,7 @@ public class EnemyGenerator : Generator<Enemy> {
         float newMinTimeToClick = lastEnemy.minTimeToClick - minTimeToClickAdd;
         float newMaxTimeToClick = lastEnemy.maxTimeToClick - maxTimeToClickAdd;
         float newHealth = lastEnemy.health + healthAdd;
-
+        Debug.Log(GetEnemyPrefab(facePrefab));
         lastEnemy = new Enemy(
             characterName: "Dummy",
             damage: newDamage,
