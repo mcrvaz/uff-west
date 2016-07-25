@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Xml;
 using System.Xml.Serialization;
 using System.IO;
 
@@ -18,11 +19,7 @@ public class GameStateXMLContainer : XMLContainer<GameStateXMLContainer, GameSta
     }
 
     public void Save() {
-        try {
-            base.Save(this.path + ".xml");
-        } catch (System.Exception e) {
-            UnityEngine.Debug.LogError(e);
-        }
+        base.Save(this.path + ".xml");
     }
 
     public void Load() {

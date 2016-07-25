@@ -140,7 +140,6 @@ public class GameController : Singleton<GameController> {
     }
 
     public void SaveGame() {
-        /*
         var state = new GameState(
             level: this.currentLevel, deathLevel: this.currentDeathLevel,
             lastDuel: this.lastDuel, isDeathDuel: this.isDeathDuel,
@@ -148,9 +147,8 @@ public class GameController : Singleton<GameController> {
             endlessPlayer: this.endlessPlayer, endlessContract: this.endlessContract
         );
         saveGameController.currentState = state;
-        
+
         saveGameController.SaveGame();
-        */
     }
 
     private void LoadCharacters() {
@@ -479,6 +477,8 @@ public class GameController : Singleton<GameController> {
 
         currentLevel = 0;
         currentDeathLevel = 0;
+
+        isDeathDuel = false;
 
         SaveGame();
     }

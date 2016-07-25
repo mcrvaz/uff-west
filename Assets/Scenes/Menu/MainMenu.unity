@@ -704,6 +704,22 @@ Prefab:
       propertyPath: m_Interactable
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11458706, guid: 7071102b175a079438a475448a39bb90, type: 2}
+      propertyPath: m_Colors.m_DisabledColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11458706, guid: 7071102b175a079438a475448a39bb90, type: 2}
+      propertyPath: m_Colors.m_DisabledColor.r
+      value: 0.52205884
+      objectReference: {fileID: 0}
+    - target: {fileID: 11458706, guid: 7071102b175a079438a475448a39bb90, type: 2}
+      propertyPath: m_Colors.m_DisabledColor.g
+      value: 0.52205884
+      objectReference: {fileID: 0}
+    - target: {fileID: 11458706, guid: 7071102b175a079438a475448a39bb90, type: 2}
+      propertyPath: m_Colors.m_DisabledColor.b
+      value: 0.52205884
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7071102b175a079438a475448a39bb90, type: 2}
   m_IsPrefabParent: 0

@@ -7,7 +7,7 @@
     <isDeathDuel>false</isDeathDuel>
     <endlessDuel>
       <timeLimit>30</timeLimit>
-      <background>map-4</background>
+      <background>map-0</background>
       <targetMinTime>0.2</targetMinTime>
       <targetMaxTime>0.5</targetMaxTime>
       <evadeMinTime>1</evadeMinTime>
@@ -16,7 +16,7 @@
       <powerupMaxTime>5</powerupMaxTime>
     </endlessDuel>
     <endlessEnemy characterName="Default Enemy">
-      <prefab>OldGuy</prefab>
+      <prefab>MaskedBandit</prefab>
       <health>100</health>
       <damage>5</damage>
       <minTimeToClick>1</minTimeToClick>
@@ -28,10 +28,10 @@
       <damage>5</damage>
     </endlessPlayer>
     <endlessContract>
-      <name>Django</name>
-      <facePrefab>enemy-face</facePrefab>
-      <crime>Arson</crime>
-      <reward>$300</reward>
+      <name>Philo Beddoe</name>
+      <facePrefab>maskedbandit-face</facePrefab>
+      <crime>Burglary</crime>
+      <reward>$1000</reward>
     </endlessContract>
   </state>
 </GameStates>
