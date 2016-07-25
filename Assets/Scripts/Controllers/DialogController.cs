@@ -24,7 +24,6 @@ public class DialogController : MonoBehaviour {
 #if UNITY_EDITOR
         if (Input.GetMouseButtonDown(0)) {
             NextDialog();
-
         }
 #endif
 #if UNITY_ANDROID && !UNITY_EDITOR

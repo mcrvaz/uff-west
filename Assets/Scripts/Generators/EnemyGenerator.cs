@@ -38,6 +38,17 @@ public class EnemyGenerator : Generator<Enemy> {
         return lastEnemy = defaultEnemy;
     }
 
+    public Enemy Reset(string facePrefab) {
+        return lastEnemy = new Enemy(
+            characterName: "Default Enemy",
+            damage: 5,
+            minTimeToClick: 1f,
+            maxTimeToClick: 1.1f,
+            prefab: GetEnemyPrefab(facePrefab),
+            health: 100f
+        ); ;
+    }
+
     public Enemy Generate() {
         float newDamage = lastEnemy.damage + damageAdd;
         float newMinTimeToClick = lastEnemy.minTimeToClick;
@@ -67,7 +78,6 @@ public class EnemyGenerator : Generator<Enemy> {
         float newMinTimeToClick = lastEnemy.minTimeToClick - minTimeToClickAdd;
         float newMaxTimeToClick = lastEnemy.maxTimeToClick - maxTimeToClickAdd;
         float newHealth = lastEnemy.health + healthAdd;
-        Debug.Log(GetEnemyPrefab(facePrefab));
         lastEnemy = new Enemy(
             characterName: "Dummy",
             damage: newDamage,
