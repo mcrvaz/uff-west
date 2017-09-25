@@ -21,12 +21,12 @@ public class DialogController : MonoBehaviour {
     }
 
     void Update() {
-#if UNITY_EDITOR
+#if !UNITY_ANDROID
         if (Input.GetMouseButtonDown(0)) {
             NextDialog();
         }
 #endif
-#if UNITY_ANDROID && !UNITY_EDITOR
+#if UNITY_ANDROID
         if(Input.touchCount > 0){
             if (Input.GetTouch(0).phase == TouchPhase.Ended) {
                 NextDialog();
