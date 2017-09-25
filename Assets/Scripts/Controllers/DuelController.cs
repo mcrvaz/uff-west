@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 public class DuelController : MonoBehaviour {
 
-    public float timeLimit;
+    public float timeLimit = 5;
     public Image background;
     public Animator countdownAnimator, endingAnimator;
 
@@ -195,6 +195,10 @@ public class DuelController : MonoBehaviour {
         if (target == enemy.selectedTarget) {
             enemy.SelectTarget();
         }
+    }
+
+    public void EndDuelEditor() {
+        StartCoroutine(EndDuel());
     }
 
     public IEnumerator EndDuel() {

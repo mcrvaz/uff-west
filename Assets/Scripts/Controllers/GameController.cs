@@ -24,64 +24,74 @@ public class GameController : Singleton<GameController> {
     #endregion
 
     #region SaveGame
-    private SaveGameController saveGameController = new SaveGameController(
-        new GameStateXMLContainer("saveGame")
-    );
+    private SaveGameController saveGameController;
     #endregion
 
     #region Story
-    private List<Enemy> enemies = new List<Enemy>();
+    private List<Enemy> enemies;
     private IEnumerator<Enemy> enemyEnumerator;
 
-    private List<Enemy> deathEnemies = new List<Enemy>();
+    private List<Enemy> deathEnemies;
     private IEnumerator<Enemy> deathEnemyEnumerator;
 
-    private List<Player> players = new List<Player>();
+    private List<Player> players;
     private IEnumerator<Player> playerEnumerator;
 
-    private List<Player> deathPlayers = new List<Player>();
+    private List<Player> deathPlayers;
     private IEnumerator<Player> deathPlayerEnumerator;
 
-    private List<Duel> duels = new List<Duel>();
+    private List<Duel> duels;
     private IEnumerator<Duel> duelEnumerator;
 
-    private List<Duel> deathDuels = new List<Duel>();
+    private List<Duel> deathDuels;
     private IEnumerator<Duel> deathDuelEnumerator;
 
-    private List<Contract> contracts = new List<Contract>();
+    private List<Contract> contracts;
     private IEnumerator<Contract> contractEnumerator;
     #endregion
 
     #region Endless
-    private PlayerGenerator playerGenerator = new PlayerGenerator(
-        damage: 5f, health: 100f
-    );
+    private PlayerGenerator playerGenerator;
     private Player endlessPlayer;
-
-    private DuelGenerator duelGenerator = new DuelGenerator(
-        newTimeLimit: 30,
-        newTargetMinTime: 0.2f, newTargetMaxTime: 0.5f,
-        newEvadeMinTime: 1f, newEvadeMaxTime: 3f,
-        newPowerupMinTime: 2f, newPowerupMaxTime: 5f
-    );
+    private DuelGenerator duelGenerator;
     private Duel endlessDuel;
-
-    private EnemyGenerator enemyGenerator = new EnemyGenerator(
-        healthAdd: 0, damageAdd: 0,
-        minTimeToClickAdd: 0.1f, maxTimeToClickAdd: 0.1f
-    );
+    private EnemyGenerator enemyGenerator;
     private Enemy endlessEnemy;
 
-    private ContractGenerator contractGenerator = new ContractGenerator();
+    private ContractGenerator contractGenerator;
     private Contract endlessContract;
     #endregion
 
     void Awake() {
+        this.Initialize();
         quitModal = Resources.Load("Prefabs/ModalCanvas") as GameObject;
         menuModal = Resources.Load("Prefabs/MenuModalCanvas") as GameObject;
         LoadContracts();
         LoadDuels();
         LoadCharacters();
+    }
+
+    void Initialize() {
+        this.saveGameController = new SaveGameController(new GameStateXMLContainer("saveGame"));
+        this.enemies = new List<Enemy>();
+        this.deathEnemies = new List<Enemy>();
+        this.players = new List<Player>();
+        this.deathPlayers = new List<Player>();
+        this.duels = new List<Duel>();
+        this.deathDuels = new List<Duel>();
+        this.contracts = new List<Contract>();
+        this.playerGenerator = new PlayerGenerator(damage: 5f, health: 100f);
+        this.duelGenerator = new DuelGenerator(
+            newTimeLimit: 30,
+            newTargetMinTime: 0.2f, newTargetMaxTime: 0.5f,
+            newEvadeMinTime: 1f, newEvadeMaxTime: 3f,
+            newPowerupMinTime: 2f, newPowerupMaxTime: 5f
+        );
+        this.enemyGenerator = new EnemyGenerator(
+            healthAdd: 0, damageAdd: 0,
+            minTimeToClickAdd: 0.1f, maxTimeToClickAdd: 0.1f
+        );
+        this.contractGenerator = new ContractGenerator();
     }
 
     void Update() {

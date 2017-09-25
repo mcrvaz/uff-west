@@ -4,6 +4,7 @@
 Temp/
 Library/
 Builds/
+Dist/
 
 # ===================================== #
 # Visual Studio / MonoDevelop generated #
@@ -19,6 +20,7 @@ obj/
 *.user
 *.unityproj
 *.booproj
+.vscode/
 
 # ============ #
 # OS generated #
